@@ -1,0 +1,72 @@
+INFO: Scrapy 1.6.0 started (bot: scrapybot)
+INFO: Versions: lxml 4.3.3.0, libxml2 2.9.9, cssselect 1.0.3, parsel 1.5.1, w3lib 1.20.0, Twisted 19.7.0, Python 3.7.2 (v3.7.2:9a3ffc0492, Dec 24 2018, 02:44:43) - [Clang 6.0 (clang-600.0.57)], pyOpenSSL 18.0.0 (OpenSSL 1.1.0j  20 Nov 2018), cryptography 2.4.2, Platform Darwin-18.7.0-x86_64-i386-64bit
+INFO: Overridden settings: {'AUTOTHROTTLE_ENABLED': True, 'AUTOTHROTTLE_MAX_DELAY': 3, 'AUTOTHROTTLE_START_DELAY': 1, 'FEED_FORMAT': 'csv', 'FEED_URI': 'medium_titles_2009-2011.csv', 'USER_AGENT': 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1)'}
+INFO: Telnet Password: 79e450fedc45f4c3
+INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.feedexport.FeedExporter',
+ 'scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.throttle.AutoThrottle']
+INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO: Enabled item pipelines:
+[]
+INFO: Spider opened
+INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+INFO: Telnet console listening on 127.0.0.1:6023
+DEBUG: Crawled (200) <GET https://medium.com/tag/data-science/archive/2010> (referer: None)
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2010>
+{'article': ['Learning From Last Year (Part\xa0II)'], 'articleURL': 'https://medium.com/stanfordreview/learning-from-last-year-part-ii-61b5c716e8ca?source=tag_archive---------0-----------------------'}
+DEBUG: Crawled (200) <GET https://medium.com/tag/data-science/archive/2011> (referer: None)
+DEBUG: Crawled (200) <GET https://medium.com/tag/data-science/archive/2009> (referer: None)
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2011>
+{'article': ['Of brains and cities; neuroscience and cultures of decision-making'], 'articleURL': 'https://medium.com/dark-matter-and-trojan-horses/of-brains-and-cities-neuroscience-and-cultures-of-decision-making-6bc6abb48d4b?source=tag_archive---------0-----------------------'}
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2009>
+{'article': [], 'articleURL': 'https://developerzen.com/data-mining-handling-missing-values-the-database-bd2241882e72?source=tag_archive---------0-----------------------'}
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2009>
+{'article': ['Rethinking: Cloud & Enterprise Computing'], 'articleURL': 'https://medium.quantiply.com/rethinking-cloud-enterprise-computing-8205851c2c02?source=tag_archive---------1-----------------------'}
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2011>
+{'article': ['Search engine vs Database in BI -\xa02'], 'articleURL': 'https://blog.matters.tech/search-engine-vs-database-in-bi-part-2-1b191363424d?source=tag_archive---------1-----------------------'}
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2011>
+{'article': ['Search engine vs Database in BI -\xa01'], 'articleURL': 'https://blog.matters.tech/search-engine-vs-database-in-bi-part-1-ac97f950d6f8?source=tag_archive---------2-----------------------'}
+INFO: Closing spider (finished)
+INFO: Stored csv feed (6 items) in: medium_titles_2009-2011.csv
+INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 762,
+ 'downloader/request_count': 3,
+ 'downloader/request_method_count/GET': 3,
+ 'downloader/response_bytes': 68525,
+ 'downloader/response_count': 3,
+ 'downloader/response_status_count/200': 3,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2019, 11, 21, 14, 46, 7, 124424),
+ 'item_scraped_count': 6,
+ 'log_count/DEBUG': 9,
+ 'log_count/INFO': 10,
+ 'memusage/max': 77950976,
+ 'memusage/startup': 77950976,
+ 'response_received_count': 3,
+ 'scheduler/dequeued': 3,
+ 'scheduler/dequeued/memory': 3,
+ 'scheduler/enqueued': 3,
+ 'scheduler/enqueued/memory': 3,
+ 'start_time': datetime.datetime(2019, 11, 21, 14, 46, 4, 610874)}
+INFO: Spider closed (finished)

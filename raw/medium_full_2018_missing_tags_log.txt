@@ -1,0 +1,1284 @@
+INFO: Scrapy 1.6.0 started (bot: scrapybot)
+INFO: Versions: lxml 4.3.3.0, libxml2 2.9.9, cssselect 1.0.3, parsel 1.5.1, w3lib 1.20.0, Twisted 19.2.0, Python 3.7.1 (default, Dec 14 2018, 13:28:58) - [Clang 4.0.1 (tags/RELEASE_401/final)], pyOpenSSL 18.0.0 (OpenSSL 1.1.1b  26 Feb 2019), cryptography 2.4.2, Platform Darwin-18.2.0-x86_64-i386-64bit
+INFO: Overridden settings: {'AUTOTHROTTLE_ENABLED': True, 'AUTOTHROTTLE_MAX_DELAY': 3, 'AUTOTHROTTLE_START_DELAY': 1, 'FEED_FORMAT': 'csv', 'FEED_URI': 'medium_2018_missing_tags.csv', 'USER_AGENT': 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1)'}
+INFO: Telnet Password: a0ccd5549aef0e3d
+INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.feedexport.FeedExporter',
+ 'scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.throttle.AutoThrottle']
+INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO: Enabled item pipelines:
+[]
+INFO: Spider opened
+INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+INFO: Telnet console listening on 127.0.0.1:6025
+DEBUG: Crawled (200) <GET https://www.daylightdata.com/blog/the-gender-wage-gap-fact-vs-myth> (referer: None)
+DEBUG: Crawled (200) <GET https://upfront.com/thoughts/giving-time-back-to-our-doctors-and-nurses-to-deliver-patient-care-c24b43bfa0a2> (referer: None)
+ERROR: Spider error processing <GET https://www.daylightdata.com/blog/the-gender-wage-gap-fact-vs-myth> (referer: None)
+Traceback (most recent call last):
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "<ipython-input-10-2c1b2ce1d527>", line 75, in parse
+    if response.css('div.u-paddingBottom3 a').attrib['href']:
+KeyError: 'href'
+ERROR: Spider error processing <GET https://upfront.com/thoughts/giving-time-back-to-our-doctors-and-nurses-to-deliver-patient-care-c24b43bfa0a2> (referer: None)
+Traceback (most recent call last):
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "<ipython-input-10-2c1b2ce1d527>", line 75, in parse
+    if response.css('div.u-paddingBottom3 a').attrib['href']:
+KeyError: 'href'
+DEBUG: Crawled (200) <GET https://blog.gooroo.io/the-cambridge-collusion-manipulating-the-minds-of-the-masses-72f1febf2771> (referer: None)
+ERROR: Spider error processing <GET https://blog.gooroo.io/the-cambridge-collusion-manipulating-the-minds-of-the-masses-72f1febf2771> (referer: None)
+Traceback (most recent call last):
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "<ipython-input-10-2c1b2ce1d527>", line 75, in parse
+    if response.css('div.u-paddingBottom3 a').attrib['href']:
+KeyError: 'href'
+DEBUG: Crawled (200) <GET https://medium.com/bloomberg-opinion/americans-should-have-more-control-over-their-data-b1a694774e1a> (referer: None)
+DEBUG: Scraped from <200 https://medium.com/bloomberg-opinion/americans-should-have-more-control-over-their-data-b1a694774e1a>
+{'NumOfClaps': [],
+ 'NumOfComments': None,
+ 'articleTags': [],
+ 'articleURL': 'https://medium.com/bloomberg-opinion/americans-should-have-more-control-over-their-data-b1a694774e1a',
+ 'linkOfAuthorProfile': 'https://medium.com/@Bloomberg_Opinion',
+ 'nameOfAuthor': 'Bloomberg Opinion',
+ 'postingTime': 'Jan 2, 2018',
+ 'readingTime': '5 min read'}
+DEBUG: Crawled (200) <GET https://medium.com/the-new-york-times/fake-news-wide-reach-but-little-impact-study-suggests-cd46243ad23a> (referer: None)
+DEBUG: Scraped from <200 https://medium.com/the-new-york-times/fake-news-wide-reach-but-little-impact-study-suggests-cd46243ad23a>
+{'NumOfClaps': [],
+ 'NumOfComments': None,
+ 'articleTags': [],
+ 'articleURL': 'https://medium.com/the-new-york-times/fake-news-wide-reach-but-little-impact-study-suggests-cd46243ad23a',
+ 'linkOfAuthorProfile': 'https://medium.com/@newyorktimes',
+ 'nameOfAuthor': 'The New York Times',
+ 'postingTime': 'Jan 4, 2018',
+ 'readingTime': '5 min read'}
+DEBUG: Crawled (200) <GET https://getnotion.com/blogs/home-monitor> (referer: None)
+ERROR: Spider error processing <GET https://getnotion.com/blogs/home-monitor> (referer: None)
+Traceback (most recent call last):
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "<ipython-input-10-2c1b2ce1d527>", line 75, in parse
+    if response.css('div.u-paddingBottom3 a').attrib['href']:
+KeyError: 'href'
+DEBUG: Crawled (200) <GET https://medium.com/@the_economist/to-understand-digital-advertising-study-its-algorithms-affefd619d37> (referer: None)
+DEBUG: Scraped from <200 https://medium.com/@the_economist/to-understand-digital-advertising-study-its-algorithms-affefd619d37>
+{'NumOfClaps': [],
+ 'NumOfComments': None,
+ 'articleTags': [],
+ 'articleURL': 'https://medium.com/@the_economist/to-understand-digital-advertising-study-its-algorithms-affefd619d37',
+ 'linkOfAuthorProfile': 'https://medium.com/@the_economist',
+ 'nameOfAuthor': 'The Economist',
+ 'postingTime': 'Mar 27, 2018',
+ 'readingTime': '5 min read'}
+DEBUG: Crawled (200) <GET https://www.manifold.co/blog/modeling-system-resource-usage-for-predictive-scheduling-738ca174cfe7> (referer: None)
+ERROR: Spider error processing <GET https://www.manifold.co/blog/modeling-system-resource-usage-for-predictive-scheduling-738ca174cfe7> (referer: None)
+Traceback (most recent call last):
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "<ipython-input-10-2c1b2ce1d527>", line 75, in parse
+    if response.css('div.u-paddingBottom3 a').attrib['href']:
+KeyError: 'href'
+DEBUG: Crawled (200) <GET https://medium.com/s/story/the-ultimate-guide-to-filling-out-your-bracket-for-march-madness-9e7d76f16449> (referer: None)
+ERROR: Spider error processing <GET https://medium.com/s/story/the-ultimate-guide-to-filling-out-your-bracket-for-march-madness-9e7d76f16449> (referer: None)
+Traceback (most recent call last):
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "<ipython-input-10-2c1b2ce1d527>", line 75, in parse
+    if response.css('div.u-paddingBottom3 a').attrib['href']:
+KeyError: 'href'
+DEBUG: Crawled (200) <GET https://medium.com/s/story/how-i-outsmarted-fivethirtyeights-nfl-forecasting-algorithm-592a301fa318> (referer: None)
+ERROR: Spider error processing <GET https://medium.com/s/story/how-i-outsmarted-fivethirtyeights-nfl-forecasting-algorithm-592a301fa318> (referer: None)
+Traceback (most recent call last):
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "<ipython-input-10-2c1b2ce1d527>", line 75, in parse
+    if response.css('div.u-paddingBottom3 a').attrib['href']:
+KeyError: 'href'
+DEBUG: Crawled (200) <GET https://medium.com/bloomberg/if-youre-a-facebook-user-you-re-also-a-research-subject-aea4b0593f9> (referer: None)
+DEBUG: Scraped from <200 https://medium.com/bloomberg/if-youre-a-facebook-user-you-re-also-a-research-subject-aea4b0593f9>
+{'NumOfClaps': [],
+ 'NumOfComments': None,
+ 'articleTags': [],
+ 'articleURL': 'https://medium.com/bloomberg/if-youre-a-facebook-user-you-re-also-a-research-subject-aea4b0593f9',
+ 'linkOfAuthorProfile': 'https://medium.com/@bloomberg',
+ 'nameOfAuthor': 'Bloomberg',
+ 'postingTime': 'Jun 14, 2018',
+ 'readingTime': '9 min read'}
+DEBUG: Crawled (200) <GET https://medium.com/mit-technology-review/storing-data-in-dna-is-a-lot-easier-than-getting-it-back-out-46dba18e169e> (referer: None)
+DEBUG: Scraped from <200 https://medium.com/mit-technology-review/storing-data-in-dna-is-a-lot-easier-than-getting-it-back-out-46dba18e169e>
+{'NumOfClaps': [],
+ 'NumOfComments': None,
+ 'articleTags': [],
+ 'articleURL': 'https://medium.com/mit-technology-review/storing-data-in-dna-is-a-lot-easier-than-getting-it-back-out-46dba18e169e',
+ 'linkOfAuthorProfile': 'https://medium.com/@MITTechReview',
+ 'nameOfAuthor': 'MIT Technology Review',
+ 'postingTime': 'Jan 26, 2018',
+ 'readingTime': '5 min read'}
+DEBUG: Crawled (200) <GET https://getnotion.com/blogs/home-monitor/build-interpret-and-protect-3-skill-sets-required-within-iot> (referer: None)
+ERROR: Spider error processing <GET https://getnotion.com/blogs/home-monitor/build-interpret-and-protect-3-skill-sets-required-within-iot> (referer: None)
+Traceback (most recent call last):
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "<ipython-input-10-2c1b2ce1d527>", line 75, in parse
+    if response.css('div.u-paddingBottom3 a').attrib['href']:
+KeyError: 'href'
+DEBUG: Crawled (200) <GET https://medium.com/@the_economist/what-makes-a-country-good-at-football-b6a4187dbab4> (referer: None)
+DEBUG: Scraped from <200 https://medium.com/@the_economist/what-makes-a-country-good-at-football-b6a4187dbab4>
+{'NumOfClaps': [],
+ 'NumOfComments': None,
+ 'articleTags': [],
+ 'articleURL': 'https://medium.com/@the_economist/what-makes-a-country-good-at-football-b6a4187dbab4',
+ 'linkOfAuthorProfile': 'https://medium.com/@the_economist',
+ 'nameOfAuthor': 'The Economist',
+ 'postingTime': 'Jun 14, 2018',
+ 'readingTime': '12 min read'}
+DEBUG: Crawled (200) <GET https://medium.com/@smashingmag/bringing-together-react-d3-and-their-ecosystem-dde80de29755> (referer: None)
+DEBUG: Scraped from <200 https://medium.com/@smashingmag/bringing-together-react-d3-and-their-ecosystem-dde80de29755>
+{'NumOfClaps': [],
+ 'NumOfComments': None,
+ 'articleTags': [],
+ 'articleURL': 'https://medium.com/@smashingmag/bringing-together-react-d3-and-their-ecosystem-dde80de29755',
+ 'linkOfAuthorProfile': 'https://medium.com/@smashingmag',
+ 'nameOfAuthor': 'Smashing Magazine',
+ 'postingTime': 'Jun 25, 2018',
+ 'readingTime': '16 min read'}
+DEBUG: Crawled (200) <GET https://medium.com/s/art-of-code/confessions-of-a-blockchain-poet-7828a20fce49> (referer: None)
+ERROR: Spider error processing <GET https://medium.com/s/art-of-code/confessions-of-a-blockchain-poet-7828a20fce49> (referer: None)
+Traceback (most recent call last):
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "<ipython-input-10-2c1b2ce1d527>", line 75, in parse
+    if response.css('div.u-paddingBottom3 a').attrib['href']:
+KeyError: 'href'
+DEBUG: Crawled (200) <GET https://medium.com/financial-times/how-machine-learning-creates-new-professions-and-problems-94c77bc3269e> (referer: None)
+DEBUG: Scraped from <200 https://medium.com/financial-times/how-machine-learning-creates-new-professions-and-problems-94c77bc3269e>
+{'NumOfClaps': [],
+ 'NumOfComments': None,
+ 'articleTags': [],
+ 'articleURL': 'https://medium.com/financial-times/how-machine-learning-creates-new-professions-and-problems-94c77bc3269e',
+ 'linkOfAuthorProfile': 'https://medium.com/@Financial_Times',
+ 'nameOfAuthor': 'The Financial Times',
+ 'postingTime': 'Jun 22, 2018',
+ 'readingTime': '5 min read'}
+DEBUG: Crawled (200) <GET https://medium.com/financial-times/how-we-lost-america-to-greed-and-envy-fcbfed3ef652> (referer: None)
+DEBUG: Scraped from <200 https://medium.com/financial-times/how-we-lost-america-to-greed-and-envy-fcbfed3ef652>
+{'NumOfClaps': [],
+ 'NumOfComments': None,
+ 'articleTags': [],
+ 'articleURL': 'https://medium.com/financial-times/how-we-lost-america-to-greed-and-envy-fcbfed3ef652',
+ 'linkOfAuthorProfile': 'https://medium.com/@Financial_Times',
+ 'nameOfAuthor': 'The Financial Times',
+ 'postingTime': 'Jul 17, 2018',
+ 'readingTime': '5 min read'}
+DEBUG: Crawled (200) <GET https://medium.com/thewashingtonpost/how-computational-analysis-is-teaching-us-to-read-in-new-ways-b14900455763> (referer: None)
+DEBUG: Scraped from <200 https://medium.com/thewashingtonpost/how-computational-analysis-is-teaching-us-to-read-in-new-ways-b14900455763>
+{'NumOfClaps': [],
+ 'NumOfComments': None,
+ 'articleTags': [],
+ 'articleURL': 'https://medium.com/thewashingtonpost/how-computational-analysis-is-teaching-us-to-read-in-new-ways-b14900455763',
+ 'linkOfAuthorProfile': 'https://medium.com/@washingtonpost',
+ 'nameOfAuthor': 'Washington Post',
+ 'postingTime': 'Jul 30, 2018',
+ 'readingTime': '5 min read'}
+DEBUG: Crawled (200) <GET https://medium.com/@the_economist/how-the-internet-has-changed-dating-847f3fc5ca0a> (referer: None)
+DEBUG: Scraped from <200 https://medium.com/@the_economist/how-the-internet-has-changed-dating-847f3fc5ca0a>
+{'NumOfClaps': [],
+ 'NumOfComments': None,
+ 'articleTags': [],
+ 'articleURL': 'https://medium.com/@the_economist/how-the-internet-has-changed-dating-847f3fc5ca0a',
+ 'linkOfAuthorProfile': 'https://medium.com/@the_economist',
+ 'nameOfAuthor': 'The Economist',
+ 'postingTime': 'Aug 21, 2018',
+ 'readingTime': '12 min read'}
+DEBUG: Crawled (200) <GET https://medium.com/fast-company/political-voting-maps-are-useless-a2f2927de959> (referer: None)
+DEBUG: Scraped from <200 https://medium.com/fast-company/political-voting-maps-are-useless-a2f2927de959>
+{'NumOfClaps': [],
+ 'NumOfComments': None,
+ 'articleTags': [],
+ 'articleURL': 'https://medium.com/fast-company/political-voting-maps-are-useless-a2f2927de959',
+ 'linkOfAuthorProfile': 'https://medium.com/@ctrlzee',
+ 'nameOfAuthor': 'Mark Wilson',
+ 'postingTime': 'Jul 27, 2018',
+ 'readingTime': '3 min read'}
+DEBUG: Crawled (200) <GET https://medium.com/mit-technology-review/data-mining-reveals-fundamental-pattern-of-human-thinking-7fc1d5e1d8b> (referer: None)
+DEBUG: Scraped from <200 https://medium.com/mit-technology-review/data-mining-reveals-fundamental-pattern-of-human-thinking-7fc1d5e1d8b>
+{'NumOfClaps': [],
+ 'NumOfComments': None,
+ 'articleTags': [],
+ 'articleURL': 'https://medium.com/mit-technology-review/data-mining-reveals-fundamental-pattern-of-human-thinking-7fc1d5e1d8b',
+ 'linkOfAuthorProfile': 'https://medium.com/@MITTechReview',
+ 'nameOfAuthor': 'MIT Technology Review',
+ 'postingTime': 'Jul 19, 2018',
+ 'readingTime': '5 min read'}
+INFO: Crawled 22 pages (at 22 pages/min), scraped 13 items (at 13 items/min)
+DEBUG: Crawled (200) <GET https://medium.com/s/story/racism-on-stage-at-the-university-of-florida-7244e1f38ca8> (referer: None)
+ERROR: Spider error processing <GET https://medium.com/s/story/racism-on-stage-at-the-university-of-florida-7244e1f38ca8> (referer: None)
+Traceback (most recent call last):
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "<ipython-input-10-2c1b2ce1d527>", line 75, in parse
+    if response.css('div.u-paddingBottom3 a').attrib['href']:
+KeyError: 'href'
+DEBUG: Crawled (200) <GET https://medium.com/knowable-magazine/is-it-time-to-bring-data-to-managing-669a4acda72e> (referer: None)
+DEBUG: Scraped from <200 https://medium.com/knowable-magazine/is-it-time-to-bring-data-to-managing-669a4acda72e>
+{'NumOfClaps': [],
+ 'NumOfComments': None,
+ 'articleTags': [],
+ 'articleURL': 'https://medium.com/knowable-magazine/is-it-time-to-bring-data-to-managing-669a4acda72e',
+ 'linkOfAuthorProfile': 'https://medium.com/@knowablemag',
+ 'nameOfAuthor': 'Knowable Magazine',
+ 'postingTime': 'Sep 3, 2018',
+ 'readingTime': '14 min read'}
+DEBUG: Crawled (200) <GET https://medium.com/bloomberg-opinion/advice-to-researchers-admit-what-you-dont-know-c96e7f2f061d> (referer: None)
+DEBUG: Scraped from <200 https://medium.com/bloomberg-opinion/advice-to-researchers-admit-what-you-dont-know-c96e7f2f061d>
+{'NumOfClaps': [],
+ 'NumOfComments': None,
+ 'articleTags': [],
+ 'articleURL': 'https://medium.com/bloomberg-opinion/advice-to-researchers-admit-what-you-dont-know-c96e7f2f061d',
+ 'linkOfAuthorProfile': 'https://medium.com/@Bloomberg_Opinion',
+ 'nameOfAuthor': 'Bloomberg Opinion',
+ 'postingTime': 'Aug 29, 2018',
+ 'readingTime': '4 min read'}
+DEBUG: Retrying <GET https://medium.com/the-new-york-times/whats-the-right-number-of-taxis-the-answer-isn-t-easy-for-cities-23a851018154> (failed 1 times): 504 Gateway Time-out
+DEBUG: Crawled (200) <GET https://medium.com/s/nautilus-limits/the-catch-22-of-hacktivism-b0bc687a8d9b> (referer: None)
+ERROR: Spider error processing <GET https://medium.com/s/nautilus-limits/the-catch-22-of-hacktivism-b0bc687a8d9b> (referer: None)
+Traceback (most recent call last):
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "<ipython-input-10-2c1b2ce1d527>", line 75, in parse
+    if response.css('div.u-paddingBottom3 a').attrib['href']:
+KeyError: 'href'
+DEBUG: Crawled (200) <GET https://medium.com/mit-technology-review/chinas-use-of-big-data-might-actually-make-it-less-big-brother-ish-1fdbe06c15f4> (referer: None)
+DEBUG: Scraped from <200 https://medium.com/mit-technology-review/chinas-use-of-big-data-might-actually-make-it-less-big-brother-ish-1fdbe06c15f4>
+{'NumOfClaps': [],
+ 'NumOfComments': None,
+ 'articleTags': [],
+ 'articleURL': 'https://medium.com/mit-technology-review/chinas-use-of-big-data-might-actually-make-it-less-big-brother-ish-1fdbe06c15f4',
+ 'linkOfAuthorProfile': 'https://medium.com/@MITTechReview',
+ 'nameOfAuthor': 'MIT Technology Review',
+ 'postingTime': 'Aug 22, 2018',
+ 'readingTime': '5 min read'}
+DEBUG: Crawled (200) <GET https://medium.com/s/teamhuman/giving-each-other-some-slack-with-sarah-esther-lageson-phd-e69a2978fcfb> (referer: None)
+ERROR: Spider error processing <GET https://medium.com/s/teamhuman/giving-each-other-some-slack-with-sarah-esther-lageson-phd-e69a2978fcfb> (referer: None)
+Traceback (most recent call last):
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "<ipython-input-10-2c1b2ce1d527>", line 75, in parse
+    if response.css('div.u-paddingBottom3 a').attrib['href']:
+KeyError: 'href'
+DEBUG: Crawled (200) <GET https://medium.com/inc./should-there-be-a-backdoor-to-googles-secret-algorithm-c2920bcacb23> (referer: None)
+DEBUG: Scraped from <200 https://medium.com/inc./should-there-be-a-backdoor-to-googles-secret-algorithm-c2920bcacb23>
+{'NumOfClaps': [],
+ 'NumOfComments': None,
+ 'articleTags': [],
+ 'articleURL': 'https://medium.com/inc./should-there-be-a-backdoor-to-googles-secret-algorithm-c2920bcacb23',
+ 'linkOfAuthorProfile': 'https://medium.com/@incmagazine',
+ 'nameOfAuthor': 'inc. magazine',
+ 'postingTime': 'Sep 19, 2018',
+ 'readingTime': '4 min read'}
+DEBUG: Crawled (200) <GET https://medium.com/@laphamsquart/happy-all-the-time-464bc1f7f5fa> (referer: None)
+DEBUG: Scraped from <200 https://medium.com/@laphamsquart/happy-all-the-time-464bc1f7f5fa>
+{'NumOfClaps': [],
+ 'NumOfComments': None,
+ 'articleTags': [],
+ 'articleURL': 'https://medium.com/@laphamsquart/happy-all-the-time-464bc1f7f5fa',
+ 'linkOfAuthorProfile': 'https://medium.com/@laphamsquart',
+ 'nameOfAuthor': "Lapham's Quarterly",
+ 'postingTime': 'Aug 16, 2018',
+ 'readingTime': '13 min read'}
+DEBUG: Retrying <GET https://medium.com/financial-times/can-social-scientists-help-tackle-misinformation-on-facebook-9c82a53b11f7> (failed 1 times): 504 Gateway Time-out
+DEBUG: Crawled (200) <GET https://medium.com/s/nautilus-genius/who-really-found-the-higgs-boson-3603ed9dd451> (referer: None)
+ERROR: Spider error processing <GET https://medium.com/s/nautilus-genius/who-really-found-the-higgs-boson-3603ed9dd451> (referer: None)
+Traceback (most recent call last):
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "<ipython-input-10-2c1b2ce1d527>", line 75, in parse
+    if response.css('div.u-paddingBottom3 a').attrib['href']:
+KeyError: 'href'
+DEBUG: Crawled (200) <GET https://medium.com/s/story/paranoia-is-now-a-best-practice-3b1adb8980ed> (referer: None)
+ERROR: Spider error processing <GET https://medium.com/s/story/paranoia-is-now-a-best-practice-3b1adb8980ed> (referer: None)
+Traceback (most recent call last):
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "<ipython-input-10-2c1b2ce1d527>", line 75, in parse
+    if response.css('div.u-paddingBottom3 a').attrib['href']:
+KeyError: 'href'
+DEBUG: Crawled (200) <GET https://medium.com/new-york-times-magazine/google-knows-where-youve-been-but-does-it-know-who-you-are-8c1e292fc898> (referer: None)
+DEBUG: Scraped from <200 https://medium.com/new-york-times-magazine/google-knows-where-youve-been-but-does-it-know-who-you-are-8c1e292fc898>
+{'NumOfClaps': [],
+ 'NumOfComments': None,
+ 'articleTags': [],
+ 'articleURL': 'https://medium.com/new-york-times-magazine/google-knows-where-youve-been-but-does-it-know-who-you-are-8c1e292fc898',
+ 'linkOfAuthorProfile': 'https://medium.com/@nytmag',
+ 'nameOfAuthor': 'New York Times Magazine',
+ 'postingTime': 'Sep 17, 2018',
+ 'readingTime': '7 min read'}
+DEBUG: Crawled (200) <GET https://medium.com/s/story/a-modest-privacy-protection-proposal-5b47631d7f4c> (referer: None)
+ERROR: Spider error processing <GET https://medium.com/s/story/a-modest-privacy-protection-proposal-5b47631d7f4c> (referer: None)
+Traceback (most recent call last):
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "<ipython-input-10-2c1b2ce1d527>", line 75, in parse
+    if response.css('div.u-paddingBottom3 a').attrib['href']:
+KeyError: 'href'
+DEBUG: Crawled (200) <GET https://medium.com/the-new-york-times/whats-the-right-number-of-taxis-the-answer-isn-t-easy-for-cities-23a851018154> (referer: None)
+DEBUG: Scraped from <200 https://medium.com/the-new-york-times/whats-the-right-number-of-taxis-the-answer-isn-t-easy-for-cities-23a851018154>
+{'NumOfClaps': [],
+ 'NumOfComments': None,
+ 'articleTags': [],
+ 'articleURL': 'https://medium.com/the-new-york-times/whats-the-right-number-of-taxis-the-answer-isn-t-easy-for-cities-23a851018154',
+ 'linkOfAuthorProfile': 'https://medium.com/@newyorktimes',
+ 'nameOfAuthor': 'The New York Times',
+ 'postingTime': 'Aug 14, 2018',
+ 'readingTime': '6 min read'}
+DEBUG: Crawled (200) <GET https://medium.com/s/nautilus-power/atheism-the-computer-model-670cd862a5d4> (referer: None)
+ERROR: Spider error processing <GET https://medium.com/s/nautilus-power/atheism-the-computer-model-670cd862a5d4> (referer: None)
+Traceback (most recent call last):
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "<ipython-input-10-2c1b2ce1d527>", line 75, in parse
+    if response.css('div.u-paddingBottom3 a').attrib['href']:
+KeyError: 'href'
+DEBUG: Crawled (200) <GET https://medium.com/s/story/what-algorithms-know-about-you-based-on-your-grocery-cart-b364e0ba545c> (referer: None)
+ERROR: Spider error processing <GET https://medium.com/s/story/what-algorithms-know-about-you-based-on-your-grocery-cart-b364e0ba545c> (referer: None)
+Traceback (most recent call last):
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "<ipython-input-10-2c1b2ce1d527>", line 75, in parse
+    if response.css('div.u-paddingBottom3 a').attrib['href']:
+KeyError: 'href'
+INFO: Crawled 37 pages (at 15 pages/min), scraped 20 items (at 7 items/min)
+DEBUG: Crawled (200) <GET https://medium.com/@smashingmag/getting-started-with-machine-learning-8de782b84c18> (referer: None)
+DEBUG: Scraped from <200 https://medium.com/@smashingmag/getting-started-with-machine-learning-8de782b84c18>
+{'NumOfClaps': [],
+ 'NumOfComments': None,
+ 'articleTags': [],
+ 'articleURL': 'https://medium.com/@smashingmag/getting-started-with-machine-learning-8de782b84c18',
+ 'linkOfAuthorProfile': 'https://medium.com/@smashingmag',
+ 'nameOfAuthor': 'Smashing Magazine',
+ 'postingTime': 'Sep 28, 2018',
+ 'readingTime': '12 min read'}
+DEBUG: Retrying <GET https://medium.com/s/story/essential-math-for-data-science-why-and-how-e88271367fbd> (failed 1 times): 504 Gateway Time-out
+DEBUG: Crawled (200) <GET https://medium.com/mit-technology-review/we-need-a-cyber-arms-control-treaty-to-keep-hospitals-and-power-grids-safe-from-hackers-83b920bc95f6> (referer: None)
+DEBUG: Scraped from <200 https://medium.com/mit-technology-review/we-need-a-cyber-arms-control-treaty-to-keep-hospitals-and-power-grids-safe-from-hackers-83b920bc95f6>
+{'NumOfClaps': [],
+ 'NumOfComments': None,
+ 'articleTags': [],
+ 'articleURL': 'https://medium.com/mit-technology-review/we-need-a-cyber-arms-control-treaty-to-keep-hospitals-and-power-grids-safe-from-hackers-83b920bc95f6',
+ 'linkOfAuthorProfile': 'https://medium.com/@MITTechReview',
+ 'nameOfAuthor': 'MIT Technology Review',
+ 'postingTime': 'Oct 1, 2018',
+ 'readingTime': '3 min read'}
+DEBUG: Crawled (200) <GET https://medium.com/s/story/5-star-design-how-ratings-influence-human-behaviour-d625c16993b3> (referer: None)
+ERROR: Spider error processing <GET https://medium.com/s/story/5-star-design-how-ratings-influence-human-behaviour-d625c16993b3> (referer: None)
+Traceback (most recent call last):
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "<ipython-input-10-2c1b2ce1d527>", line 75, in parse
+    if response.css('div.u-paddingBottom3 a').attrib['href']:
+KeyError: 'href'
+DEBUG: Crawled (200) <GET https://medium.com/s/story/how-tech-companies-create-your-digital-twin-c8675da58ffa> (referer: None)
+ERROR: Spider error processing <GET https://medium.com/s/story/how-tech-companies-create-your-digital-twin-c8675da58ffa> (referer: None)
+Traceback (most recent call last):
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "<ipython-input-10-2c1b2ce1d527>", line 75, in parse
+    if response.css('div.u-paddingBottom3 a').attrib['href']:
+KeyError: 'href'
+DEBUG: Crawled (200) <GET https://medium.com/mit-technology-review/even-the-best-ai-for-spotting-fake-news-is-still-terrible-5afe0f026d94> (referer: None)
+DEBUG: Scraped from <200 https://medium.com/mit-technology-review/even-the-best-ai-for-spotting-fake-news-is-still-terrible-5afe0f026d94>
+{'NumOfClaps': [],
+ 'NumOfComments': None,
+ 'articleTags': [],
+ 'articleURL': 'https://medium.com/mit-technology-review/even-the-best-ai-for-spotting-fake-news-is-still-terrible-5afe0f026d94',
+ 'linkOfAuthorProfile': 'https://medium.com/@MITTechReview',
+ 'nameOfAuthor': 'MIT Technology Review',
+ 'postingTime': 'Oct 4, 2018',
+ 'readingTime': '4 min read'}
+DEBUG: Crawled (200) <GET https://medium.com/s/nautilus-fakes/why-fake-data-when-you-can-fake-a-scientist-b15ac1258d4f> (referer: None)
+ERROR: Spider error processing <GET https://medium.com/s/nautilus-fakes/why-fake-data-when-you-can-fake-a-scientist-b15ac1258d4f> (referer: None)
+Traceback (most recent call last):
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "<ipython-input-10-2c1b2ce1d527>", line 75, in parse
+    if response.css('div.u-paddingBottom3 a').attrib['href']:
+KeyError: 'href'
+DEBUG: Crawled (200) <GET https://medium.com/s/story/stone-soup-anyone-7004e8aed92> (referer: None)
+ERROR: Spider error processing <GET https://medium.com/s/story/stone-soup-anyone-7004e8aed92> (referer: None)
+Traceback (most recent call last):
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "<ipython-input-10-2c1b2ce1d527>", line 75, in parse
+    if response.css('div.u-paddingBottom3 a').attrib['href']:
+KeyError: 'href'
+DEBUG: Retrying <GET https://medium.com/s/out-of-ink/the-shameful-state-of-online-advertising-4b0e6021570e> (failed 1 times): 504 Gateway Time-out
+DEBUG: Crawled (200) <GET https://medium.com/mit-technology-review/the-secret-data-collected-by-dockless-bikes-is-helping-cities-map-your-movement-54ec6c2b97dc> (referer: None)
+DEBUG: Scraped from <200 https://medium.com/mit-technology-review/the-secret-data-collected-by-dockless-bikes-is-helping-cities-map-your-movement-54ec6c2b97dc>
+{'NumOfClaps': [],
+ 'NumOfComments': None,
+ 'articleTags': [],
+ 'articleURL': 'https://medium.com/mit-technology-review/the-secret-data-collected-by-dockless-bikes-is-helping-cities-map-your-movement-54ec6c2b97dc',
+ 'linkOfAuthorProfile': 'https://medium.com/@MITTechReview',
+ 'nameOfAuthor': 'MIT Technology Review',
+ 'postingTime': 'Sep 28, 2018',
+ 'readingTime': '4 min read'}
+DEBUG: Crawled (200) <GET https://medium.com/s/story/platforms-are-making-you-vulnerable-1626fc4d6dc5> (referer: None)
+ERROR: Spider error processing <GET https://medium.com/s/story/platforms-are-making-you-vulnerable-1626fc4d6dc5> (referer: None)
+Traceback (most recent call last):
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "<ipython-input-10-2c1b2ce1d527>", line 75, in parse
+    if response.css('div.u-paddingBottom3 a').attrib['href']:
+KeyError: 'href'
+DEBUG: Crawled (200) <GET https://medium.com/inc./how-this-company-used-anthropology-to-understand-its-customers-9b1008f1bec3> (referer: None)
+DEBUG: Scraped from <200 https://medium.com/inc./how-this-company-used-anthropology-to-understand-its-customers-9b1008f1bec3>
+{'NumOfClaps': [],
+ 'NumOfComments': None,
+ 'articleTags': [],
+ 'articleURL': 'https://medium.com/inc./how-this-company-used-anthropology-to-understand-its-customers-9b1008f1bec3',
+ 'linkOfAuthorProfile': 'https://medium.com/@incmagazine',
+ 'nameOfAuthor': 'inc. magazine',
+ 'postingTime': 'Oct 8, 2018',
+ 'readingTime': '3 min read'}
+DEBUG: Crawled (200) <GET https://medium.com/s/nautilus-big-bangs/how-world-of-warcraft-might-help-head-off-the-next-pandemic-46a0bd8fedc5> (referer: None)
+ERROR: Spider error processing <GET https://medium.com/s/nautilus-big-bangs/how-world-of-warcraft-might-help-head-off-the-next-pandemic-46a0bd8fedc5> (referer: None)
+Traceback (most recent call last):
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "<ipython-input-10-2c1b2ce1d527>", line 75, in parse
+    if response.css('div.u-paddingBottom3 a').attrib['href']:
+KeyError: 'href'
+DEBUG: Crawled (200) <GET https://medium.com/financial-times/can-social-scientists-help-tackle-misinformation-on-facebook-9c82a53b11f7> (referer: None)
+DEBUG: Scraped from <200 https://medium.com/financial-times/can-social-scientists-help-tackle-misinformation-on-facebook-9c82a53b11f7>
+{'NumOfClaps': [],
+ 'NumOfComments': None,
+ 'articleTags': [],
+ 'articleURL': 'https://medium.com/financial-times/can-social-scientists-help-tackle-misinformation-on-facebook-9c82a53b11f7',
+ 'linkOfAuthorProfile': 'https://medium.com/@Financial_Times',
+ 'nameOfAuthor': 'The Financial Times',
+ 'postingTime': 'Aug 10, 2018',
+ 'readingTime': '4 min read'}
+DEBUG: Crawled (200) <GET https://medium.com/s/story/essential-math-for-data-science-why-and-how-e88271367fbd> (referer: None)
+ERROR: Spider error processing <GET https://medium.com/s/story/essential-math-for-data-science-why-and-how-e88271367fbd> (referer: None)
+Traceback (most recent call last):
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "<ipython-input-10-2c1b2ce1d527>", line 75, in parse
+    if response.css('div.u-paddingBottom3 a').attrib['href']:
+KeyError: 'href'
+DEBUG: Crawled (200) <GET https://medium.com/s/the-micro-propaganda-machine/the-2018-facebook-midterms-part-iii-granular-enforcement-10f8f2d97501> (referer: None)
+ERROR: Spider error processing <GET https://medium.com/s/the-micro-propaganda-machine/the-2018-facebook-midterms-part-iii-granular-enforcement-10f8f2d97501> (referer: None)
+Traceback (most recent call last):
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "<ipython-input-10-2c1b2ce1d527>", line 75, in parse
+    if response.css('div.u-paddingBottom3 a').attrib['href']:
+KeyError: 'href'
+DEBUG: Crawled (200) <GET https://medium.com/mit-technology-review/the-quirky-ways-ai-researchers-gather-data-to-feed-their-algorithms-9ddad56f07dc> (referer: None)
+DEBUG: Scraped from <200 https://medium.com/mit-technology-review/the-quirky-ways-ai-researchers-gather-data-to-feed-their-algorithms-9ddad56f07dc>
+{'NumOfClaps': [],
+ 'NumOfComments': None,
+ 'articleTags': [],
+ 'articleURL': 'https://medium.com/mit-technology-review/the-quirky-ways-ai-researchers-gather-data-to-feed-their-algorithms-9ddad56f07dc',
+ 'linkOfAuthorProfile': 'https://medium.com/@MITTechReview',
+ 'nameOfAuthor': 'MIT Technology Review',
+ 'postingTime': 'Nov 5, 2018',
+ 'readingTime': '4 min read'}
+DEBUG: Redirecting (302) to <GET https://medium.com/m/global-identity?redirectUrl=https%3A%2F%2Fmedium.reinvent.net%2Fpreparing-for-a-career-that-doesnt-exist-yet-ce4006bc5> from <GET https://medium.reinvent.net/preparing-for-a-career-that-doesnt-exist-yet-ce4006bc5>
+DEBUG: Redirecting (302) to <GET https://medium.reinvent.net/preparing-for-a-career-that-doesnt-exist-yet-ce4006bc5?gi=950f4596e0e9> from <GET https://medium.com/m/global-identity?redirectUrl=https%3A%2F%2Fmedium.reinvent.net%2Fpreparing-for-a-career-that-doesnt-exist-yet-ce4006bc5>
+DEBUG: Crawled (200) <GET https://medium.com/s/the-micro-propaganda-machine/the-2018-facebook-midterms-part-i-recursive-ad-ccountability-ac090d276097> (referer: None)
+ERROR: Spider error processing <GET https://medium.com/s/the-micro-propaganda-machine/the-2018-facebook-midterms-part-i-recursive-ad-ccountability-ac090d276097> (referer: None)
+Traceback (most recent call last):
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "<ipython-input-10-2c1b2ce1d527>", line 75, in parse
+    if response.css('div.u-paddingBottom3 a').attrib['href']:
+KeyError: 'href'
+DEBUG: Crawled (404) <GET https://blog.keen.io/order-and-limit-results-of-grouped-queries-hooray-83e768a97411> (referer: None)
+INFO: Ignoring response <404 https://blog.keen.io/order-and-limit-results-of-grouped-queries-hooray-83e768a97411>: HTTP status code is not handled or not allowed
+DEBUG: Crawled (404) <GET https://blog.rotageek.com/retail-2017-in-review-d9a277f3c360> (referer: None)
+INFO: Ignoring response <404 https://blog.rotageek.com/retail-2017-in-review-d9a277f3c360>: HTTP status code is not handled or not allowed
+DEBUG: Retrying <GET https://devup.co/flight-data-analysis-with-spark-ml-and-minio-fffe5808a36e> (failed 1 times): Connection was refused by other side: 61: Connection refused.
+DEBUG: Crawled (200) <GET https://medium.com/s/the-micro-propaganda-machine/the-2018-facebook-midterms-part-ii-shadow-organization-c97de1c54c65> (referer: None)
+ERROR: Spider error processing <GET https://medium.com/s/the-micro-propaganda-machine/the-2018-facebook-midterms-part-ii-shadow-organization-c97de1c54c65> (referer: None)
+Traceback (most recent call last):
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "<ipython-input-10-2c1b2ce1d527>", line 75, in parse
+    if response.css('div.u-paddingBottom3 a').attrib['href']:
+KeyError: 'href'
+DEBUG: Redirecting (302) to <GET https://medium.com/m/global-identity?redirectUrl=https%3A%2F%2Ftowardsdatascience.com%2Ffear-factor-guns-vs-terrorism-e6b92ebb576d> from <GET https://towardsdatascience.com/fear-factor-guns-vs-terrorism-e6b92ebb576d>
+DEBUG: Retrying <GET https://medium.com/s/story/facebook-is-just-like-the-nsa-22c43f236ff5> (failed 1 times): 504 Gateway Time-out
+DEBUG: Retrying <GET https://devup.co/flight-data-analysis-with-spark-ml-and-minio-fffe5808a36e> (failed 2 times): Connection was refused by other side: 61: Connection refused.
+DEBUG: Redirecting (302) to <GET https://towardsdatascience.com/fear-factor-guns-vs-terrorism-e6b92ebb576d?gi=5e6f96c5f06b> from <GET https://medium.com/m/global-identity?redirectUrl=https%3A%2F%2Ftowardsdatascience.com%2Ffear-factor-guns-vs-terrorism-e6b92ebb576d>
+DEBUG: Gave up retrying <GET https://devup.co/flight-data-analysis-with-spark-ml-and-minio-fffe5808a36e> (failed 3 times): Connection was refused by other side: 61: Connection refused.
+INFO: Crawled 56 pages (at 19 pages/min), scraped 27 items (at 7 items/min)
+ERROR: Error downloading <GET https://devup.co/flight-data-analysis-with-spark-ml-and-minio-fffe5808a36e>
+Traceback (most recent call last):
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/core/downloader/middleware.py", line 43, in process_request
+    defer.returnValue((yield download_func(request=request,spider=spider)))
+twisted.internet.error.ConnectionRefusedError: Connection was refused by other side: 61: Connection refused.
+DEBUG: Redirecting (301) to <GET http://www.daylightdata.com/hubdaylight-opens-providing-office-space-and-private-accelerator-14003fddffbf> from <GET https://blog.daylightdata.com/hubdaylight-opens-providing-office-space-and-private-accelerator-14003fddffbf>
+DEBUG: Redirecting (301) to <GET https://www.daylightdata.com/hubdaylight-opens-providing-office-space-and-private-accelerator-14003fddffbf> from <GET http://www.daylightdata.com/hubdaylight-opens-providing-office-space-and-private-accelerator-14003fddffbf>
+DEBUG: Crawled (404) <GET https://www.daylightdata.com/hubdaylight-opens-providing-office-space-and-private-accelerator-14003fddffbf> (referer: None)
+INFO: Ignoring response <404 https://www.daylightdata.com/hubdaylight-opens-providing-office-space-and-private-accelerator-14003fddffbf>: HTTP status code is not handled or not allowed
+DEBUG: Crawled (200) <GET https://medium.com/s/story/five-unusual-alternatives-to-pie-charts-389cc4676974> (referer: None)
+ERROR: Spider error processing <GET https://medium.com/s/story/five-unusual-alternatives-to-pie-charts-389cc4676974> (referer: None)
+Traceback (most recent call last):
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "<ipython-input-10-2c1b2ce1d527>", line 75, in parse
+    if response.css('div.u-paddingBottom3 a').attrib['href']:
+KeyError: 'href'
+DEBUG: Redirecting (301) to <GET http://www.daylightdata.com/duke-vs-unc-rivalry-visualized-5b3aac767bdc> from <GET https://blog.daylightdata.com/duke-vs-unc-rivalry-visualized-5b3aac767bdc>
+DEBUG: Redirecting (301) to <GET http://www.daylightdata.com/daylight-data-develops-launch-ready-analytics-for-neuroplus-d044e59f9ecd> from <GET https://blog.daylightdata.com/daylight-data-develops-launch-ready-analytics-for-neuroplus-d044e59f9ecd>
+DEBUG: Redirecting (301) to <GET https://www.daylightdata.com/duke-vs-unc-rivalry-visualized-5b3aac767bdc> from <GET http://www.daylightdata.com/duke-vs-unc-rivalry-visualized-5b3aac767bdc>
+DEBUG: Redirecting (301) to <GET https://www.daylightdata.com/daylight-data-develops-launch-ready-analytics-for-neuroplus-d044e59f9ecd> from <GET http://www.daylightdata.com/daylight-data-develops-launch-ready-analytics-for-neuroplus-d044e59f9ecd>
+DEBUG: Crawled (404) <GET https://www.daylightdata.com/duke-vs-unc-rivalry-visualized-5b3aac767bdc> (referer: None)
+INFO: Ignoring response <404 https://www.daylightdata.com/duke-vs-unc-rivalry-visualized-5b3aac767bdc>: HTTP status code is not handled or not allowed
+DEBUG: Redirecting (302) to <GET https://medium.com/m/global-identity?redirectUrl=https%3A%2F%2Ftech.cars.com%2Fshifting-into-data-science-2977c1fbf6c2> from <GET https://tech.cars.com/shifting-into-data-science-2977c1fbf6c2>
+DEBUG: Crawled (200) <GET https://medium.com/s/story/boba-science-how-can-i-drink-a-bubble-tea-to-ensure-that-i-dont-finish-the-tea-before-the-bobas-7fc5fd0e442d> (referer: None)
+DEBUG: Redirecting (301) to <GET https://upfront.com/thoughts/giving-time-back-to-our-doctors-and-nurses-to-deliver-patient-care-c24b43bfa0a2> from <GET https://insights.upfront.com/giving-time-back-to-our-doctors-and-nurses-to-deliver-patient-care-c24b43bfa0a2>
+DEBUG: Filtered duplicate request: <GET https://upfront.com/thoughts/giving-time-back-to-our-doctors-and-nurses-to-deliver-patient-care-c24b43bfa0a2> - no more duplicates will be shown (see DUPEFILTER_DEBUG to show all duplicates)
+ERROR: Spider error processing <GET https://medium.com/s/story/boba-science-how-can-i-drink-a-bubble-tea-to-ensure-that-i-dont-finish-the-tea-before-the-bobas-7fc5fd0e442d> (referer: None)
+Traceback (most recent call last):
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "<ipython-input-10-2c1b2ce1d527>", line 75, in parse
+    if response.css('div.u-paddingBottom3 a').attrib['href']:
+KeyError: 'href'
+DEBUG: Redirecting (302) to <GET https://medium.com/m/global-identity?redirectUrl=https%3A%2F%2Fblog.outsellinc.com%2Fwhat-the-hell-is-blockchain-and-how-is-it-enabling-innovation-52e05b75888> from <GET https://blog.outsellinc.com/what-the-hell-is-blockchain-and-how-is-it-enabling-innovation-52e05b75888>
+DEBUG: Crawled (404) <GET https://www.daylightdata.com/daylight-data-develops-launch-ready-analytics-for-neuroplus-d044e59f9ecd> (referer: None)
+INFO: Ignoring response <404 https://www.daylightdata.com/daylight-data-develops-launch-ready-analytics-for-neuroplus-d044e59f9ecd>: HTTP status code is not handled or not allowed
+DEBUG: Redirecting (302) to <GET https://medium.com/m/global-identity?redirectUrl=https%3A%2F%2Ftech.cars.com%2Fwhats-interesting-about-hotcars-b7eda5d14176> from <GET https://tech.cars.com/whats-interesting-about-hotcars-b7eda5d14176>
+DEBUG: Redirecting (302) to <GET https://blog.outsellinc.com/what-the-hell-is-blockchain-and-how-is-it-enabling-innovation-52e05b75888?gi=603464c7d93a> from <GET https://medium.com/m/global-identity?redirectUrl=https%3A%2F%2Fblog.outsellinc.com%2Fwhat-the-hell-is-blockchain-and-how-is-it-enabling-innovation-52e05b75888>
+DEBUG: Crawled (200) <GET https://medium.com/s/out-of-ink/the-shameful-state-of-online-advertising-4b0e6021570e> (referer: None)
+ERROR: Spider error processing <GET https://medium.com/s/out-of-ink/the-shameful-state-of-online-advertising-4b0e6021570e> (referer: None)
+Traceback (most recent call last):
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "<ipython-input-10-2c1b2ce1d527>", line 75, in parse
+    if response.css('div.u-paddingBottom3 a').attrib['href']:
+KeyError: 'href'
+DEBUG: Redirecting (302) to <GET https://medium.com/m/global-identity?redirectUrl=https%3A%2F%2Ftheascent.pub%2Fwhat-i-learned-from-from-rick-rashid-founder-of-microsoft-research-20-965b3f465dcc> from <GET https://theascent.pub/what-i-learned-from-from-rick-rashid-founder-of-microsoft-research-20-965b3f465dcc>
+DEBUG: Crawled (200) <GET https://blog.outsellinc.com/what-the-hell-is-blockchain-and-how-is-it-enabling-innovation-52e05b75888?gi=603464c7d93a> (referer: None)
+DEBUG: Redirecting (301) to <GET http://www.daylightdata.com/the-gender-wage-gap-fact-vs-myth-5256f388118d> from <GET https://blog.daylightdata.com/the-gender-wage-gap-fact-vs-myth-5256f388118d>
+DEBUG: Scraped from <200 https://blog.outsellinc.com/what-the-hell-is-blockchain-and-how-is-it-enabling-innovation-52e05b75888?gi=603464c7d93a>
+{'NumOfClaps': '65 claps',
+ 'NumOfComments': None,
+ 'articleTags': ['Blockchain',
+                 'Travel Industry',
+                 'Distributed Ledgers',
+                 'Podcast',
+                 'Data Science'],
+ 'articleURL': 'https://blog.outsellinc.com/what-the-hell-is-blockchain-and-how-is-it-enabling-innovation-52e05b75888?gi=603464c7d93a',
+ 'linkOfAuthorProfile': 'https://blog.outsellinc.com/@bensampson',
+ 'nameOfAuthor': 'Ben Sampson',
+ 'postingTime': 'Apr 2, 2018',
+ 'readingTime': '13 min read'}
+DEBUG: Redirecting (302) to <GET https://tech.cars.com/whats-interesting-about-hotcars-b7eda5d14176?gi=a5932cb2ddf> from <GET https://medium.com/m/global-identity?redirectUrl=https%3A%2F%2Ftech.cars.com%2Fwhats-interesting-about-hotcars-b7eda5d14176>
+DEBUG: Crawled (200) <GET https://medium.com/scientific-american/what-does-a-crooked-election-look-like-e24b985daf> (referer: None)
+DEBUG: Redirecting (301) to <GET https://www.daylightdata.com/the-gender-wage-gap-fact-vs-myth-5256f388118d> from <GET http://www.daylightdata.com/the-gender-wage-gap-fact-vs-myth-5256f388118d>
+DEBUG: Scraped from <200 https://medium.com/scientific-american/what-does-a-crooked-election-look-like-e24b985daf>
+{'NumOfClaps': [],
+ 'NumOfComments': None,
+ 'articleTags': [],
+ 'articleURL': 'https://medium.com/scientific-american/what-does-a-crooked-election-look-like-e24b985daf',
+ 'linkOfAuthorProfile': 'https://medium.com/@scientificamerican',
+ 'nameOfAuthor': 'Scientific American',
+ 'postingTime': 'Oct 30, 2018',
+ 'readingTime': '5 min read'}
+DEBUG: Redirecting (302) to <GET https://medium.com/m/global-identity?redirectUrl=https%3A%2F%2Fthedatainart.com%2Fcomedy-central-presents-complete-episode-list-with-imdb-ratings-and-links-to-view-episode-1aa30481ff79> from <GET https://thedatainart.com/comedy-central-presents-complete-episode-list-with-imdb-ratings-and-links-to-view-episode-1aa30481ff79>
+DEBUG: Redirecting (meta refresh) to <GET https://www.daylightdata.com/blog/the-gender-wage-gap-fact-vs-myth> from <GET https://www.daylightdata.com/the-gender-wage-gap-fact-vs-myth-5256f388118d>
+DEBUG: Redirecting (302) to <GET https://medium.com/m/global-identity?redirectUrl=https%3A%2F%2Ftheascent.pub%2Fhow-much-coffee-is-too-much-90fd61bd3325> from <GET https://theascent.pub/how-much-coffee-is-too-much-90fd61bd3325>
+DEBUG: Crawled (200) <GET https://tech.cars.com/whats-interesting-about-hotcars-b7eda5d14176?gi=a5932cb2ddf> (referer: None)
+DEBUG: Scraped from <200 https://tech.cars.com/whats-interesting-about-hotcars-b7eda5d14176?gi=a5932cb2ddf>
+{'NumOfClaps': '42 claps',
+ 'NumOfComments': None,
+ 'articleTags': ['Machine Learning',
+                 'Data Science',
+                 'Cars',
+                 'Hotcars',
+                 'Product Development'],
+ 'articleURL': 'https://tech.cars.com/whats-interesting-about-hotcars-b7eda5d14176?gi=a5932cb2ddf',
+ 'linkOfAuthorProfile': 'https://tech.cars.com/@addhyan',
+ 'nameOfAuthor': 'Addhyan Pandey',
+ 'postingTime': 'Apr 24, 2018',
+ 'readingTime': '5 min read'}
+DEBUG: Retrying <GET https://medium.com/mit-technology-review/data-mining-has-revealed-previously-unknown-russian-twitter-troll-campaigns-8efeabf74909> (failed 1 times): 504 Gateway Time-out
+DEBUG: Crawled (200) <GET https://medium.reinvent.net/preparing-for-a-career-that-doesnt-exist-yet-ce4006bc5?gi=950f4596e0e9> (referer: None)
+DEBUG: Scraped from <200 https://medium.reinvent.net/preparing-for-a-career-that-doesnt-exist-yet-ce4006bc5?gi=950f4596e0e9>
+{'NumOfClaps': '48 claps',
+ 'NumOfComments': None,
+ 'articleTags': ['Technology',
+                 'Future Of Work',
+                 'Artificial Intelligence',
+                 'Work',
+                 'Data Science'],
+ 'articleURL': 'https://medium.reinvent.net/preparing-for-a-career-that-doesnt-exist-yet-ce4006bc5?gi=950f4596e0e9',
+ 'linkOfAuthorProfile': 'https://medium.reinvent.net/@jrdaly',
+ 'nameOfAuthor': 'Jim Daly',
+ 'postingTime': 'Jan 5, 2018',
+ 'readingTime': '6 min read'}
+DEBUG: Redirecting (301) to <GET https://www.manifold.co/blog/modeling-system-resource-usage-for-predictive-scheduling-738ca174cfe7> from <GET https://blog.manifold.co/modeling-system-resource-usage-for-predictive-scheduling-738ca174cfe7>
+DEBUG: Redirecting (302) to <GET https://medium.com/m/global-identity?redirectUrl=https%3A%2F%2F42hire.com%2Fhow-to-interview-a-data-scientist-and-know-if-theyre-good-18bd02ca43c3> from <GET https://42hire.com/how-to-interview-a-data-scientist-and-know-if-theyre-good-18bd02ca43c3>
+DEBUG: Retrying <GET https://medium.com/s/story/machine-learning-for-people-who-know-nothing-about-machine-learning-fcc312a53f12> (failed 1 times): 502 Bad Gateway
+DEBUG: Redirecting (301) to <GET https://medium.com/life-at-carwow/meettheteam-giorgio-galvan-data-analyst-13afd7ee7d0b> from <GET https://medium.com/@will.mccaughey/meettheteam-giorgio-galvan-data-analyst-13afd7ee7d0b>
+DEBUG: Crawled (200) <GET https://medium.com/s/story/facebook-is-just-like-the-nsa-22c43f236ff5> (referer: None)
+ERROR: Spider error processing <GET https://medium.com/s/story/facebook-is-just-like-the-nsa-22c43f236ff5> (referer: None)
+Traceback (most recent call last):
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "<ipython-input-10-2c1b2ce1d527>", line 75, in parse
+    if response.css('div.u-paddingBottom3 a').attrib['href']:
+KeyError: 'href'
+DEBUG: Crawled (200) <GET https://medium.com/s/story/cybersecurity-isnt-just-about-hacks-f11c7ad07660> (referer: None)
+ERROR: Spider error processing <GET https://medium.com/s/story/cybersecurity-isnt-just-about-hacks-f11c7ad07660> (referer: None)
+Traceback (most recent call last):
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "<ipython-input-10-2c1b2ce1d527>", line 75, in parse
+    if response.css('div.u-paddingBottom3 a').attrib['href']:
+KeyError: 'href'
+DEBUG: Redirecting (301) to <GET https://getnotion.com/spotlight-series-data-science-69c8f35d8c8> from <GET https://blog.getnotion.com/spotlight-series-data-science-69c8f35d8c8>
+DEBUG: Crawled (404) <GET https://blog.impress.ai/ai-and-the-power-of-change-co-hosted-by-impress-ai-accenture-212a03e4191c> (referer: None)
+INFO: Ignoring response <404 https://blog.impress.ai/ai-and-the-power-of-change-co-hosted-by-impress-ai-accenture-212a03e4191c>: HTTP status code is not handled or not allowed
+DEBUG: Redirecting (301) to <GET https://getnotion.com/blogs/home-monitor> from <GET https://getnotion.com/spotlight-series-data-science-69c8f35d8c8>
+DEBUG: Crawled (200) <GET https://medium.com/s/story/no-happy-little-accidents-8663540763f8> (referer: None)
+ERROR: Spider error processing <GET https://medium.com/s/story/no-happy-little-accidents-8663540763f8> (referer: None)
+Traceback (most recent call last):
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "<ipython-input-10-2c1b2ce1d527>", line 75, in parse
+    if response.css('div.u-paddingBottom3 a').attrib['href']:
+KeyError: 'href'
+DEBUG: Redirecting (302) to <GET https://tech.cars.com/shifting-into-data-science-2977c1fbf6c2?gi=d12e07d396a0> from <GET https://medium.com/m/global-identity?redirectUrl=https%3A%2F%2Ftech.cars.com%2Fshifting-into-data-science-2977c1fbf6c2>
+DEBUG: Retrying <GET https://medium.com/fast-company/suspicious-packages-spotlight-vast-postal-surveillance-system-612c562f7f45> (failed 1 times): 504 Gateway Time-out
+DEBUG: Crawled (200) <GET https://towardsdatascience.com/fear-factor-guns-vs-terrorism-e6b92ebb576d?gi=5e6f96c5f06b> (referer: None)
+DEBUG: Scraped from <200 https://towardsdatascience.com/fear-factor-guns-vs-terrorism-e6b92ebb576d?gi=5e6f96c5f06b>
+{'NumOfClaps': '181 claps',
+ 'NumOfComments': '8',
+ 'articleTags': ['Terrorism', 'Guns', 'Data Science', 'Fear', 'Death'],
+ 'articleURL': 'https://towardsdatascience.com/fear-factor-guns-vs-terrorism-e6b92ebb576d?gi=5e6f96c5f06b',
+ 'linkOfAuthorProfile': 'https://towardsdatascience.com/@dan.cripe',
+ 'nameOfAuthor': 'Daniel Cripe',
+ 'postingTime': 'Jan 17, 2018',
+ 'readingTime': '8 min read'}
+DEBUG: Redirecting (301) to <GET https://getnotion.com/build-interpret-and-protect-3-skill-sets-required-within-iot-68c1c154947b> from <GET https://blog.getnotion.com/build-interpret-and-protect-3-skill-sets-required-within-iot-68c1c154947b>
+DEBUG: Redirecting (301) to <GET https://getnotion.com/blogs/home-monitor/build-interpret-and-protect-3-skill-sets-required-within-iot> from <GET https://getnotion.com/build-interpret-and-protect-3-skill-sets-required-within-iot-68c1c154947b>
+DEBUG: Redirecting (302) to <GET https://medium.com/m/global-identity?redirectUrl=https%3A%2F%2Fengineering.olist.com%2Fcomo-estruturar-uma-equipe-de-an%25C3%25A1lise-de-dados-em-uma-startup-parte-1-509a9c65cfe2> from <GET https://engineering.olist.com/como-estruturar-uma-equipe-de-an%C3%A1lise-de-dados-em-uma-startup-parte-1-509a9c65cfe2>
+DEBUG: Crawled (200) <GET https://medium.com/s/story/what-the-2018-early-vote-can-tell-us-and-what-it-cant-b99ef03d3af> (referer: None)
+ERROR: Spider error processing <GET https://medium.com/s/story/what-the-2018-early-vote-can-tell-us-and-what-it-cant-b99ef03d3af> (referer: None)
+Traceback (most recent call last):
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "<ipython-input-10-2c1b2ce1d527>", line 75, in parse
+    if response.css('div.u-paddingBottom3 a').attrib['href']:
+KeyError: 'href'
+DEBUG: Redirecting (301) to <GET https://blog.derniercri.io/julia-le-langage-qui-les-r%C3%A9unifiera-tous-3a274cb8794f/> from <GET https://blog.derniercri.io/julia-le-langage-qui-les-r%C3%A9unifiera-tous-3a274cb8794f>
+DEBUG: Crawled (404) <GET https://blog.derniercri.io/julia-le-langage-qui-les-r%C3%A9unifiera-tous-3a274cb8794f/> (referer: None)
+INFO: Ignoring response <404 https://blog.derniercri.io/julia-le-langage-qui-les-r%C3%A9unifiera-tous-3a274cb8794f/>: HTTP status code is not handled or not allowed
+DEBUG: Redirecting (302) to <GET https://medium.com/m/global-identity?redirectUrl=https%3A%2F%2Fblog.color.com%2Fleap-machine-learning-from-evidence-to-assess-pathogenicity-8bec2e0caa93> from <GET https://blog.color.com/leap-machine-learning-from-evidence-to-assess-pathogenicity-8bec2e0caa93>
+DEBUG: Crawled (200) <GET https://medium.com/life-at-carwow/meettheteam-giorgio-galvan-data-analyst-13afd7ee7d0b> (referer: None)
+DEBUG: Scraped from <200 https://medium.com/life-at-carwow/meettheteam-giorgio-galvan-data-analyst-13afd7ee7d0b>
+{'NumOfClaps': '1 clap',
+ 'NumOfComments': None,
+ 'articleTags': ['Data Science', 'Tech', 'Jobs', 'Startup'],
+ 'articleURL': 'https://medium.com/life-at-carwow/meettheteam-giorgio-galvan-data-analyst-13afd7ee7d0b',
+ 'linkOfAuthorProfile': 'https://medium.com/@will.mccaughey',
+ 'nameOfAuthor': 'William McCaughey',
+ 'postingTime': 'Jan 3, 2018',
+ 'readingTime': '5 min read'}
+WARNING: Remote certificate is not valid for hostname "shortlythereafter.co.uk"; VerificationError(errors=[DNSMismatch(mismatched_id=DNS_ID(hostname=b'shortlythereafter.co.uk'))])
+DEBUG: Crawled (404) <GET https://shortlythereafter.co.uk/accountants-vs-zombies-c90040f2193c> (referer: None)
+INFO: Ignoring response <404 https://shortlythereafter.co.uk/accountants-vs-zombies-c90040f2193c>: HTTP status code is not handled or not allowed
+DEBUG: Redirecting (302) to <GET https://theascent.pub/what-i-learned-from-from-rick-rashid-founder-of-microsoft-research-20-965b3f465dcc?gi=49048715983b> from <GET https://medium.com/m/global-identity?redirectUrl=https%3A%2F%2Ftheascent.pub%2Fwhat-i-learned-from-from-rick-rashid-founder-of-microsoft-research-20-965b3f465dcc>
+DEBUG: Crawled (200) <GET https://theascent.pub/what-i-learned-from-from-rick-rashid-founder-of-microsoft-research-20-965b3f465dcc?gi=49048715983b> (referer: None)
+DEBUG: Retrying <GET https://tech.cars.com/shifting-into-data-science-2977c1fbf6c2?gi=d12e07d396a0> (failed 1 times): 504 Gateway Time-out
+DEBUG: Scraped from <200 https://theascent.pub/what-i-learned-from-from-rick-rashid-founder-of-microsoft-research-20-965b3f465dcc?gi=49048715983b>
+{'NumOfClaps': [],
+ 'NumOfComments': None,
+ 'articleTags': ['Data Science',
+                 'Advice',
+                 'Management And Leadership',
+                 'Leadership Development',
+                 'Career Advice'],
+ 'articleURL': 'https://theascent.pub/what-i-learned-from-from-rick-rashid-founder-of-microsoft-research-20-965b3f465dcc?gi=49048715983b',
+ 'linkOfAuthorProfile': 'https://theascent.pub/@f_1',
+ 'nameOfAuthor': 'F',
+ 'postingTime': 'Jun 8, 2018',
+ 'readingTime': '3 min read'}
+INFO: Crawled 76 pages (at 20 pages/min), scraped 34 items (at 7 items/min)
+DEBUG: Redirecting (302) to <GET https://medium.com/m/global-identity?redirectUrl=https%3A%2F%2Ftech.cars.com%2Fshifting-into-data-science-2977c1fbf6c2> from <GET https://tech.cars.com/shifting-into-data-science-2977c1fbf6c2?gi=d12e07d396a0>
+DEBUG: Redirecting (302) to <GET https://engineering.olist.com/como-estruturar-uma-equipe-de-an%C3%A1lise-de-dados-em-uma-startup-parte-1-509a9c65cfe2?gi=b273d144b125> from <GET https://medium.com/m/global-identity?redirectUrl=https%3A%2F%2Fengineering.olist.com%2Fcomo-estruturar-uma-equipe-de-an%25C3%25A1lise-de-dados-em-uma-startup-parte-1-509a9c65cfe2>
+DEBUG: Crawled (200) <GET https://engineering.olist.com/como-estruturar-uma-equipe-de-an%C3%A1lise-de-dados-em-uma-startup-parte-1-509a9c65cfe2?gi=b273d144b125> (referer: None)
+DEBUG: Redirecting (301) to <GET https://www.manifold.co/blog/using-redis-streams-for-time-series-25de5b12bb46> from <GET https://blog.manifold.co/using-redis-streams-for-time-series-25de5b12bb46>
+DEBUG: Scraped from <200 https://engineering.olist.com/como-estruturar-uma-equipe-de-an%C3%A1lise-de-dados-em-uma-startup-parte-1-509a9c65cfe2?gi=b273d144b125>
+{'NumOfClaps': '70 claps',
+ 'NumOfComments': '1',
+ 'articleTags': ['Data Science',
+                 'Analytics',
+                 'Team Building',
+                 'Data Engineering',
+                 'Management'],
+ 'articleURL': 'https://engineering.olist.com/como-estruturar-uma-equipe-de-an%C3%A1lise-de-dados-em-uma-startup-parte-1-509a9c65cfe2?gi=b273d144b125',
+ 'linkOfAuthorProfile': 'https://engineering.olist.com/@andresionek91',
+ 'nameOfAuthor': 'André Sionek',
+ 'postingTime': 'Sep 8, 2018',
+ 'readingTime': '7 min read'}
+DEBUG: Redirecting (302) to <GET https://blog.color.com/leap-machine-learning-from-evidence-to-assess-pathogenicity-8bec2e0caa93?gi=8f97819d2774> from <GET https://medium.com/m/global-identity?redirectUrl=https%3A%2F%2Fblog.color.com%2Fleap-machine-learning-from-evidence-to-assess-pathogenicity-8bec2e0caa93>
+DEBUG: Crawled (404) <GET https://www.manifold.co/blog/using-redis-streams-for-time-series-25de5b12bb46> (referer: None)
+INFO: Ignoring response <404 https://www.manifold.co/blog/using-redis-streams-for-time-series-25de5b12bb46>: HTTP status code is not handled or not allowed
+DEBUG: Redirecting (302) to <GET https://tech.cars.com/shifting-into-data-science-2977c1fbf6c2?gi=1f07b7c60b76> from <GET https://medium.com/m/global-identity?redirectUrl=https%3A%2F%2Ftech.cars.com%2Fshifting-into-data-science-2977c1fbf6c2>
+DEBUG: Crawled (200) <GET https://blog.color.com/leap-machine-learning-from-evidence-to-assess-pathogenicity-8bec2e0caa93?gi=8f97819d2774> (referer: None)
+DEBUG: Scraped from <200 https://blog.color.com/leap-machine-learning-from-evidence-to-assess-pathogenicity-8bec2e0caa93?gi=8f97819d2774>
+{'NumOfClaps': '100 claps',
+ 'NumOfComments': None,
+ 'articleTags': ['Machine Learning',
+                 'Data Science',
+                 'Genetics',
+                 'Engineering',
+                 'Biology'],
+ 'articleURL': 'https://blog.color.com/leap-machine-learning-from-evidence-to-assess-pathogenicity-8bec2e0caa93?gi=8f97819d2774',
+ 'linkOfAuthorProfile': 'https://blog.color.com/@carmen_lai',
+ 'nameOfAuthor': 'Carmen Lai',
+ 'postingTime': 'Oct 3, 2018',
+ 'readingTime': '9 min read'}
+DEBUG: Retrying <GET https://blog.monteirolima.adv.br/sou-candidato-como-me-prevenir-de-fakenews-nessas-elei%C3%A7%C3%B5es-6dcb0fe46b21> (failed 1 times): DNS lookup failed: no results for hostname lookup: blog.monteirolima.adv.br.
+DEBUG: Retrying <GET https://blog.monteirolima.adv.br/h%C3%A1-um-direito-a-ser-deixado-em-paz-como-apagar-ou-desindexar-um-conte%C3%BAdo-na-internet-f5da7da1282b> (failed 1 times): DNS lookup failed: no results for hostname lookup: blog.monteirolima.adv.br.
+DEBUG: Retrying <GET https://blog.monteirolima.adv.br/eu-tenho-o-direito-ao-esquecimento-e360d9fdf3a4> (failed 1 times): DNS lookup failed: no results for hostname lookup: blog.monteirolima.adv.br.
+DEBUG: Redirecting (301) to <GET https://medium.com/avionix-llc/unlock-the-true-value-of-your-datasets-4267d76741e6> from <GET https://medium.com/@kgstaub/unlock-the-true-value-of-your-datasets-4267d76741e6>
+DEBUG: Retrying <GET https://medium.com/m/global-identity?redirectUrl=https%3A%2F%2Fthedatainart.com%2Fcomedy-central-presents-complete-episode-list-with-imdb-ratings-and-links-to-view-episode-1aa30481ff79> (failed 1 times): 504 Gateway Time-out
+DEBUG: Retrying <GET https://medium.com/m/global-identity?redirectUrl=https%3A%2F%2Ftheascent.pub%2Fhow-much-coffee-is-too-much-90fd61bd3325> (failed 1 times): 504 Gateway Time-out
+DEBUG: Crawled (200) <GET https://medium.com/mit-technology-review/data-mining-has-revealed-previously-unknown-russian-twitter-troll-campaigns-8efeabf74909> (referer: None)
+DEBUG: Redirecting (302) to <GET https://theascent.pub/how-much-coffee-is-too-much-90fd61bd3325?gi=ece46339ec31> from <GET https://medium.com/m/global-identity?redirectUrl=https%3A%2F%2Ftheascent.pub%2Fhow-much-coffee-is-too-much-90fd61bd3325>
+DEBUG: Scraped from <200 https://medium.com/mit-technology-review/data-mining-has-revealed-previously-unknown-russian-twitter-troll-campaigns-8efeabf74909>
+{'NumOfClaps': [],
+ 'NumOfComments': None,
+ 'articleTags': [],
+ 'articleURL': 'https://medium.com/mit-technology-review/data-mining-has-revealed-previously-unknown-russian-twitter-troll-campaigns-8efeabf74909',
+ 'linkOfAuthorProfile': 'https://medium.com/@MITTechReview',
+ 'nameOfAuthor': 'MIT Technology Review',
+ 'postingTime': 'Oct 11, 2018',
+ 'readingTime': '3 min read'}
+DEBUG: Crawled (200) <GET https://tech.cars.com/shifting-into-data-science-2977c1fbf6c2?gi=1f07b7c60b76> (referer: None)
+DEBUG: Scraped from <200 https://tech.cars.com/shifting-into-data-science-2977c1fbf6c2?gi=1f07b7c60b76>
+{'NumOfClaps': '14 claps',
+ 'NumOfComments': None,
+ 'articleTags': ['Data Science'],
+ 'articleURL': 'https://tech.cars.com/shifting-into-data-science-2977c1fbf6c2?gi=1f07b7c60b76',
+ 'linkOfAuthorProfile': 'https://tech.cars.com/@sms112788',
+ 'nameOfAuthor': 'Sean Shookman',
+ 'postingTime': 'Mar 19, 2018',
+ 'readingTime': '10 min read'}
+DEBUG: Crawled (200) <GET https://medium.com/mit-technology-review/need-medical-help-sorry-not-until-you-sign-away-your-privacy-78dabd0e4cac> (referer: None)
+DEBUG: Scraped from <200 https://medium.com/mit-technology-review/need-medical-help-sorry-not-until-you-sign-away-your-privacy-78dabd0e4cac>
+{'NumOfClaps': [],
+ 'NumOfComments': None,
+ 'articleTags': [],
+ 'articleURL': 'https://medium.com/mit-technology-review/need-medical-help-sorry-not-until-you-sign-away-your-privacy-78dabd0e4cac',
+ 'linkOfAuthorProfile': 'https://medium.com/@MITTechReview',
+ 'nameOfAuthor': 'MIT Technology Review',
+ 'postingTime': 'Oct 23, 2018',
+ 'readingTime': '5 min read'}
+DEBUG: Redirecting (301) to <GET https://medium.com/unreal-madrid/data-scraping-and-data-cleaning-a4ca1aacbf9c> from <GET https://medium.com/@jiaheng_wei/data-scraping-and-data-cleaning-a4ca1aacbf9c>
+DEBUG: Crawled (200) <GET https://medium.com/fast-company/suspicious-packages-spotlight-vast-postal-surveillance-system-612c562f7f45> (referer: None)
+DEBUG: Scraped from <200 https://medium.com/fast-company/suspicious-packages-spotlight-vast-postal-surveillance-system-612c562f7f45>
+{'NumOfClaps': [],
+ 'NumOfComments': None,
+ 'articleTags': [],
+ 'articleURL': 'https://medium.com/fast-company/suspicious-packages-spotlight-vast-postal-surveillance-system-612c562f7f45',
+ 'linkOfAuthorProfile': 'https://medium.com/@FastCompany',
+ 'nameOfAuthor': 'Fast Company',
+ 'postingTime': 'Oct 25, 2018',
+ 'readingTime': '5 min read'}
+DEBUG: Crawled (200) <GET https://medium.com/s/story/machine-learning-for-people-who-know-nothing-about-machine-learning-fcc312a53f12> (referer: None)
+ERROR: Spider error processing <GET https://medium.com/s/story/machine-learning-for-people-who-know-nothing-about-machine-learning-fcc312a53f12> (referer: None)
+Traceback (most recent call last):
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "<ipython-input-10-2c1b2ce1d527>", line 75, in parse
+    if response.css('div.u-paddingBottom3 a').attrib['href']:
+KeyError: 'href'
+DEBUG: Redirecting (301) to <GET https://medium.com/datasciencebrazil/estatistica-data-science-1d939b633d46> from <GET https://medium.com/@lucasoliveira_56505/estatistica-data-science-1d939b633d46>
+DEBUG: Crawled (200) <GET https://theascent.pub/how-much-coffee-is-too-much-90fd61bd3325?gi=ece46339ec31> (referer: None)
+DEBUG: Scraped from <200 https://theascent.pub/how-much-coffee-is-too-much-90fd61bd3325?gi=ece46339ec31>
+{'NumOfClaps': '204 claps',
+ 'NumOfComments': '1',
+ 'articleTags': ['Coffee',
+                 'Data Science',
+                 'Quantified Self',
+                 'Creativity',
+                 'Health'],
+ 'articleURL': 'https://theascent.pub/how-much-coffee-is-too-much-90fd61bd3325?gi=ece46339ec31',
+ 'linkOfAuthorProfile': 'https://theascent.pub/@maxfrenzel',
+ 'nameOfAuthor': 'Max Frenzel',
+ 'postingTime': 'Jul 17, 2018',
+ 'readingTime': '5 min read'}
+DEBUG: Retrying <GET https://medium.com/m/global-identity?redirectUrl=https%3A%2F%2F42hire.com%2Fhow-to-interview-a-data-scientist-and-know-if-theyre-good-18bd02ca43c3> (failed 1 times): 504 Gateway Time-out
+DEBUG: Redirecting (302) to <GET https://42hire.com/how-to-interview-a-data-scientist-and-know-if-theyre-good-18bd02ca43c3?gi=8301d8d32dcd> from <GET https://medium.com/m/global-identity?redirectUrl=https%3A%2F%2F42hire.com%2Fhow-to-interview-a-data-scientist-and-know-if-theyre-good-18bd02ca43c3>
+DEBUG: Retrying <GET https://blog.monteirolima.adv.br/sou-candidato-como-me-prevenir-de-fakenews-nessas-elei%C3%A7%C3%B5es-6dcb0fe46b21> (failed 2 times): DNS lookup failed: no results for hostname lookup: blog.monteirolima.adv.br.
+DEBUG: Crawled (200) <GET https://medium.com/datasciencebrazil/estatistica-data-science-1d939b633d46> (referer: None)
+DEBUG: Scraped from <200 https://medium.com/datasciencebrazil/estatistica-data-science-1d939b633d46>
+{'NumOfClaps': '202 claps',
+ 'NumOfComments': None,
+ 'articleTags': ['Estatistica',
+                 'Data Science',
+                 'Cientista De Dados',
+                 'Data Science Brazil',
+                 'Beginner'],
+ 'articleURL': 'https://medium.com/datasciencebrazil/estatistica-data-science-1d939b633d46',
+ 'linkOfAuthorProfile': 'https://medium.com/@lucasoliveira_56505',
+ 'nameOfAuthor': 'Lucas Oliveira',
+ 'postingTime': 'Nov 20, 2018',
+ 'readingTime': '8 min read'}
+DEBUG: Retrying <GET https://blog.monteirolima.adv.br/h%C3%A1-um-direito-a-ser-deixado-em-paz-como-apagar-ou-desindexar-um-conte%C3%BAdo-na-internet-f5da7da1282b> (failed 2 times): DNS lookup failed: no results for hostname lookup: blog.monteirolima.adv.br.
+DEBUG: Retrying <GET https://blog.monteirolima.adv.br/eu-tenho-o-direito-ao-esquecimento-e360d9fdf3a4> (failed 2 times): DNS lookup failed: no results for hostname lookup: blog.monteirolima.adv.br.
+INFO: Crawled 86 pages (at 10 pages/min), scraped 42 items (at 8 items/min)
+DEBUG: Crawled (200) <GET https://medium.com/unreal-madrid/data-scraping-and-data-cleaning-a4ca1aacbf9c> (referer: None)
+DEBUG: Scraped from <200 https://medium.com/unreal-madrid/data-scraping-and-data-cleaning-a4ca1aacbf9c>
+{'NumOfClaps': '50 claps',
+ 'NumOfComments': None,
+ 'articleTags': ['Data Science'],
+ 'articleURL': 'https://medium.com/unreal-madrid/data-scraping-and-data-cleaning-a4ca1aacbf9c',
+ 'linkOfAuthorProfile': 'https://medium.com/@jiaheng_wei',
+ 'nameOfAuthor': 'Derrick Wei',
+ 'postingTime': 'Oct 23, 2018',
+ 'readingTime': '4 min read'}
+DEBUG: Gave up retrying <GET https://blog.monteirolima.adv.br/sou-candidato-como-me-prevenir-de-fakenews-nessas-elei%C3%A7%C3%B5es-6dcb0fe46b21> (failed 3 times): DNS lookup failed: no results for hostname lookup: blog.monteirolima.adv.br.
+ERROR: Error downloading <GET https://blog.monteirolima.adv.br/sou-candidato-como-me-prevenir-de-fakenews-nessas-elei%C3%A7%C3%B5es-6dcb0fe46b21>
+Traceback (most recent call last):
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/twisted/internet/defer.py", line 1416, in _inlineCallbacks
+    result = result.throwExceptionIntoGenerator(g)
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/twisted/python/failure.py", line 512, in throwExceptionIntoGenerator
+    return g.throw(self.type, self.value, self.tb)
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/core/downloader/middleware.py", line 43, in process_request
+    defer.returnValue((yield download_func(request=request,spider=spider)))
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/twisted/internet/endpoints.py", line 975, in startConnectionAttempts
+    "no results for hostname lookup: {}".format(self._hostStr)
+twisted.internet.error.DNSLookupError: DNS lookup failed: no results for hostname lookup: blog.monteirolima.adv.br.
+DEBUG: Gave up retrying <GET https://blog.monteirolima.adv.br/h%C3%A1-um-direito-a-ser-deixado-em-paz-como-apagar-ou-desindexar-um-conte%C3%BAdo-na-internet-f5da7da1282b> (failed 3 times): DNS lookup failed: no results for hostname lookup: blog.monteirolima.adv.br.
+ERROR: Error downloading <GET https://blog.monteirolima.adv.br/h%C3%A1-um-direito-a-ser-deixado-em-paz-como-apagar-ou-desindexar-um-conte%C3%BAdo-na-internet-f5da7da1282b>
+Traceback (most recent call last):
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/twisted/internet/defer.py", line 1416, in _inlineCallbacks
+    result = result.throwExceptionIntoGenerator(g)
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/twisted/python/failure.py", line 512, in throwExceptionIntoGenerator
+    return g.throw(self.type, self.value, self.tb)
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/core/downloader/middleware.py", line 43, in process_request
+    defer.returnValue((yield download_func(request=request,spider=spider)))
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/twisted/internet/endpoints.py", line 975, in startConnectionAttempts
+    "no results for hostname lookup: {}".format(self._hostStr)
+twisted.internet.error.DNSLookupError: DNS lookup failed: no results for hostname lookup: blog.monteirolima.adv.br.
+DEBUG: Gave up retrying <GET https://blog.monteirolima.adv.br/eu-tenho-o-direito-ao-esquecimento-e360d9fdf3a4> (failed 3 times): DNS lookup failed: no results for hostname lookup: blog.monteirolima.adv.br.
+ERROR: Error downloading <GET https://blog.monteirolima.adv.br/eu-tenho-o-direito-ao-esquecimento-e360d9fdf3a4>
+Traceback (most recent call last):
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/twisted/internet/defer.py", line 1416, in _inlineCallbacks
+    result = result.throwExceptionIntoGenerator(g)
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/twisted/python/failure.py", line 512, in throwExceptionIntoGenerator
+    return g.throw(self.type, self.value, self.tb)
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/scrapy/core/downloader/middleware.py", line 43, in process_request
+    defer.returnValue((yield download_func(request=request,spider=spider)))
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/nancy/miniconda3/lib/python3.7/site-packages/twisted/internet/endpoints.py", line 975, in startConnectionAttempts
+    "no results for hostname lookup: {}".format(self._hostStr)
+twisted.internet.error.DNSLookupError: DNS lookup failed: no results for hostname lookup: blog.monteirolima.adv.br.
+DEBUG: Retrying <GET https://medium.com/avionix-llc/unlock-the-true-value-of-your-datasets-4267d76741e6> (failed 1 times): 504 Gateway Time-out
+DEBUG: Retrying <GET https://42hire.com/how-to-interview-a-data-scientist-and-know-if-theyre-good-18bd02ca43c3?gi=8301d8d32dcd> (failed 2 times): 504 Gateway Time-out
+DEBUG: Redirecting (302) to <GET https://thedatainart.com/comedy-central-presents-complete-episode-list-with-imdb-ratings-and-links-to-view-episode-1aa30481ff79?gi=47f97a39c872> from <GET https://medium.com/m/global-identity?redirectUrl=https%3A%2F%2Fthedatainart.com%2Fcomedy-central-presents-complete-episode-list-with-imdb-ratings-and-links-to-view-episode-1aa30481ff79>
+DEBUG: Crawled (200) <GET https://thedatainart.com/comedy-central-presents-complete-episode-list-with-imdb-ratings-and-links-to-view-episode-1aa30481ff79?gi=47f97a39c872> (referer: None)
+DEBUG: Scraped from <200 https://thedatainart.com/comedy-central-presents-complete-episode-list-with-imdb-ratings-and-links-to-view-episode-1aa30481ff79?gi=47f97a39c872>
+{'NumOfClaps': '1 clap',
+ 'NumOfComments': None,
+ 'articleTags': ['Comedy',
+                 'Television',
+                 'Stand Up Comedy',
+                 'Data Visualization',
+                 'Data Science'],
+ 'articleURL': 'https://thedatainart.com/comedy-central-presents-complete-episode-list-with-imdb-ratings-and-links-to-view-episode-1aa30481ff79?gi=47f97a39c872',
+ 'linkOfAuthorProfile': 'https://thedatainart.com/@owentemple',
+ 'nameOfAuthor': 'Owen Temple',
+ 'postingTime': 'Jun 29, 2018',
+ 'readingTime': '3 min read'}
+DEBUG: Crawled (200) <GET https://medium.com/avionix-llc/unlock-the-true-value-of-your-datasets-4267d76741e6> (referer: None)
+DEBUG: Scraped from <200 https://medium.com/avionix-llc/unlock-the-true-value-of-your-datasets-4267d76741e6>
+{'NumOfClaps': '1 clap',
+ 'NumOfComments': None,
+ 'articleTags': ['Fintech',
+                 'Big Data',
+                 'Big Data Analytics',
+                 'Data Science',
+                 'Software Engineering'],
+ 'articleURL': 'https://medium.com/avionix-llc/unlock-the-true-value-of-your-datasets-4267d76741e6',
+ 'linkOfAuthorProfile': 'https://medium.com/@kgstaub',
+ 'nameOfAuthor': 'Kenneth Staub',
+ 'postingTime': 'Jul 25, 2018',
+ 'readingTime': '3 min read'}
+DEBUG: Redirecting (302) to <GET https://medium.com/m/global-identity?redirectUrl=https%3A%2F%2F42hire.com%2Fhow-to-interview-a-data-scientist-and-know-if-theyre-good-18bd02ca43c3> from <GET https://42hire.com/how-to-interview-a-data-scientist-and-know-if-theyre-good-18bd02ca43c3?gi=8301d8d32dcd>
+INFO: Crawled 89 pages (at 3 pages/min), scraped 45 items (at 3 items/min)
+DEBUG: Redirecting (302) to <GET https://42hire.com/how-to-interview-a-data-scientist-and-know-if-theyre-good-18bd02ca43c3?gi=257dae438133> from <GET https://medium.com/m/global-identity?redirectUrl=https%3A%2F%2F42hire.com%2Fhow-to-interview-a-data-scientist-and-know-if-theyre-good-18bd02ca43c3>
+DEBUG: Crawled (200) <GET https://42hire.com/how-to-interview-a-data-scientist-and-know-if-theyre-good-18bd02ca43c3?gi=257dae438133> (referer: None)
+DEBUG: Scraped from <200 https://42hire.com/how-to-interview-a-data-scientist-and-know-if-theyre-good-18bd02ca43c3?gi=257dae438133>
+{'NumOfClaps': '26 claps',
+ 'NumOfComments': None,
+ 'articleTags': ['Data Science',
+                 'Human Resources',
+                 'Recruiting',
+                 'Interview',
+                 'Hiring'],
+ 'articleURL': 'https://42hire.com/how-to-interview-a-data-scientist-and-know-if-theyre-good-18bd02ca43c3?gi=257dae438133',
+ 'linkOfAuthorProfile': 'https://42hire.com/@MurtazaBambot',
+ 'nameOfAuthor': 'Murtaza Bambot',
+ 'postingTime': 'Aug 20, 2018',
+ 'readingTime': '5 min read'}
+INFO: Closing spider (finished)
+INFO: Stored csv feed (46 items) in: medium_2018_missing_tags.csv
+INFO: Dumping Scrapy stats:
+{'downloader/exception_count': 12,
+ 'downloader/exception_type_count/twisted.internet.error.ConnectionRefusedError': 3,
+ 'downloader/exception_type_count/twisted.internet.error.DNSLookupError': 9,
+ 'downloader/request_bytes': 68246,
+ 'downloader/request_count': 163,
+ 'downloader/request_method_count/GET': 163,
+ 'downloader/response_bytes': 2866006,
+ 'downloader/response_count': 151,
+ 'downloader/response_status_count/200': 82,
+ 'downloader/response_status_count/301': 20,
+ 'downloader/response_status_count/302': 26,
+ 'downloader/response_status_count/404': 9,
+ 'downloader/response_status_count/502': 1,
+ 'downloader/response_status_count/504': 13,
+ 'dupefilter/filtered': 5,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2019, 5, 15, 14, 15, 47, 470661),
+ 'httperror/response_ignored_count': 9,
+ 'httperror/response_ignored_status_count/404': 9,
+ 'item_scraped_count': 46,
+ 'log_count/DEBUG': 210,
+ 'log_count/ERROR': 39,
+ 'log_count/INFO': 25,
+ 'log_count/WARNING': 1,
+ 'memusage/max': 187138048,
+ 'memusage/startup': 183595008,
+ 'response_received_count': 90,
+ 'retry/count': 22,
+ 'retry/max_reached': 4,
+ 'retry/reason_count/502 Bad Gateway': 1,
+ 'retry/reason_count/504 Gateway Time-out': 13,
+ 'retry/reason_count/twisted.internet.error.ConnectionRefusedError': 2,
+ 'retry/reason_count/twisted.internet.error.DNSLookupError': 6,
+ 'scheduler/dequeued': 163,
+ 'scheduler/dequeued/memory': 163,
+ 'scheduler/enqueued': 163,
+ 'scheduler/enqueued/memory': 163,
+ 'spider_exceptions/KeyError': 35,
+ 'start_time': datetime.datetime(2019, 5, 15, 14, 9, 39, 938203)}
+INFO: Spider closed (finished)

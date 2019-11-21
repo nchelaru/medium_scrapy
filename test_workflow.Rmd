@@ -1,0 +1,166 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
+
+```{r}
+library(reticulate)
+
+use_python('/Users/nancy/miniconda3/bin/python')
+```
+
+
+```{python}
+## Import libraries
+import scrapy
+from scrapy.crawler import CrawlerProcess
+from scrapy.utils.log import configure_logging
+import logging
+ 
+## Set working directory
+import os
+os.chdir('./raw')
+ 
+## Create container for scraped data
+class Article(scrapy.Item):
+    nameOfAuthor = scrapy.Field()
+    linkOfAuthorProfile = scrapy.Field()
+    NumOfComments = scrapy.Field()
+    article = scrapy.Field()
+    postingTime = scrapy.Field()
+    NumOfClaps = scrapy.Field()
+    articleURL = scrapy.Field()
+    articleTags = scrapy.Field()
+    readingTime = scrapy.Field()
+ 
+## Set-up logging
+logger = logging.getLogger('scrapylogger')
+ 
+## Create crawler
+class MediumSpider(scrapy.Spider):
+    name = "medium_spider"
+ 
+    configure_logging(install_root_handler=False)
+    logging.basicConfig(
+        filename='medium_full_2010_log.txt',
+        format='%(levelname)s: %(message)s',
+        level=logging.INFO
+    )
+ 
+    custom_settings = {
+        'FEED_FORMAT': 'csv',
+        'FEED_URI': 'medium_full_2010.csv',
+        'AUTOTHROTTLE_ENABLED' : True,
+        'AUTOTHROTTLE_START_DELAY' : 1,
+        'AUTOTHROTTLE_MAX_DELAY' : 3
+    }
+ 
+    def start_requests(self):
+        urls = []
+ 
+        for month in range(1, 13):
+            for day in range(1, 32):
+                urls.append(f"https://medium.com/tag/data-science/archive/2018/{month:02}/{day:02}")
+ 
+        for url in urls:
+            yield scrapy.Request(url=url, callback=self.parse)
+ 
+ 
+ 
+    def parse(self, response):
+        item = Article()
+ 
+        for story in response.css('div.postArticle'):
+            if story.css('div.postArticle-readMore a::attr(href)').extract_first() is not None:
+                url = story.css('div.postArticle-readMore a::attr(href)').extract_first()
+                yield scrapy.Request(url=url, callback=self.parse_full, meta={'item': item})
+ 
+    def parse_full(self, response):
+ 
+        item = response.meta['item']
+        item['articleURL'] = response.request.url
+        item['article'] = response.css('div.postArticle-content section div.section-content div h1::text, \
+                                        div.postArticle-content section div.section-content div h1 a::text, \
+                                        div.postArticle-content section div.section-content div h1 strong::text,\
+                                        div.postArticle-content section div.section-content div h1 em::text, \
+                                        div.postArticle-content section div.section-content div h3::text, \
+                                        div.postArticle-content section div.section-content div h4::text, \
+                                        div.postArticle-content section div.section-content div p strong::text, \
+                                        div.postArticle-content section div.section-content div p strong em::text, \
+                                        div.postArticle-content section div.section-content div p::text').extract_first()
+
+        try:
+            item['linkOfAuthorProfile'] = response.css('div.u-paddingBottom3 a').attrib['href']
+        except KeyError:
+            item['linkOfAuthorProfile'] = ' '
+ 
+        try:
+            item['readingTime'] = response.css('span.readingTime').attrib['title']
+        except KeyError:
+            item['readingTime'] = ' '
+ 
+ 
+        item['nameOfAuthor'] = response.css('div.u-paddingBottom3 a::text').extract_first()
+        item['postingTime'] = response.css('time::text').extract_first()
+        item['articleTags'] = response.css('div.u-paddingBottom10 ul.tags--postTags li a::text').getall()
+        item['NumOfComments'] = response.css(
+            'div.buttonSet.u-flex0 button.button.button--chromeless.u-baseColor--buttonNormal.u-marginRight12::text').extract_first()
+        item['NumOfClaps'] = response.xpath(
+            '//div/main/article/footer/div[1]/div[3]/div/div[1]/div/span/button//text()').extract_first()
+ 
+ 
+        yield item
+ 
+ 
+process = CrawlerProcess({
+    'USER_AGENT': 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1)'
+})
+ 
+process.crawl(MediumSpider)
+process.start()
+```
+
+```{python}
+import pandas as pd
+import os
+
+os.chdir('./raw')
+
+full_list = ["medium_full_2012.csv",
+              "medium_full_2013.csv",
+              "medium_full_2014.csv",
+              "medium_full_2015.csv",
+              "medium_full_2016.csv",
+              "medium_full_2017.csv",
+              "medium_full_2018.csv",
+              "medium_full_2019.csv"]
+              
+for i in full_list:
+  df = pd.read_csv(i)
+  print(df.shape)
+
+```
+
+
+```{python}
+
+os.chdir('./raw')
+
+title_list = ["medium_titles_2012.csv",
+              "medium_titles_2013.csv",
+              "medium_titles_2014.csv",
+              "medium_titles_2015.csv",
+              "medium_titles_2016.csv",
+              "medium_titles_2017.csv",
+              "medium_titles_2018.csv",
+              "medium_titles_2019.csv"]
+              
+              
+for i in title_list:
+  df = pd.read_csv(i)
+  print(df.shape)
+```

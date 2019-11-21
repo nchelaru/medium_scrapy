@@ -1,0 +1,604 @@
+---
+title: "What we talk about when we talk about data science on Medium.com"
+date: "`r Sys.Date()`"
+author:  "Nancy Chelaru"
+output:
+  rmdformats::readthedown:
+    highlight: kate
+---
+
+
+```{r knitr_init, echo=FALSE, message=FALSE, warning=FALSE, cache=FALSE}
+library(knitr)
+library(rmdformats)
+library(reticulate)
+library(kableExtra)
+library(plyr)
+library(dplyr)
+library(magrittr)
+
+use_python('/Users/nancy/miniconda3/bin/python')
+
+## Global options
+options(max.print="75")
+opts_chunk$set(echo=TRUE,
+	             cache=TRUE,
+               prompt=FALSE,
+               tidy=TRUE,
+               comment=NA,
+               message=FALSE,
+               warning=FALSE)
+opts_knit$set(width=75)
+```
+
+
+# Introduction
+
+The data science community on the Medium.com has really exploded in the past few years, paralleling the data science boom. Browsing through the sheer deluge of data science articles published each day, I tend to cycle through intrigue, inadequacy, anxiety, boredom, clickbait fatigue, and some mixture of all of them. I think you likely have felt something similar. 
+
+Though, such a mountain of readily available data presents opportunities for analyses, so I decided to dive in to do some independent data science of my own.  Turns out, this has been a great project for getting my feet wet with web scraping, data cleaning and natural language processing, none of which I have done before in any real sense. Plus, trying to sieve through the Medium data science hive mind feels like something that a website called "Intelligence Refinery" should do.
+
+
+<br>
+
+# Getting the data
+
+## Web scraping - round 1
+
+In the web scraping portion of the project, I collected, among other things, the <b>URL, title, author name, publish date, tags, number of comments and number of "claps"</b> of all articles with the tag "Data Science" published on Medium (earliest of which was published in 2009, but really picked up in volume in 2013). 
+
+Since I was completely new to web scraping before this, I looked around for existing and fairly recent scripts scraping Medium articles. I had found two that use Selenium ([here](https://github.com/NISH1001/medium-crawler) and [here](https://github.com/Sangarshanan/webscraping-and-analysis-of-medium-articles)), but because of the large size of data to be scraped, I wanted to use Scrapy over Selenium ([see a comparison of the two here](https://www.accordbox.com/blog/web-scraping-framework-review-scrapy-vs-selenium/)). Plus, Scrapy has a built-in selector system that means I don't have to use BeautifulSoup to parse the HTML. I ended up using the Scrapy workflow by [May Yeung](https://code.likeagirl.io/heres-how-i-applied-coding-to-my-job-d8e13674c7e2) (posted on Medium, of course) as a starting point and made the script below, after much trial and error. 
+
+Looking at the [archive](https://medium.com/tag/data-science/archive) of all articles tagged with "Data Science", I see that I can iterate over each year (2013-2019 May), each month (01-12) and each day (01-31) to see the story cards of all articles tagged with "Data Science". Even though each story card contains the title, author name, publication date, number of comments and claps, I needed to get to the actual article page to get the tags. So, the script below follows the article URL on each story card to access the article page and scrape all the desired elements. This was the major departure from May Yeung's workflow, which scraped only the story cards. 
+
+As there are almost 20,000 articles/year published in more recent years, I decided to divide up the scraping by year. As an example, here is the script used to get all the articles tagged with "Data Science" published in 2018:
+
+```python
+## Import libraries
+import scrapy
+from scrapy.crawler import CrawlerProcess
+from scrapy.utils.log import configure_logging
+import logging
+ 
+## Set working directory
+import os
+os.chdir('/Users/nancy/PycharmProjects/medium-ds-articles/data/raw/')
+ 
+## Create container for scraped data
+class Article(scrapy.Item):
+    nameOfAuthor = scrapy.Field()
+    linkOfAuthorProfile = scrapy.Field()
+    NumOfComments = scrapy.Field()
+    article = scrapy.Field()
+    postingTime = scrapy.Field()
+    NumOfClaps = scrapy.Field()
+    articleURL = scrapy.Field()
+    articleTags = scrapy.Field()
+    readingTime = scrapy.Field()
+ 
+## Set-up logging
+logger = logging.getLogger('scrapylogger')
+ 
+## Create crawler
+class MediumSpider(scrapy.Spider):
+    name = "medium_spider"
+ 
+    configure_logging(install_root_handler=False)
+    logging.basicConfig(
+        filename='medium_full_2018_log.txt',
+        format='%(levelname)s: %(message)s',
+        level=logging.INFO
+    )
+ 
+    custom_settings = {
+        'FEED_FORMAT': 'csv',
+        'FEED_URI': 'medium_full_2018.csv',
+        'AUTOTHROTTLE_ENABLED' : True,
+        'AUTOTHROTTLE_START_DELAY' : 1,
+        'AUTOTHROTTLE_MAX_DELAY' : 3
+    }
+ 
+    def start_requests(self):
+        urls = []
+ 
+        for month in range(1, 13):
+            for day in range(1, 32):
+                urls.append(f"https://medium.com/tag/data-science/archive/2018/{month:02}/{day:02}")
+ 
+        for url in urls:
+            yield scrapy.Request(url=url, callback=self.parse)
+ 
+ 
+ 
+    def parse(self, response):
+        item = Article()
+ 
+        for story in response.css('div.postArticle'):
+            if story.css('div.postArticle-readMore a::attr(href)').extract_first() is not None:
+                url = story.css('div.postArticle-readMore a::attr(href)').extract_first()
+                yield scrapy.Request(url=url, callback=self.parse_full, meta={'item': item})
+ 
+    def parse_full(self, response):
+ 
+        item = response.meta['item']
+        item['articleURL'] = response.request.url
+        item['article'] = response.css('div.postArticle-content section div.section-content div h1::text, \
+                                        div.postArticle-content section div.section-content div h1 a::text, \
+                                        div.postArticle-content section div.section-content div h1 strong::text,\
+                                        div.postArticle-content section div.section-content div h1 em::text, \
+                                        div.postArticle-content section div.section-content div h3::text, \
+                                        div.postArticle-content section div.section-content div h4::text, \
+                                        div.postArticle-content section div.section-content div p strong::text, \
+                                        div.postArticle-content section div.section-content div p strong em::text, \
+                                        div.postArticle-content section div.section-content div p::text').extract_first()
+
+        try:
+            item['linkOfAuthorProfile'] = response.css('div.u-paddingBottom3 a').attrib['href']
+        except KeyError:
+            item['linkOfAuthorProfile'] = ' '
+ 
+        try:
+            item['readingTime'] = response.css('span.readingTime').attrib['title']
+        except KeyError:
+            item['readingTime'] = ' '
+ 
+ 
+        item['nameOfAuthor'] = response.css('div.u-paddingBottom3 a::text').extract_first()
+        item['postingTime'] = response.css('time::text').extract_first()
+        item['articleTags'] = response.css('div.u-paddingBottom10 ul.tags--postTags li a::text').getall()
+        item['NumOfComments'] = response.css(
+            'div.buttonSet.u-flex0 button.button.button--chromeless.u-baseColor--buttonNormal.u-marginRight12::text').extract_first()
+        item['NumOfClaps'] = response.xpath(
+            '//div/main/article/footer/div[1]/div[3]/div/div[1]/div/span/button//text()').extract_first()
+ 
+ 
+        yield item
+ 
+ 
+process = CrawlerProcess({
+    'USER_AGENT': 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1)'
+})
+ 
+process.crawl(MediumSpider)
+process.start()
+```
+
+
+
+## Web scraping - round 2
+
+Just to see if for whatever reason I am missing some articles, I wrote a second crawler where I just scraped the article link from each story card. I do realize that there must be much simpler and more elegant ways of doing everything. However, this was my first attempt at web scraping, so I settled for the quickest way to get some data that I can analyze.
+
+Here is the script for the simplified crawler:
+
+```python
+import scrapy
+from scrapy.crawler import CrawlerProcess
+from scrapy.utils.log import configure_logging
+import logging
+
+class Article(scrapy.Item):
+    article = scrapy.Field()
+    articleURL = scrapy.Field()
+
+logger = logging.getLogger('scrapylogger')
+
+class MediumSpider(scrapy.Spider):
+    name = "medium_spider" # Name of the scraper
+
+    configure_logging(install_root_handler=False)
+    logging.basicConfig(
+        filename='./data/raw/medium_titles_2018_log.txt',
+        format='%(levelname)s: %(message)s',
+        level=logging.INFO
+    )
+
+    custom_settings = {
+        'FEED_FORMAT': 'csv',
+        'FEED_URI': './data/raw/medium_titles_2018.csv',
+        'AUTOTHROTTLE_ENABLED': True,
+        'AUTOTHROTTLE_START_DELAY': 1,
+        'AUTOTHROTTLE_MAX_DELAY': 3
+    }
+
+    def start_requests(self):
+        urls = []
+
+        for month in range(1, 13):
+            for day in range(1, 32):
+                urls.append(f"https://medium.com/tag/data-science/archive/2018/{month:02}/{day:02}")
+
+        for url in urls:
+            yield scrapy.Request(url=url, callback=self.parse)
+
+
+
+    def parse(self, response):
+        for story in response.css('div.postArticle'):
+            yield {
+                'article': story.css(
+                    'div.postArticle-content section div.section-content div h3::text').getall(),
+                'articleURL': story.css('div.postArticle-readMore a::attr(href)').extract_first(),
+            }
+
+
+process = CrawlerProcess({
+    'USER_AGENT': 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1)'
+})
+
+process.crawl(IntroSpider)
+process.start()
+```
+
+## Combine scraping results
+
+Now that this is done, let's peek at the two data sets for 2018:
+
+```{r eval=T, echo=F, message=FALSE, warning=FALSE}
+library(reticulate)
+library(knitr)
+library(kableExtra)
+```
+
+```{python}
+## Import libraries
+import pandas as pd
+
+## Import data sets
+full = pd.read_csv("https://github.com/nchelaru/scrapy/raw/master/data/raw/medium_full_2018.csv")
+titles = pd.read_csv("https://github.com/nchelaru/scrapy/raw/master/data/raw/medium_titles_2018.csv")
+```
+
+
+```{python eval=F, echo=T}
+full.head(3)
+```
+
+```{r echo=F, eval=T}
+full <- py$full 
+
+kable(t(head(full, 3))) %>%
+  kable_styling(bootstrap_options = c("striped", "hover")) %>%
+  scroll_box(width = "100%")
+```
+
+<br> 
+
+```{python eval=F, echo=T}
+titles.head(3)
+```
+
+
+```{r echo=F, eval=T}
+titles <- py$titles
+
+kable(head(titles)) %>%
+  kable_styling(bootstrap_options = c("striped", "hover")) %>%
+  scroll_box(width = "100%")
+```
+
+<br>
+
+Theoretically, if my scraping is perfect in both cases, I would get the same number of articles/links from the two crawlers. However, a quick comparison of the two data sets, namely the "full-featured" article data that I got using the crawler in Part 1 and the more simplified "title-only" data gotten using the crawler above, showed that there are differences:
+
+```{python}
+## Check dimensions of the two datasets
+print("Full:", full.shape)
+print("Titles:", titles.shape)
+```
+
+Looking over the data sets, I see that there are duplicate links that only differ in the last part of the URLs (namely, `?source=tag_archive---------0---------------------`). As the links are still valid after removing everything after `?`, I did just that and deduplicated rows with idential article links.
+
+```{python}
+## Clean full info dataset
+full['articleLink'] = full['articleURL'].str.split('?').str[0]
+
+full.drop('articleURL', axis=1, inplace=True)
+
+full.drop_duplicates(subset=['articleLink'], keep='first', inplace=True)
+
+full['articleLink'].dropna(inplace=True)
+
+full.shape
+```
+
+```{python}
+## Clean title info dataset
+titles['articleLink'] = titles['articleURL'].str.split('?').str[0]
+
+titles.drop('articleURL', axis=1, inplace=True)
+
+titles.drop_duplicates(subset=['articleLink'], keep='first', inplace=True)
+
+titles['articleLink'].dropna(inplace=True)
+
+titles.shape
+```
+
+Now the number of articles/links in the two datasets are much closer.
+
+At this point, I want to get data on articles whose links are present in the "title-only" dataset, just to see what information I am missing. To get links present in the titles but not in the full dataframe, I will use set operations:
+
+```{python}
+## Get difference between the two sets
+diff = set(titles['articleLink']) - set(full['articleLink'])
+
+## Check shape
+print(len(diff))
+```
+
+A cursory look through these 33 links show that some lead to 404 errors, and for others the Scrapy log shows redirects that may have interferred with the scraping process.
+
+```{python, eval=T, echo=F}
+diff = pd.DataFrame(diff)
+```
+
+```{r, eval=T, echo=F}
+diff <- py$diff
+
+kable(diff, col.names=NULL) %>%
+  kable_styling(bootstrap_options = c("striped", "hover")) %>%
+  scroll_box(width = "100%")
+```
+
+<br>
+
+Again, as this is a quick proof-of-concept and hobbey project, I'm not as concerned with getting all the data that I can possibly can. Though I will try my hardest. :)
+
+So, I fed the links into the crawler shown in Part 1 and seemed to be successful in getting article data for 18 articles:
+
+```{python}
+additional = pd.read_csv('https://github.com/nchelaru/scrapy/raw/master/data/raw/medium_missing_2018.csv')
+
+print(additional.shape)
+```
+
+
+```{r eval=T, echo=F}
+additional <- py$additional
+
+kable(additional) %>%
+  kable_styling(bootstrap_options = c("striped", "hover")) %>%
+  scroll_box(width = "100%")
+```
+
+<br>
+
+Finally, I want to process the links in this dataset the same way as above and merge it into the full dataframe:
+
+```{python}
+## Clean up the dataframe
+additional['articleLink'] = additional['articleURL'].str.split('?').str[0]
+
+additional.drop('articleURL', axis=1, inplace=True)
+
+additional.drop('article', axis=1, inplace=True)
+
+## Merge the two dataframes
+final_df = pd.concat([full, additional], sort=True)
+```
+
+Good to check that there are no duplicate entries in the dataframe:
+
+```{python}
+## Check for duplicate entries
+final_df[final_df.duplicated()].shape
+```
+
+As a final check:
+
+```{python}
+## Check the dataframe size
+final_df.shape
+```
+
+Let's export the data to a CSV so we can pick up where we leave off next time.
+
+```{python}
+final_df.to_csv('./2018_final_data.csv', index=False)
+```
+
+
+Truthfully, scraping the story cards the second time didn't add much data to the final set. However, it was a good exercise in data manipulation and cleaning. This is done in the same manner for articles tagged with "Data science" published in all years between 2013 and 2019 May.
+
+ 
+
+
+
+<br>
+
+# Data cleaning
+
+```{python, eval=T, echo=F}
+import pandas as pd
+
+final_df = pd.read_csv('https://github.com/nchelaru/scrapy/raw/master/data/processed/2018_final_data.csv')
+
+df1 = final_df[final_df['article'].str.split().str.len() < 3].head(5)
+```
+
+Looking at the data, I quickly see that there are issues with the scraped article titles. With `Scrapy`, I could use either CSS or XPath selectors to grab the desired elements form the HTML, which require that the formating of each story card and article page to be quite consistent. Surprisingly, for a blogging platform, the formatting of the elements was quite diverse, particularly of the article title. This led me to list all possible CSS selectors (XPath selectors didn't do much better, so I omit those here) in an attempt to grab everything, but still I was getting some partial and blank titles.
+
+As an example, you can see that I was getting only the first part ("Alastair Majury") of several articles written by an author of the same name, even though there are more to the titles when I look at the article page directly.
+
+```{python, eval=F, echo=T}
+final_df[final_df['article'].str.split().str.len() < 3].head(5)
+```
+
+
+```{r, eval=T, echo=F}
+df1 <- py$df1
+
+kable(df1) %>%
+  kable_styling(bootstrap_options = c("striped", "hover")) %>%
+  scroll_box(width='100%')
+```
+
+<br>
+
+I'm sure there are ways that I could have handled this better, but I noticed that the last part of each article URL contains pretty much the article title. So, I thought an easy way of getting clean-ish (emphasis on the -ish) article titles would be to parse the URLs.
+
+So, I split each URL into parts by `/`, then further split the hyphen-separated portion and remove the alphanumeric artile ID at the very end. Finally, I put the cleaned strings into a new column, names.
+
+
+```{python, eval=F, echo=T}
+for index, row in final_df.iterrows():
+    for link in row['articleLink'].split('/'):
+        if '-' in link:
+            words = link.split('-')[:-1]
+            final_df.loc[index, 'names'] = ' '.join(words)
+```
+
+```{python, eval=F, echo=F}
+import pickle
+
+## Pickle results
+with open('./medium_ds_final_2018.pickle', 'wb') as f:
+    pickle.dump(final_df, f)
+```
+
+```{python, eval=T, echo=F}
+import pickle
+
+## Unpickle dictionary
+with open("./medium_ds_final_2018.pickle", 'rb') as f:
+    final_df = pickle.load(f)
+```
+
+
+Looking at the same truncated titles above, this approach seems to give me more info. Also, this seems to allow me to get some informative English words for article titles that are not in English.
+
+
+```{python, eval=F, echo=T}
+final_df[final_df['article'].str.split().str.len() < 3][['article', 'names', 'articleLink']].head(15)
+```
+
+```{python, eval=T, echo=F}
+df2 = final_df[final_df['article'].str.split().str.len() < 3][['article', 'names', 'articleLink']].head(15)
+```
+
+
+```{r, eval=T, echo=F}
+df2 <- py$df2
+
+kable(df2, row.names=FALSE) %>%
+  kable_styling(full_width=T, bootstrap_options = c("striped", "hover")) %>%
+  column_spec(2, width='10em') %>%
+    scroll_box(width='100%')
+```
+
+<br>
+
+It's not perfect, but let's give this a try for now.
+
+
+# Identify common bigrams in article titles
+As my first analysis, I really want to see if there are some patterns/trends in the article titles. Particularly, if popular topics have evolved over the year and just how clickbait-y the article titles have become. Here, I will use the [workflow](https://www.tidytextmining.com/ngrams.html#counting-and-correlating-pairs-of-words-with-the-widyr-package) presented in the excellent reference "Text Mining with R" for extracting word pairs (bigrams) from a corpus and examining their relationships.
+
+<br>
+
+## Get title bigram counts
+First, I will use the Python natural language processing packages `NLTK` and `spaCy` to tokenize each (parsed) article title, filter out non-English words, singularize nouns, generate bigrams and finally create a tally of the frequency of each bigram. Unlike many other examples I have seen, I opted to not remove stop words, as otherwise I would lose bigrams like 'how', 'to' and 'need', 'to' that are so prevalent in Medium articles and hallmarks for clickbait.
+
+
+```{python, echo=T, eval=F}
+## Import libraries
+import collections
+import nltk
+import inflection as inf
+import spacy
+from spacy_langdetect import LanguageDetector
+
+## Get bigrams
+nlp = spacy.load('en_core_web_sm')
+
+nlp.add_pipe(LanguageDetector(), name="language_detector", last=True)
+
+counts = collections.Counter()
+
+token_text = []
+
+for sent in final_df["names"]:
+    doc = nlp(sent)
+    if doc._.language['language'] == 'en':
+        word_list = []
+        for token in doc:
+            if token.is_alpha:
+                word_list.append(inf.singularize(token.text.lower()))
+          counts.update(nltk.bigrams(word_list))
+    
+## Get dataframe of bigram counts
+bigram_counts = pd.DataFrame.from_dict(counts, orient='index').reset_index()
+
+bigram_counts.columns = ["Bigrams", 'Count']
+
+bigram_counts[['Term1', 'Term2']] = pd.DataFrame(bigram_counts['Bigrams'].tolist(), index=bigram_counts.index)  
+
+bigram_counts = bigram_counts[['Term1', 'Term2', 'Count']]
+
+bigram_counts.columns = ['word1', 'word2', 'n']
+
+bigram_counts.sort_values(by='n', ascending=False).head()
+```
+
+```{r, eval=T, echo=F}
+df <- read.csv('https://github.com/nchelaru/scrapy/raw/master/data/processed/2018_title_bigram_counts.csv') %>% arrange(desc(n))
+
+kable(head(df, 10), row.names=FALSE) %>%
+  kable_styling(full_width=T, bootstrap_options = c("striped", "hover")) %>%
+  column_spec(2, width='10em') %>%
+    scroll_box(width='100%')
+```
+
+Unsurprisingly, "data science", "machine learning" and "how to" are the most frequently appearing bigrams in article titles. Looks like we are on the right track. 
+
+
+<br>
+
+## Visualize bigram relationships
+
+Finally, I will use the R packages `igraph` and `ggraph` to visualize the relationship between the top 60 (otherwise the figure is too crowded) most frequently appearing bigrams in titles of Medium articles tagged with "Data science" published in 2018.
+
+Each word appears as a node and the directionality of the arrow connecting them to each other indicates the order in which they appears in a bigram. Finally, the darkness of the arrow connecting each pair of words is proportional to the frequency of appearance for that bigram. For example, we see much darker arrows connecting 'data', 'science' or 'machine', 'learning'.
+
+```{r, eval=T, echo=F}
+## Import data
+bigram_counts <- read.csv("https://github.com/nchelaru/scrapy/raw/master/data/processed/2018_title_bigram_counts.csv")
+```
+
+```{r fig.align='center', message=FALSE, warning=FALSE, fig.out = '100%', fig.height=8}
+## Import libraries
+library(igraph)
+library(ggraph)
+
+## Set seed for ggraph package
+set.seed(2016)
+
+## Get top 60 most frequent bigrams
+bigram_counts <- head(bigram_counts[order(-bigram_counts$n),], 60)
+
+## Create graph
+bigram_graph <- bigram_counts %>%
+  graph_from_data_frame()
+
+a <- grid::arrow(type = "closed")
+        
+ggraph(bigram_graph, layout = "fr") +
+  geom_edge_link(aes(edge_alpha = n), show.legend = FALSE,
+                 arrow = a, end_cap = circle(.07, 'inches')) +
+  geom_node_point(color = "lightblue", size = 5) +
+  geom_node_text(aes(label = name), vjust = 1, hjust = 1, repel = TRUE) +
+  theme_void()
+```
+
+Yep, we are seeing the "need to", "how to", "the best" that just sends a stab of FOMO through your heart. 
+
+Anyways! Please head over to this nifty Shiny dashboard to explore the most frequently appearing bigrams in the titles of Medium data science articles published between 2013 and 2019 May.
+
+<br>
+
+# Session info
+
+```{r}
+sessionInfo()
+```

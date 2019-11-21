@@ -1,0 +1,140 @@
+---
+title: "What We Talk About When We Talk About Data Science on Medium.com"
+output: 
+  flexdashboard::flex_dashboard:
+    source_code: embed
+    theme: journal
+runtime: shiny
+
+---
+
+```{r setup, include=FALSE}
+## Import libraries
+library(flexdashboard)
+library(shinyWidgets)
+library(igraph)
+library(ggraph)
+
+## Set seed for ggraph package
+set.seed(2016)
+```
+
+
+ 
+
+Explore top article title keywords
+=========================================
+
+
+Column {.sidebar}
+-----------------------------------------------------------------------
+
+ 
+```{r}
+sliderInput("year", HTML("<b>Select the year of publication:</b>"), 
+            min = 2013, max = 2019, value = 2013,
+            sep="", animate=animationOptions(interval = 4000, loop = FALSE, playButton = NULL,
+  pauseButton = NULL))
+```
+
+<br><hr><br>
+
+
+```{r}
+knobInput(
+  "knob",
+  HTML("<b>Select the top X most frequently appearing bigrams:</b>"),
+  40,
+  min = 30, max = 70,
+  step = 5, angleOffset = 0, angleArc = 360,
+  cursor = TRUE,
+  thickness = NULL,
+  lineCap = "round",
+  displayInput = TRUE,
+  displayPrevious = FALSE,
+  rotation = "clockwise",
+  fgColor = NULL,
+  inputColor = NULL,
+  bgColor = NULL,
+  readOnly = FALSE,
+  skin = NULL,
+  width = NULL,
+  height = NULL,
+  immediate = FALSE
+)
+```
+
+Column {data-width=350 .tabset .tabset-fade}
+-----------------------------------------------------------------------
+
+### Introduction
+
+In this dashboard, you can explore the most frequently appearing bigrams in the titles of Medium.com articles tagged with "Data science" published between 2013 and late November of 2019.
+
+Please see [here](http://rpubs.com/nchelaru/medium_ds_nlp) for a detailed run-down of the workflow for web scraping and data preparation.
+
+
+### General workflow
+
+Here, I used the [workflow](https://www.tidytextmining.com/ngrams.html#counting-and-correlating-pairs-of-words-with-the-widyr-package) presented in the excellent reference *[Text Mining with R](https://www.tidytextmining.com/)* for visualizing bigram relationships for a body of text.
+
+```r
+## Import libraries
+library(igraph)
+library(ggraph)
+
+## Set seed for ggraph package
+set.seed(2016)
+
+## Create graph
+bigram_graph <- bigram_counts %>% 
+                    graph_from_data_frame()
+
+a <- grid::arrow(type = "closed")
+
+ggraph(bigram_graph, layout = "fr") + 
+    geom_edge_link(aes(edge_alpha = n), show.legend = FALSE, 
+                   arrow = a, end_cap = circle(0.07, "inches")) + 
+    geom_node_point(color = "lightblue", size = 5) + 
+    geom_node_text(aes(label = name), vjust = 1, 
+                   hjust = 1, repel = TRUE) + 
+    theme_void()
+```
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Visualize network of top occurring bigrams
+ 
+```{r}
+renderPlot({
+  link <- sprintf("https://github.com/nchelaru/scrapy/raw/master/data/processed/%s_title_bigram_counts.csv", input$year)
+
+  ## Import data
+  bigram_counts <- read.csv(link)
+  
+  bigram_counts <- head(bigram_counts[order(-bigram_counts$n),], input$knob)
+  
+  ## Create graph
+  bigram_graph <- bigram_counts %>%
+    graph_from_data_frame()
+  
+  a <- grid::arrow(type = "closed")
+          
+  ggraph(bigram_graph, layout = "fr") +
+    geom_edge_link(aes(edge_alpha = n), show.legend = FALSE,
+                   arrow = a, end_cap = circle(.05, 'inches')) +
+    geom_node_point(color = "lightblue", size = 5) +
+    geom_node_text(aes(label = name), vjust = 1, hjust = 1, repel = TRUE, size=8) +
+    theme_void() 
+})
+
+```
+
+
+Session info
+=========================================
+```{r}
+sessionInfo()
+```
+

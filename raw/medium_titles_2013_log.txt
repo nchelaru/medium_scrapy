@@ -1,0 +1,656 @@
+INFO: Scrapy 1.6.0 started (bot: scrapybot)
+INFO: Versions: lxml 4.3.3.0, libxml2 2.9.9, cssselect 1.0.3, parsel 1.5.1, w3lib 1.20.0, Twisted 19.2.0, Python 3.7.2 (v3.7.2:9a3ffc0492, Dec 24 2018, 02:44:43) - [Clang 6.0 (clang-600.0.57)], pyOpenSSL 18.0.0 (OpenSSL 1.1.0j  20 Nov 2018), cryptography 2.4.2, Platform Darwin-18.2.0-x86_64-i386-64bit
+INFO: Overridden settings: {'AUTOTHROTTLE_ENABLED': True, 'AUTOTHROTTLE_MAX_DELAY': 3, 'AUTOTHROTTLE_START_DELAY': 1, 'FEED_FORMAT': 'csv', 'FEED_URI': '/Users/nancy/PycharmProjects/medium-ds-articles/data/raw/medium_titles_2013.csv', 'USER_AGENT': 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1)'}
+INFO: Telnet Password: 93b51aa149f55692
+INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.feedexport.FeedExporter',
+ 'scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.throttle.AutoThrottle']
+INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO: Enabled item pipelines:
+[]
+INFO: Spider opened
+INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+INFO: Telnet console listening on 127.0.0.1:6025
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/01> from <GET https://medium.com/tag/data-science/archive/2013/01/01>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/01> from <GET https://medium.com/tag/data-science/archive/2013/01/02>
+DEBUG: Filtered duplicate request: <GET https://medium.com/tag/data-science/archive/2013/01> - no more duplicates will be shown (see DUPEFILTER_DEBUG to show all duplicates)
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/01> from <GET https://medium.com/tag/data-science/archive/2013/01/03>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/01> from <GET https://medium.com/tag/data-science/archive/2013/01/04>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/01> from <GET https://medium.com/tag/data-science/archive/2013/01/05>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/01> from <GET https://medium.com/tag/data-science/archive/2013/01/06>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/01> from <GET https://medium.com/tag/data-science/archive/2013/01/07>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/01> from <GET https://medium.com/tag/data-science/archive/2013/01/08>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/01> from <GET https://medium.com/tag/data-science/archive/2013/01/09>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/01> from <GET https://medium.com/tag/data-science/archive/2013/01/12>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/01> from <GET https://medium.com/tag/data-science/archive/2013/01/13>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/01> from <GET https://medium.com/tag/data-science/archive/2013/01/14>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/01> from <GET https://medium.com/tag/data-science/archive/2013/01/15>
+INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/01> from <GET https://medium.com/tag/data-science/archive/2013/01/16>
+DEBUG: Crawled (200) <GET https://medium.com/tag/data-science/archive/2013/01> (referer: None)
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/01> from <GET https://medium.com/tag/data-science/archive/2013/01/19>
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/01>
+{'article': ['Hadoop Platform as a Service in the\xa0Cloud'], 'articleURL': 'https://medium.com/netflix-techblog/hadoop-platform-as-a-service-in-the-cloud-c23f35f965e7?source=tag_archive---------0---------------------'}
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/01>
+{'article': [], 'articleURL': 'https://medium.com/@robbieallen/dashboards-aren-t-the-answer-f591d5c5e3dc?source=tag_archive---------1---------------------'}
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/01> from <GET https://medium.com/tag/data-science/archive/2013/01/17>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/01> from <GET https://medium.com/tag/data-science/archive/2013/01/11>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/01> from <GET https://medium.com/tag/data-science/archive/2013/01/20>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/01> from <GET https://medium.com/tag/data-science/archive/2013/01/21>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/01> from <GET https://medium.com/tag/data-science/archive/2013/01/18>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/01> from <GET https://medium.com/tag/data-science/archive/2013/01/22>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/01> from <GET https://medium.com/tag/data-science/archive/2013/01/23>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/01> from <GET https://medium.com/tag/data-science/archive/2013/01/24>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/01> from <GET https://medium.com/tag/data-science/archive/2013/01/10>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/01> from <GET https://medium.com/tag/data-science/archive/2013/01/25>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/01> from <GET https://medium.com/tag/data-science/archive/2013/01/26>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/01> from <GET https://medium.com/tag/data-science/archive/2013/01/27>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/01> from <GET https://medium.com/tag/data-science/archive/2013/01/28>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/01> from <GET https://medium.com/tag/data-science/archive/2013/01/29>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/01> from <GET https://medium.com/tag/data-science/archive/2013/01/30>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/01> from <GET https://medium.com/tag/data-science/archive/2013/01/31>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/02> from <GET https://medium.com/tag/data-science/archive/2013/02/01>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/02> from <GET https://medium.com/tag/data-science/archive/2013/02/02>
+INFO: Crawled 1 pages (at 1 pages/min), scraped 2 items (at 2 items/min)
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/02> from <GET https://medium.com/tag/data-science/archive/2013/02/04>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/02> from <GET https://medium.com/tag/data-science/archive/2013/02/03>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/02> from <GET https://medium.com/tag/data-science/archive/2013/02/05>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/02> from <GET https://medium.com/tag/data-science/archive/2013/02/06>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/02> from <GET https://medium.com/tag/data-science/archive/2013/02/07>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/02> from <GET https://medium.com/tag/data-science/archive/2013/02/11>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/02> from <GET https://medium.com/tag/data-science/archive/2013/02/12>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/02> from <GET https://medium.com/tag/data-science/archive/2013/02/15>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/02> from <GET https://medium.com/tag/data-science/archive/2013/02/14>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/02> from <GET https://medium.com/tag/data-science/archive/2013/02/16>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/02> from <GET https://medium.com/tag/data-science/archive/2013/02/08>
+DEBUG: Crawled (200) <GET https://medium.com/tag/data-science/archive/2013/02> (referer: None)
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/02>
+{'article': ['What the $*&@#^* is Applied Big\xa0Data?'], 'articleURL': 'https://medium.com/@gregsands/what-the-is-applied-big-data-bd746082305?source=tag_archive---------0---------------------'}
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/02> from <GET https://medium.com/tag/data-science/archive/2013/02/09>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/02> from <GET https://medium.com/tag/data-science/archive/2013/02/18>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/02> from <GET https://medium.com/tag/data-science/archive/2013/02/19>
+INFO: Crawled 2 pages (at 1 pages/min), scraped 3 items (at 1 items/min)
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/02> from <GET https://medium.com/tag/data-science/archive/2013/02/13>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/02> from <GET https://medium.com/tag/data-science/archive/2013/02/21>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/02> from <GET https://medium.com/tag/data-science/archive/2013/02/23>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/02> from <GET https://medium.com/tag/data-science/archive/2013/02/20>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/02> from <GET https://medium.com/tag/data-science/archive/2013/02/24>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/02> from <GET https://medium.com/tag/data-science/archive/2013/02/22>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/02> from <GET https://medium.com/tag/data-science/archive/2013/02/10>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/02> from <GET https://medium.com/tag/data-science/archive/2013/02/25>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/02> from <GET https://medium.com/tag/data-science/archive/2013/02/27>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/02> from <GET https://medium.com/tag/data-science/archive/2013/02/29>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/03> from <GET https://medium.com/tag/data-science/archive/2013/03/01>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/02> from <GET https://medium.com/tag/data-science/archive/2013/02/30>
+DEBUG: Retrying <GET https://medium.com/tag/data-science/archive/2013/02/17> (failed 1 times): 504 Gateway Time-out
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/02> from <GET https://medium.com/tag/data-science/archive/2013/02/31>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/03> from <GET https://medium.com/tag/data-science/archive/2013/03/03>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/03> from <GET https://medium.com/tag/data-science/archive/2013/03/02>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/02> from <GET https://medium.com/tag/data-science/archive/2013/02/26>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/03> from <GET https://medium.com/tag/data-science/archive/2013/03/04>
+INFO: Crawled 2 pages (at 0 pages/min), scraped 3 items (at 0 items/min)
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/03> from <GET https://medium.com/tag/data-science/archive/2013/03/06>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/02> from <GET https://medium.com/tag/data-science/archive/2013/02/28>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/03> from <GET https://medium.com/tag/data-science/archive/2013/03/07>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/03> from <GET https://medium.com/tag/data-science/archive/2013/03/05>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/03> from <GET https://medium.com/tag/data-science/archive/2013/03/10>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/03> from <GET https://medium.com/tag/data-science/archive/2013/03/09>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/03> from <GET https://medium.com/tag/data-science/archive/2013/03/08>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/03> from <GET https://medium.com/tag/data-science/archive/2013/03/11>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/02> from <GET https://medium.com/tag/data-science/archive/2013/02/17>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/03> from <GET https://medium.com/tag/data-science/archive/2013/03/12>
+DEBUG: Crawled (200) <GET https://medium.com/tag/data-science/archive/2013/03> (referer: None)
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/03>
+{'article': ['The Rise of Column-based data stores Part\xa01', 'Column-based data stores are becoming in an important trend\xa0today'], 'articleURL': 'https://medium.com/a-data-driven-guy/the-rise-of-column-based-data-stores-part-1-cea72e7a8ed5?source=tag_archive---------0---------------------'}
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/03>
+{'article': ['Data Scientists: the world need\xa0us'], 'articleURL': 'https://medium.com/a-data-driven-guy/data-scientists-the-world-need-us-f31dec7ef2d8?source=tag_archive---------1---------------------'}
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/03>
+{'article': ['Data Science paradigms'], 'articleURL': 'https://medium.com/a-data-driven-guy/data-science-paradigms-4183a3e5abb5?source=tag_archive---------2---------------------'}
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/03> from <GET https://medium.com/tag/data-science/archive/2013/03/14>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/03> from <GET https://medium.com/tag/data-science/archive/2013/03/17>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/03> from <GET https://medium.com/tag/data-science/archive/2013/03/15>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/03> from <GET https://medium.com/tag/data-science/archive/2013/03/13>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/03> from <GET https://medium.com/tag/data-science/archive/2013/03/16>
+INFO: Crawled 3 pages (at 1 pages/min), scraped 6 items (at 3 items/min)
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/03> from <GET https://medium.com/tag/data-science/archive/2013/03/22>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/03> from <GET https://medium.com/tag/data-science/archive/2013/03/20>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/03> from <GET https://medium.com/tag/data-science/archive/2013/03/18>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/03> from <GET https://medium.com/tag/data-science/archive/2013/03/21>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/03> from <GET https://medium.com/tag/data-science/archive/2013/03/19>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/03> from <GET https://medium.com/tag/data-science/archive/2013/03/24>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/03> from <GET https://medium.com/tag/data-science/archive/2013/03/25>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/03> from <GET https://medium.com/tag/data-science/archive/2013/03/26>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/03> from <GET https://medium.com/tag/data-science/archive/2013/03/23>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/03> from <GET https://medium.com/tag/data-science/archive/2013/03/27>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/03> from <GET https://medium.com/tag/data-science/archive/2013/03/31>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/03> from <GET https://medium.com/tag/data-science/archive/2013/03/30>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/04> from <GET https://medium.com/tag/data-science/archive/2013/04/01>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/04> from <GET https://medium.com/tag/data-science/archive/2013/04/02>
+DEBUG: Crawled (200) <GET https://medium.com/tag/data-science/archive/2013/02> (referer: None)
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/02>
+{'article': ['What the $*&@#^* is Applied Big\xa0Data?'], 'articleURL': 'https://medium.com/@gregsands/what-the-is-applied-big-data-bd746082305?source=tag_archive---------0---------------------'}
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/04> from <GET https://medium.com/tag/data-science/archive/2013/04/03>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/04> from <GET https://medium.com/tag/data-science/archive/2013/04/04>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/03> from <GET https://medium.com/tag/data-science/archive/2013/03/28>
+INFO: Crawled 4 pages (at 1 pages/min), scraped 7 items (at 1 items/min)
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/04> from <GET https://medium.com/tag/data-science/archive/2013/04/06>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/04> from <GET https://medium.com/tag/data-science/archive/2013/04/05>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/03> from <GET https://medium.com/tag/data-science/archive/2013/03/29>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/04> from <GET https://medium.com/tag/data-science/archive/2013/04/08>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/04> from <GET https://medium.com/tag/data-science/archive/2013/04/09>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/04> from <GET https://medium.com/tag/data-science/archive/2013/04/10>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/04> from <GET https://medium.com/tag/data-science/archive/2013/04/13>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/04> from <GET https://medium.com/tag/data-science/archive/2013/04/11>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/04> from <GET https://medium.com/tag/data-science/archive/2013/04/12>
+DEBUG: Crawled (200) <GET https://medium.com/tag/data-science/archive/2013/04> (referer: None)
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/04>
+{'article': ['Is your A/B testing effort just chasing statistical ghosts?'], 'articleURL': 'https://booking.ai/is-your-a-b-testing-effort-just-chasing-statistical-ghosts-eb85602bef7e?source=tag_archive---------0---------------------'}
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/04>
+{'article': ['Data-Driven Games Development Rockstars'], 'articleURL': 'https://medium.com/a-data-driven-guy/data-driven-games-development-rockstars-9ca18dc8e75d?source=tag_archive---------1---------------------'}
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/04>
+{'article': ['Small Thoughts | Blogging, Freedom and\xa0Privacy'], 'articleURL': 'https://inadequate.net/small-thoughts-blogging-freedom-and-privacy-117aeb396a0f?source=tag_archive---------2---------------------'}
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/04> from <GET https://medium.com/tag/data-science/archive/2013/04/16>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/04> from <GET https://medium.com/tag/data-science/archive/2013/04/14>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/04> from <GET https://medium.com/tag/data-science/archive/2013/04/07>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/04> from <GET https://medium.com/tag/data-science/archive/2013/04/15>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/04> from <GET https://medium.com/tag/data-science/archive/2013/04/19>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/04> from <GET https://medium.com/tag/data-science/archive/2013/04/20>
+INFO: Crawled 5 pages (at 1 pages/min), scraped 10 items (at 3 items/min)
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/04> from <GET https://medium.com/tag/data-science/archive/2013/04/22>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/04> from <GET https://medium.com/tag/data-science/archive/2013/04/18>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/04> from <GET https://medium.com/tag/data-science/archive/2013/04/23>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/04> from <GET https://medium.com/tag/data-science/archive/2013/04/21>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/04> from <GET https://medium.com/tag/data-science/archive/2013/04/17>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/04> from <GET https://medium.com/tag/data-science/archive/2013/04/25>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/04> from <GET https://medium.com/tag/data-science/archive/2013/04/27>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/04> from <GET https://medium.com/tag/data-science/archive/2013/04/28>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/04> from <GET https://medium.com/tag/data-science/archive/2013/04/29>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/04> from <GET https://medium.com/tag/data-science/archive/2013/04/24>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/05> from <GET https://medium.com/tag/data-science/archive/2013/05/01>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/04> from <GET https://medium.com/tag/data-science/archive/2013/04/31>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/05> from <GET https://medium.com/tag/data-science/archive/2013/05/02>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/04> from <GET https://medium.com/tag/data-science/archive/2013/04/30>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/05> from <GET https://medium.com/tag/data-science/archive/2013/05/04>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/04> from <GET https://medium.com/tag/data-science/archive/2013/04/26>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/05> from <GET https://medium.com/tag/data-science/archive/2013/05/07>
+INFO: Crawled 5 pages (at 0 pages/min), scraped 10 items (at 0 items/min)
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/05> from <GET https://medium.com/tag/data-science/archive/2013/05/03>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/05> from <GET https://medium.com/tag/data-science/archive/2013/05/08>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/05> from <GET https://medium.com/tag/data-science/archive/2013/05/06>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/05> from <GET https://medium.com/tag/data-science/archive/2013/05/09>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/05> from <GET https://medium.com/tag/data-science/archive/2013/05/10>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/05> from <GET https://medium.com/tag/data-science/archive/2013/05/11>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/05> from <GET https://medium.com/tag/data-science/archive/2013/05/13>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/05> from <GET https://medium.com/tag/data-science/archive/2013/05/12>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/05> from <GET https://medium.com/tag/data-science/archive/2013/05/15>
+DEBUG: Crawled (200) <GET https://medium.com/tag/data-science/archive/2013/05> (referer: None)
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/05>
+{'article': ['Location Relevance at\xa0Airbnb'], 'articleURL': 'https://medium.com/airbnb-engineering/location-relevance-at-airbnb-12c004247b07?source=tag_archive---------0---------------------'}
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/05>
+{'article': ['Will we ever get past classical physics?'], 'articleURL': 'https://medium.com/@ellisonbg/will-we-ever-get-past-classical-physics-ff02c972fd12?source=tag_archive---------1---------------------'}
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/05>
+{'article': ['On Persuadable Customers & Predictive Analytics for\xa0Whatever'], 'articleURL': 'https://medium.com/@happybandits/eric-siegel-on-persuadable-customers-chicks-8ce81bb9735e?source=tag_archive---------2---------------------'}
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/05>
+{'article': ['Questions CIOs Often Ask On Master Data Management'], 'articleURL': 'https://medium.com/@svg.world/questions-cios-often-ask-on-master-data-management-1474d5b76c26?source=tag_archive---------3---------------------'}
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/05> from <GET https://medium.com/tag/data-science/archive/2013/05/16>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/05> from <GET https://medium.com/tag/data-science/archive/2013/05/17>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/05> from <GET https://medium.com/tag/data-science/archive/2013/05/18>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/05> from <GET https://medium.com/tag/data-science/archive/2013/05/19>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/05> from <GET https://medium.com/tag/data-science/archive/2013/05/21>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/05> from <GET https://medium.com/tag/data-science/archive/2013/05/14>
+INFO: Crawled 6 pages (at 1 pages/min), scraped 14 items (at 4 items/min)
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/05> from <GET https://medium.com/tag/data-science/archive/2013/05/22>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/05> from <GET https://medium.com/tag/data-science/archive/2013/05/23>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/05> from <GET https://medium.com/tag/data-science/archive/2013/05/24>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/05> from <GET https://medium.com/tag/data-science/archive/2013/05/25>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/05> from <GET https://medium.com/tag/data-science/archive/2013/05/26>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/05> from <GET https://medium.com/tag/data-science/archive/2013/05/28>
+DEBUG: Retrying <GET https://medium.com/tag/data-science/archive/2013/05/05> (failed 1 times): 504 Gateway Time-out
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/05> from <GET https://medium.com/tag/data-science/archive/2013/05/20>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/05> from <GET https://medium.com/tag/data-science/archive/2013/05/27>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/05> from <GET https://medium.com/tag/data-science/archive/2013/05/29>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/05> from <GET https://medium.com/tag/data-science/archive/2013/05/30>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/05> from <GET https://medium.com/tag/data-science/archive/2013/05/31>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/06> from <GET https://medium.com/tag/data-science/archive/2013/06/02>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/06> from <GET https://medium.com/tag/data-science/archive/2013/06/03>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/06> from <GET https://medium.com/tag/data-science/archive/2013/06/06>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/06> from <GET https://medium.com/tag/data-science/archive/2013/06/04>
+INFO: Crawled 6 pages (at 0 pages/min), scraped 14 items (at 0 items/min)
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/06> from <GET https://medium.com/tag/data-science/archive/2013/06/09>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/06> from <GET https://medium.com/tag/data-science/archive/2013/06/08>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/06> from <GET https://medium.com/tag/data-science/archive/2013/06/01>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/06> from <GET https://medium.com/tag/data-science/archive/2013/06/10>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/06> from <GET https://medium.com/tag/data-science/archive/2013/06/11>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/06> from <GET https://medium.com/tag/data-science/archive/2013/06/07>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/06> from <GET https://medium.com/tag/data-science/archive/2013/06/12>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/05> from <GET https://medium.com/tag/data-science/archive/2013/05/05>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/06> from <GET https://medium.com/tag/data-science/archive/2013/06/15>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/06> from <GET https://medium.com/tag/data-science/archive/2013/06/14>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/06> from <GET https://medium.com/tag/data-science/archive/2013/06/16>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/06> from <GET https://medium.com/tag/data-science/archive/2013/06/17>
+DEBUG: Crawled (200) <GET https://medium.com/tag/data-science/archive/2013/06> (referer: None)
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/06>
+{'article': ['Analytics For Hackers: How To Think About Event\xa0Data'], 'articleURL': 'https://blog.keen.io/analytics-for-hackers-how-to-think-about-event-data-cabeefe1f3d9?source=tag_archive---------0---------------------'}
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/06>
+{'article': ['Introducing Lipstick on A(pache)\xa0Pig'], 'articleURL': 'https://medium.com/netflix-techblog/introducing-lipstick-on-a-pache-pig-f17e0a4e0c89?source=tag_archive---------1---------------------'}
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/06>
+{'article': ['Event Data vs Entity Data\u200a—\u200aHow to store user properties in Keen\xa0IO'], 'articleURL': 'https://blog.keen.io/event-data-vs-entity-data-how-to-store-user-properties-in-keen-io-dd902073eb08?source=tag_archive---------2---------------------'}
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/06>
+{'article': ['I See\xa0Graphs'], 'articleURL': 'https://medium.com/@vishal_s/i-see-graphs-66a0a55088b1?source=tag_archive---------3---------------------'}
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/06>
+{'article': ['Welcome to the Opex\xa0Blog'], 'articleURL': 'https://medium.com/opex-analytics/welcome-to-the-opex-blog-d9fd5731cc4?source=tag_archive---------4---------------------'}
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/06>
+{'article': ['Weekend Reading\u200a—\u200a22–23 JUNE\xa02013'], 'articleURL': 'https://inadequate.net/weekend-reading-22-23-june-2013-c426b5424339?source=tag_archive---------5---------------------'}
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/06> from <GET https://medium.com/tag/data-science/archive/2013/06/05>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/06> from <GET https://medium.com/tag/data-science/archive/2013/06/18>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/06> from <GET https://medium.com/tag/data-science/archive/2013/06/13>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/06> from <GET https://medium.com/tag/data-science/archive/2013/06/21>
+INFO: Crawled 7 pages (at 1 pages/min), scraped 20 items (at 6 items/min)
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/06> from <GET https://medium.com/tag/data-science/archive/2013/06/19>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/06> from <GET https://medium.com/tag/data-science/archive/2013/06/20>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/06> from <GET https://medium.com/tag/data-science/archive/2013/06/22>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/06> from <GET https://medium.com/tag/data-science/archive/2013/06/23>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/06> from <GET https://medium.com/tag/data-science/archive/2013/06/25>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/06> from <GET https://medium.com/tag/data-science/archive/2013/06/24>
+DEBUG: Crawled (200) <GET https://medium.com/tag/data-science/archive/2013/05> (referer: None)
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/05>
+{'article': ['Location Relevance at\xa0Airbnb'], 'articleURL': 'https://medium.com/airbnb-engineering/location-relevance-at-airbnb-12c004247b07?source=tag_archive---------0---------------------'}
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/05>
+{'article': ['Will we ever get past classical physics?'], 'articleURL': 'https://medium.com/@ellisonbg/will-we-ever-get-past-classical-physics-ff02c972fd12?source=tag_archive---------1---------------------'}
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/05>
+{'article': ['On Persuadable Customers & Predictive Analytics for\xa0Whatever'], 'articleURL': 'https://medium.com/@happybandits/eric-siegel-on-persuadable-customers-chicks-8ce81bb9735e?source=tag_archive---------2---------------------'}
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/05>
+{'article': ['Questions CIOs Often Ask On Master Data Management'], 'articleURL': 'https://medium.com/@svg.world/questions-cios-often-ask-on-master-data-management-1474d5b76c26?source=tag_archive---------3---------------------'}
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/06> from <GET https://medium.com/tag/data-science/archive/2013/06/26>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/06> from <GET https://medium.com/tag/data-science/archive/2013/06/27>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/06> from <GET https://medium.com/tag/data-science/archive/2013/06/30>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/06> from <GET https://medium.com/tag/data-science/archive/2013/06/28>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/06> from <GET https://medium.com/tag/data-science/archive/2013/06/31>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/07> from <GET https://medium.com/tag/data-science/archive/2013/07/03>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/07> from <GET https://medium.com/tag/data-science/archive/2013/07/04>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/07> from <GET https://medium.com/tag/data-science/archive/2013/07/02>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/06> from <GET https://medium.com/tag/data-science/archive/2013/06/29>
+INFO: Crawled 8 pages (at 1 pages/min), scraped 24 items (at 4 items/min)
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/07> from <GET https://medium.com/tag/data-science/archive/2013/07/06>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/07> from <GET https://medium.com/tag/data-science/archive/2013/07/05>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/07> from <GET https://medium.com/tag/data-science/archive/2013/07/01>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/07> from <GET https://medium.com/tag/data-science/archive/2013/07/10>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/07> from <GET https://medium.com/tag/data-science/archive/2013/07/11>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/07> from <GET https://medium.com/tag/data-science/archive/2013/07/09>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/07> from <GET https://medium.com/tag/data-science/archive/2013/07/07>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/07> from <GET https://medium.com/tag/data-science/archive/2013/07/08>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/07> from <GET https://medium.com/tag/data-science/archive/2013/07/13>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/07> from <GET https://medium.com/tag/data-science/archive/2013/07/14>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/07> from <GET https://medium.com/tag/data-science/archive/2013/07/12>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/07> from <GET https://medium.com/tag/data-science/archive/2013/07/17>
+DEBUG: Crawled (200) <GET https://medium.com/tag/data-science/archive/2013/07> (referer: None)
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/07>
+{'article': ['From PhD to Data Scientist:  5 Tips for Making the Transition'], 'articleURL': 'https://blog.insightdatascience.com/from-phd-to-data-scientist-17209c66a9d9?source=tag_archive---------0---------------------'}
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/07>
+{'article': ['Welcome to the Insight\xa0Blog!'], 'articleURL': 'https://blog.insightdatascience.com/welcome-to-the-insight-blog-2-7581752e9fe1?source=tag_archive---------1---------------------'}
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/07>
+{'article': ['What is Analytics? Part II: A Longer Definition with Three Main Categories'], 'articleURL': 'https://medium.com/opex-analytics/what-is-analytics-part-2-a-longer-definition-with-3-main-categories-7ebacd10f71a?source=tag_archive---------2---------------------'}
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/07>
+{'article': ['Improving Your Transportation Analytics with Excel\xa0Add-On'], 'articleURL': 'https://medium.com/opex-analytics/improving-your-transportation-analytics-with-excel-add-on-e767b032952e?source=tag_archive---------3---------------------'}
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/07>
+{'article': ['What is Analytics? Part I: Four Short\xa0Answers'], 'articleURL': 'https://medium.com/opex-analytics/what-is-analytics-part-1-4-short-answers-4f6095f919c5?source=tag_archive---------4---------------------'}
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/07> from <GET https://medium.com/tag/data-science/archive/2013/07/16>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/07> from <GET https://medium.com/tag/data-science/archive/2013/07/18>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/07> from <GET https://medium.com/tag/data-science/archive/2013/07/15>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/07> from <GET https://medium.com/tag/data-science/archive/2013/07/20>
+INFO: Crawled 9 pages (at 1 pages/min), scraped 29 items (at 5 items/min)
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/07> from <GET https://medium.com/tag/data-science/archive/2013/07/22>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/07> from <GET https://medium.com/tag/data-science/archive/2013/07/19>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/07> from <GET https://medium.com/tag/data-science/archive/2013/07/23>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/07> from <GET https://medium.com/tag/data-science/archive/2013/07/25>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/07> from <GET https://medium.com/tag/data-science/archive/2013/07/26>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/07> from <GET https://medium.com/tag/data-science/archive/2013/07/27>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/07> from <GET https://medium.com/tag/data-science/archive/2013/07/29>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/07> from <GET https://medium.com/tag/data-science/archive/2013/07/21>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/07> from <GET https://medium.com/tag/data-science/archive/2013/07/31>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/07> from <GET https://medium.com/tag/data-science/archive/2013/07/28>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/07> from <GET https://medium.com/tag/data-science/archive/2013/07/24>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/08> from <GET https://medium.com/tag/data-science/archive/2013/08/01>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/08> from <GET https://medium.com/tag/data-science/archive/2013/08/04>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/08> from <GET https://medium.com/tag/data-science/archive/2013/08/02>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/08> from <GET https://medium.com/tag/data-science/archive/2013/08/03>
+INFO: Crawled 9 pages (at 0 pages/min), scraped 29 items (at 0 items/min)
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/07> from <GET https://medium.com/tag/data-science/archive/2013/07/30>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/08> from <GET https://medium.com/tag/data-science/archive/2013/08/08>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/08> from <GET https://medium.com/tag/data-science/archive/2013/08/07>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/08> from <GET https://medium.com/tag/data-science/archive/2013/08/06>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/08> from <GET https://medium.com/tag/data-science/archive/2013/08/10>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/08> from <GET https://medium.com/tag/data-science/archive/2013/08/09>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/08> from <GET https://medium.com/tag/data-science/archive/2013/08/11>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/08> from <GET https://medium.com/tag/data-science/archive/2013/08/12>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/08> from <GET https://medium.com/tag/data-science/archive/2013/08/05>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/08> from <GET https://medium.com/tag/data-science/archive/2013/08/14>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/08> from <GET https://medium.com/tag/data-science/archive/2013/08/13>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/08> from <GET https://medium.com/tag/data-science/archive/2013/08/16>
+DEBUG: Crawled (200) <GET https://medium.com/tag/data-science/archive/2013/08> (referer: None)
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/08>
+{'article': [], 'articleURL': 'https://medium.com/product-man/stepping-into-thin-air-5429f6beec4e?source=tag_archive---------0---------------------'}
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/08>
+{'article': ['A Saturday on Strava,\xa0Mapped'], 'articleURL': 'https://medium.com/strava-engineering/a-saturday-on-strava-mapped-ab0187dc307f?source=tag_archive---------1---------------------'}
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/08>
+{'article': ['Fellow Spotlight: Cinna\xa0Wu'], 'articleURL': 'https://blog.insightdatascience.com/fellow-spotlight-cinna-wu-8783fca56c72?source=tag_archive---------2---------------------'}
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/08>
+{'article': ['THE SEXIEST JOB IN THE\xa0WORLD'], 'articleURL': 'https://medium.com/smartism/the-sexiest-job-in-the-world-da325a795ce1?source=tag_archive---------3---------------------'}
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/08>
+{'article': ['Maps Are More Than Eye\xa0Candy'], 'articleURL': 'https://medium.com/opex-analytics/maps-are-more-than-eye-candy-f2c062a8a1dd?source=tag_archive---------4---------------------'}
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/08>
+{'article': ['Three Definitions of Big Data for the Supply Chain\xa0Manager'], 'articleURL': 'https://medium.com/opex-analytics/three-definitions-of-big-data-for-the-supply-chain-manager-96500d0649d?source=tag_archive---------5---------------------'}
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/08>
+{'article': ['Analytics for Small and Medium Sized\xa0Firms'], 'articleURL': 'https://medium.com/opex-analytics/analytics-for-small-and-medium-sized-firms-5dfae25e015b?source=tag_archive---------6---------------------'}
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/08>
+{'article': ['What is a Data Scientist?'], 'articleURL': 'https://medium.com/opex-analytics/what-is-a-data-scientist-745c6a67e1b6?source=tag_archive---------7---------------------'}
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/08> from <GET https://medium.com/tag/data-science/archive/2013/08/15>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/08> from <GET https://medium.com/tag/data-science/archive/2013/08/18>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/08> from <GET https://medium.com/tag/data-science/archive/2013/08/19>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/08> from <GET https://medium.com/tag/data-science/archive/2013/08/20>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/08> from <GET https://medium.com/tag/data-science/archive/2013/08/21>
+INFO: Crawled 10 pages (at 1 pages/min), scraped 37 items (at 8 items/min)
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/08> from <GET https://medium.com/tag/data-science/archive/2013/08/22>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/08> from <GET https://medium.com/tag/data-science/archive/2013/08/24>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/08> from <GET https://medium.com/tag/data-science/archive/2013/08/25>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/08> from <GET https://medium.com/tag/data-science/archive/2013/08/17>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/08> from <GET https://medium.com/tag/data-science/archive/2013/08/23>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/08> from <GET https://medium.com/tag/data-science/archive/2013/08/28>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/08> from <GET https://medium.com/tag/data-science/archive/2013/08/30>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/09> from <GET https://medium.com/tag/data-science/archive/2013/09/02>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/09> from <GET https://medium.com/tag/data-science/archive/2013/09/01>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/09> from <GET https://medium.com/tag/data-science/archive/2013/09/03>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/08> from <GET https://medium.com/tag/data-science/archive/2013/08/31>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/09> from <GET https://medium.com/tag/data-science/archive/2013/09/05>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/09> from <GET https://medium.com/tag/data-science/archive/2013/09/06>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/08> from <GET https://medium.com/tag/data-science/archive/2013/08/29>
+INFO: Crawled 10 pages (at 0 pages/min), scraped 37 items (at 0 items/min)
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/09> from <GET https://medium.com/tag/data-science/archive/2013/09/09>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/09> from <GET https://medium.com/tag/data-science/archive/2013/09/08>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/09> from <GET https://medium.com/tag/data-science/archive/2013/09/04>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/09> from <GET https://medium.com/tag/data-science/archive/2013/09/10>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/08> from <GET https://medium.com/tag/data-science/archive/2013/08/27>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/08> from <GET https://medium.com/tag/data-science/archive/2013/08/26>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/09> from <GET https://medium.com/tag/data-science/archive/2013/09/07>
+DEBUG: Crawled (200) <GET https://medium.com/tag/data-science/archive/2013/09> (referer: None)
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/09>
+{'article': ['Go Heatmap\xa0Yourself'], 'articleURL': 'https://medium.com/strava-engineering/go-heatmap-yourself-43371c169b26?source=tag_archive---------0---------------------'}
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/09>
+{'article': [], 'articleURL': 'https://medium.com/making-sense/sensemaking-2a4de44b85b2?source=tag_archive---------1---------------------'}
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/09>
+{'article': ['Big Data’s Role in Creating Customer Centric Business Intelligence'], 'articleURL': 'https://medium.com/@tulliosiragusa/big-datas-role-in-creating-customer-centric-business-intelligence-afa32283215e?source=tag_archive---------2---------------------'}
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/09> from <GET https://medium.com/tag/data-science/archive/2013/09/13>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/09> from <GET https://medium.com/tag/data-science/archive/2013/09/11>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/09> from <GET https://medium.com/tag/data-science/archive/2013/09/15>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/09> from <GET https://medium.com/tag/data-science/archive/2013/09/16>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/09> from <GET https://medium.com/tag/data-science/archive/2013/09/14>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/09> from <GET https://medium.com/tag/data-science/archive/2013/09/18>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/09> from <GET https://medium.com/tag/data-science/archive/2013/09/12>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/09> from <GET https://medium.com/tag/data-science/archive/2013/09/17>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/09> from <GET https://medium.com/tag/data-science/archive/2013/09/20>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/09> from <GET https://medium.com/tag/data-science/archive/2013/09/22>
+INFO: Crawled 11 pages (at 1 pages/min), scraped 40 items (at 3 items/min)
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/09> from <GET https://medium.com/tag/data-science/archive/2013/09/19>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/09> from <GET https://medium.com/tag/data-science/archive/2013/09/23>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/09> from <GET https://medium.com/tag/data-science/archive/2013/09/26>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/09> from <GET https://medium.com/tag/data-science/archive/2013/09/25>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/09> from <GET https://medium.com/tag/data-science/archive/2013/09/28>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/09> from <GET https://medium.com/tag/data-science/archive/2013/09/21>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/09> from <GET https://medium.com/tag/data-science/archive/2013/09/27>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/09> from <GET https://medium.com/tag/data-science/archive/2013/09/30>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/09> from <GET https://medium.com/tag/data-science/archive/2013/09/31>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/09> from <GET https://medium.com/tag/data-science/archive/2013/09/29>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/10> from <GET https://medium.com/tag/data-science/archive/2013/10/01>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/10> from <GET https://medium.com/tag/data-science/archive/2013/10/03>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/10> from <GET https://medium.com/tag/data-science/archive/2013/10/04>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/10> from <GET https://medium.com/tag/data-science/archive/2013/10/06>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/10> from <GET https://medium.com/tag/data-science/archive/2013/10/05>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/10> from <GET https://medium.com/tag/data-science/archive/2013/10/07>
+INFO: Crawled 11 pages (at 0 pages/min), scraped 40 items (at 0 items/min)
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/10> from <GET https://medium.com/tag/data-science/archive/2013/10/02>
+DEBUG: Retrying <GET https://medium.com/tag/data-science/archive/2013/09/24> (failed 1 times): 504 Gateway Time-out
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/10> from <GET https://medium.com/tag/data-science/archive/2013/10/08>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/10> from <GET https://medium.com/tag/data-science/archive/2013/10/11>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/10> from <GET https://medium.com/tag/data-science/archive/2013/10/09>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/10> from <GET https://medium.com/tag/data-science/archive/2013/10/10>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/10> from <GET https://medium.com/tag/data-science/archive/2013/10/12>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/10> from <GET https://medium.com/tag/data-science/archive/2013/10/13>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/10> from <GET https://medium.com/tag/data-science/archive/2013/10/16>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/10> from <GET https://medium.com/tag/data-science/archive/2013/10/14>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/10> from <GET https://medium.com/tag/data-science/archive/2013/10/15>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/10> from <GET https://medium.com/tag/data-science/archive/2013/10/18>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/10> from <GET https://medium.com/tag/data-science/archive/2013/10/17>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/10> from <GET https://medium.com/tag/data-science/archive/2013/10/21>
+INFO: Crawled 11 pages (at 0 pages/min), scraped 40 items (at 0 items/min)
+DEBUG: Crawled (200) <GET https://medium.com/tag/data-science/archive/2013/10> (referer: None)
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/10>
+{'article': ['Nailing the Tech Interview'], 'articleURL': 'https://medium.com/@InsightData/nailing-the-tech-interview-a8b5c5a4fc2a?source=tag_archive---------0---------------------'}
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/10>
+{'article': ['Comment on “Is Big Data an Economic Big\xa0Dud?”'], 'articleURL': 'https://medium.com/opex-analytics/comment-on-is-big-data-an-economic-big-dud-80f208be7d5a?source=tag_archive---------1---------------------'}
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/10>
+{'article': ['Three Types of\xa0Buffers'], 'articleURL': 'https://medium.com/opex-analytics/three-types-of-buffers-d7f0800a01c4?source=tag_archive---------2---------------------'}
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/10>
+{'article': ['Lora Cecere on the Role of Analytics in the Supply\xa0Chain'], 'articleURL': 'https://medium.com/@OpexAnalytics/lora-cecere-on-the-role-of-analytics-in-the-supply-chain-c269d9d905f2?source=tag_archive---------3---------------------'}
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/10> from <GET https://medium.com/tag/data-science/archive/2013/10/23>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/10> from <GET https://medium.com/tag/data-science/archive/2013/10/24>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/10> from <GET https://medium.com/tag/data-science/archive/2013/10/22>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/10> from <GET https://medium.com/tag/data-science/archive/2013/10/26>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/10> from <GET https://medium.com/tag/data-science/archive/2013/10/27>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/10> from <GET https://medium.com/tag/data-science/archive/2013/10/25>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/10> from <GET https://medium.com/tag/data-science/archive/2013/10/19>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/10> from <GET https://medium.com/tag/data-science/archive/2013/10/20>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/10> from <GET https://medium.com/tag/data-science/archive/2013/10/28>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/10> from <GET https://medium.com/tag/data-science/archive/2013/10/29>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/09> from <GET https://medium.com/tag/data-science/archive/2013/09/24>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/10> from <GET https://medium.com/tag/data-science/archive/2013/10/31>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/10> from <GET https://medium.com/tag/data-science/archive/2013/10/30>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/11> from <GET https://medium.com/tag/data-science/archive/2013/11/01>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/11> from <GET https://medium.com/tag/data-science/archive/2013/11/04>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/11> from <GET https://medium.com/tag/data-science/archive/2013/11/05>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/11> from <GET https://medium.com/tag/data-science/archive/2013/11/02>
+INFO: Crawled 12 pages (at 1 pages/min), scraped 44 items (at 4 items/min)
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/11> from <GET https://medium.com/tag/data-science/archive/2013/11/06>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/11> from <GET https://medium.com/tag/data-science/archive/2013/11/03>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/11> from <GET https://medium.com/tag/data-science/archive/2013/11/09>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/11> from <GET https://medium.com/tag/data-science/archive/2013/11/10>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/11> from <GET https://medium.com/tag/data-science/archive/2013/11/07>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/11> from <GET https://medium.com/tag/data-science/archive/2013/11/11>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/11> from <GET https://medium.com/tag/data-science/archive/2013/11/13>
+DEBUG: Crawled (200) <GET https://medium.com/tag/data-science/archive/2013/09> (referer: None)
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/09>
+{'article': ['Go Heatmap\xa0Yourself'], 'articleURL': 'https://medium.com/strava-engineering/go-heatmap-yourself-43371c169b26?source=tag_archive---------0---------------------'}
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/09>
+{'article': [], 'articleURL': 'https://medium.com/making-sense/sensemaking-2a4de44b85b2?source=tag_archive---------1---------------------'}
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/09>
+{'article': ['Big Data’s Role in Creating Customer Centric Business Intelligence'], 'articleURL': 'https://medium.com/@tulliosiragusa/big-datas-role-in-creating-customer-centric-business-intelligence-afa32283215e?source=tag_archive---------2---------------------'}
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/11> from <GET https://medium.com/tag/data-science/archive/2013/11/14>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/11> from <GET https://medium.com/tag/data-science/archive/2013/11/08>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/11> from <GET https://medium.com/tag/data-science/archive/2013/11/15>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/11> from <GET https://medium.com/tag/data-science/archive/2013/11/17>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/11> from <GET https://medium.com/tag/data-science/archive/2013/11/18>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/11> from <GET https://medium.com/tag/data-science/archive/2013/11/19>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/11> from <GET https://medium.com/tag/data-science/archive/2013/11/16>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/11> from <GET https://medium.com/tag/data-science/archive/2013/11/22>
+INFO: Crawled 13 pages (at 1 pages/min), scraped 47 items (at 3 items/min)
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/11> from <GET https://medium.com/tag/data-science/archive/2013/11/20>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/11> from <GET https://medium.com/tag/data-science/archive/2013/11/21>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/11> from <GET https://medium.com/tag/data-science/archive/2013/11/24>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/11> from <GET https://medium.com/tag/data-science/archive/2013/11/25>
+DEBUG: Crawled (200) <GET https://medium.com/tag/data-science/archive/2013/11> (referer: None)
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/11>
+{'article': [], 'articleURL': 'https://medium.com/@nomadic_mind/new-to-machine-learning-avoid-these-three-mistakes-73258b3848a4?source=tag_archive---------0---------------------'}
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/11>
+{'article': ['Mixpanel vs Keen IO\u200a—\u200aWhat’s the difference, anyway?'], 'articleURL': 'https://blog.keen.io/mixpanel-vs-keen-io-whats-the-difference-anyway-2cf189a13429?source=tag_archive---------1---------------------'}
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/11>
+{'article': [], 'articleURL': 'https://blog.insightdatascience.com/thisplusthat-me-a-search-engine-that-lets-you-add-words-as-vectors-2ec0b8a4f629?source=tag_archive---------2---------------------'}
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/11>
+{'article': ['Inspector Git: Discover Awesome New Repositories on\xa0Github'], 'articleURL': 'https://blog.insightdatascience.com/inspector-git-discover-awesome-new-repositories-on-github-b4ab0011f211?source=tag_archive---------3---------------------'}
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/11>
+{'article': ['Why it’s the era of Data Science but not of the Data Scientist'], 'articleURL': 'https://medium.com/i-love-experiments/why-it-s-the-era-of-data-science-but-not-of-the-data-scientist-1acd76a3b53c?source=tag_archive---------4---------------------'}
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/11>
+{'article': ['Reinventing Social Sciences in the Era of Big\xa0Data'], 'articleURL': 'https://medium.com/i-love-experiments/reinventing-social-sciences-in-the-era-of-big-data-d255f3e391f3?source=tag_archive---------5---------------------'}
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/11>
+{'article': ['On the Path to Personalization: Part\xa01'], 'articleURL': 'https://open.nytimes.com/on-the-path-to-personalization-part-1-877d32f6cc4a?source=tag_archive---------6---------------------'}
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/11>
+{'article': ['The Golden Age of Social Science Has\xa0Begun'], 'articleURL': 'https://theumlaut.com/the-golden-age-of-social-science-has-begun-d7555098ac72?source=tag_archive---------7---------------------'}
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/11>
+{'article': ['Harnessing the combined power of SAP HANA and Graph Analytics for real-time insights'], 'articleURL': 'https://medium.quantiply.com/harnessing-the-combined-power-of-sap-hana-and-graph-analytics-for-real-time-insights-888d8126a43e?source=tag_archive---------8---------------------'}
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/11>
+{'article': ['PARC and SAP Co-innovation: Adding Graph Analytics to SAP\xa0HANA'], 'articleURL': 'https://medium.quantiply.com/parc-and-sap-co-innovation-adding-graph-analytics-to-sap-hana-10bed41fb6dc?source=tag_archive---------9---------------------'}
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/11> from <GET https://medium.com/tag/data-science/archive/2013/11/28>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/11> from <GET https://medium.com/tag/data-science/archive/2013/11/27>
+DEBUG: Retrying <GET https://medium.com/tag/data-science/archive/2013/11/12> (failed 1 times): 504 Gateway Time-out
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/11> from <GET https://medium.com/tag/data-science/archive/2013/11/23>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/11> from <GET https://medium.com/tag/data-science/archive/2013/11/29>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/11> from <GET https://medium.com/tag/data-science/archive/2013/11/30>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/11> from <GET https://medium.com/tag/data-science/archive/2013/11/26>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/12> from <GET https://medium.com/tag/data-science/archive/2013/12/01>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/12> from <GET https://medium.com/tag/data-science/archive/2013/12/04>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/12> from <GET https://medium.com/tag/data-science/archive/2013/12/05>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/12> from <GET https://medium.com/tag/data-science/archive/2013/12/06>
+INFO: Crawled 14 pages (at 1 pages/min), scraped 57 items (at 10 items/min)
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/11> from <GET https://medium.com/tag/data-science/archive/2013/11/31>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/12> from <GET https://medium.com/tag/data-science/archive/2013/12/07>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/12> from <GET https://medium.com/tag/data-science/archive/2013/12/08>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/12> from <GET https://medium.com/tag/data-science/archive/2013/12/02>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/12> from <GET https://medium.com/tag/data-science/archive/2013/12/10>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/12> from <GET https://medium.com/tag/data-science/archive/2013/12/03>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/12> from <GET https://medium.com/tag/data-science/archive/2013/12/12>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/12> from <GET https://medium.com/tag/data-science/archive/2013/12/13>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/12> from <GET https://medium.com/tag/data-science/archive/2013/12/11>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/12> from <GET https://medium.com/tag/data-science/archive/2013/12/15>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/12> from <GET https://medium.com/tag/data-science/archive/2013/12/09>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/12> from <GET https://medium.com/tag/data-science/archive/2013/12/14>
+DEBUG: Crawled (200) <GET https://medium.com/tag/data-science/archive/2013/12> (referer: None)
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/12>
+{'article': [], 'articleURL': 'https://medium.com/@nomadic_mind/what-i-learned-from-analyzing-1-000-medium-collections-b99a56fbe0e2?source=tag_archive---------0---------------------'}
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/12>
+{'article': [], 'articleURL': 'https://medium.com/@nomadic_mind/how-to-make-medium-the-worlds-greatest-collaborative-idea-generation-and-distribution-platform-c666fcdc91a0?source=tag_archive---------1---------------------'}
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/12>
+{'article': ['Netflix Presentation Videos from AWS Re:Invent 2013'], 'articleURL': 'https://medium.com/netflix-techblog/netflix-presentation-videos-from-aws-re-invent-2013-807532f84f90?source=tag_archive---------2---------------------'}
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/12>
+{'article': ['A chat about data science and our fun visualizations'], 'articleURL': 'https://medium.com/foursquare-direct/a-chat-about-data-science-and-our-fun-visualizations-b2b4f19b97b8?source=tag_archive---------3---------------------'}
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/12>
+{'article': ['Saving Money by Applying Data Science to Equipment Leasing'], 'articleURL': 'https://medium.com/opex-analytics/saving-money-by-applying-data-science-to-equipment-leasing-fdfb689aed00?source=tag_archive---------4---------------------'}
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/12> from <GET https://medium.com/tag/data-science/archive/2013/12/18>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/11> from <GET https://medium.com/tag/data-science/archive/2013/11/12>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/12> from <GET https://medium.com/tag/data-science/archive/2013/12/17>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/12> from <GET https://medium.com/tag/data-science/archive/2013/12/20>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/12> from <GET https://medium.com/tag/data-science/archive/2013/12/19>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/12> from <GET https://medium.com/tag/data-science/archive/2013/12/21>
+INFO: Crawled 15 pages (at 1 pages/min), scraped 62 items (at 5 items/min)
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/12> from <GET https://medium.com/tag/data-science/archive/2013/12/24>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/12> from <GET https://medium.com/tag/data-science/archive/2013/12/16>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/12> from <GET https://medium.com/tag/data-science/archive/2013/12/23>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/12> from <GET https://medium.com/tag/data-science/archive/2013/12/27>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/12> from <GET https://medium.com/tag/data-science/archive/2013/12/28>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/12> from <GET https://medium.com/tag/data-science/archive/2013/12/29>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/12> from <GET https://medium.com/tag/data-science/archive/2013/12/22>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/12> from <GET https://medium.com/tag/data-science/archive/2013/12/26>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/12> from <GET https://medium.com/tag/data-science/archive/2013/12/30>
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/12> from <GET https://medium.com/tag/data-science/archive/2013/12/31>
+DEBUG: Crawled (200) <GET https://medium.com/tag/data-science/archive/2013/11> (referer: None)
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/11>
+{'article': [], 'articleURL': 'https://medium.com/@nomadic_mind/new-to-machine-learning-avoid-these-three-mistakes-73258b3848a4?source=tag_archive---------0---------------------'}
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/11>
+{'article': ['Mixpanel vs Keen IO\u200a—\u200aWhat’s the difference, anyway?'], 'articleURL': 'https://blog.keen.io/mixpanel-vs-keen-io-whats-the-difference-anyway-2cf189a13429?source=tag_archive---------1---------------------'}
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/11>
+{'article': [], 'articleURL': 'https://blog.insightdatascience.com/thisplusthat-me-a-search-engine-that-lets-you-add-words-as-vectors-2ec0b8a4f629?source=tag_archive---------2---------------------'}
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/11>
+{'article': ['Inspector Git: Discover Awesome New Repositories on\xa0Github'], 'articleURL': 'https://blog.insightdatascience.com/inspector-git-discover-awesome-new-repositories-on-github-b4ab0011f211?source=tag_archive---------3---------------------'}
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/11>
+{'article': ['Why it’s the era of Data Science but not of the Data Scientist'], 'articleURL': 'https://medium.com/i-love-experiments/why-it-s-the-era-of-data-science-but-not-of-the-data-scientist-1acd76a3b53c?source=tag_archive---------4---------------------'}
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/11>
+{'article': ['Reinventing Social Sciences in the Era of Big\xa0Data'], 'articleURL': 'https://medium.com/i-love-experiments/reinventing-social-sciences-in-the-era-of-big-data-d255f3e391f3?source=tag_archive---------5---------------------'}
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/11>
+{'article': ['On the Path to Personalization: Part\xa01'], 'articleURL': 'https://open.nytimes.com/on-the-path-to-personalization-part-1-877d32f6cc4a?source=tag_archive---------6---------------------'}
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/11>
+{'article': ['The Golden Age of Social Science Has\xa0Begun'], 'articleURL': 'https://theumlaut.com/the-golden-age-of-social-science-has-begun-d7555098ac72?source=tag_archive---------7---------------------'}
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/11>
+{'article': ['Harnessing the combined power of SAP HANA and Graph Analytics for real-time insights'], 'articleURL': 'https://medium.quantiply.com/harnessing-the-combined-power-of-sap-hana-and-graph-analytics-for-real-time-insights-888d8126a43e?source=tag_archive---------8---------------------'}
+DEBUG: Scraped from <200 https://medium.com/tag/data-science/archive/2013/11>
+{'article': ['PARC and SAP Co-innovation: Adding Graph Analytics to SAP\xa0HANA'], 'articleURL': 'https://medium.quantiply.com/parc-and-sap-co-innovation-adding-graph-analytics-to-sap-hana-10bed41fb6dc?source=tag_archive---------9---------------------'}
+DEBUG: Redirecting (302) to <GET https://medium.com/tag/data-science/archive/2013/12> from <GET https://medium.com/tag/data-science/archive/2013/12/25>
+INFO: Closing spider (finished)
+INFO: Stored csv feed (72 items) in: /Users/nancy/PycharmProjects/medium-ds-articles/data/raw/medium_titles_2013.csv
+INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 183919,
+ 'downloader/request_count': 392,
+ 'downloader/request_method_count/GET': 392,
+ 'downloader/response_bytes': 1181502,
+ 'downloader/response_count': 392,
+ 'downloader/response_status_count/200': 16,
+ 'downloader/response_status_count/302': 372,
+ 'downloader/response_status_count/504': 4,
+ 'dupefilter/filtered': 356,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2019, 5, 15, 15, 8, 17, 660079),
+ 'item_scraped_count': 72,
+ 'log_count/DEBUG': 465,
+ 'log_count/INFO': 33,
+ 'memusage/max': 91901952,
+ 'memusage/startup': 88289280,
+ 'response_received_count': 16,
+ 'retry/count': 4,
+ 'retry/reason_count/504 Gateway Time-out': 4,
+ 'scheduler/dequeued': 392,
+ 'scheduler/dequeued/memory': 392,
+ 'scheduler/enqueued': 392,
+ 'scheduler/enqueued/memory': 392,
+ 'start_time': datetime.datetime(2019, 5, 15, 14, 44, 36, 123549)}
+INFO: Spider closed (finished)
+INFO: Scrapy 1.6.0 started (bot: scrapybot)
+INFO: Versions: lxml 4.3.3.0, libxml2 2.9.9, cssselect 1.0.3, parsel 1.5.1, w3lib 1.20.0, Twisted 19.2.0, Python 3.7.2 (v3.7.2:9a3ffc0492, Dec 24 2018, 02:44:43) - [Clang 6.0 (clang-600.0.57)], pyOpenSSL 18.0.0 (OpenSSL 1.1.0j  20 Nov 2018), cryptography 2.4.2, Platform Darwin-18.2.0-x86_64-i386-64bit
+INFO: Overridden settings: {'AUTOTHROTTLE_ENABLED': True, 'AUTOTHROTTLE_MAX_DELAY': 3, 'AUTOTHROTTLE_START_DELAY': 1, 'FEED_FORMAT': 'csv', 'FEED_URI': '/Users/nancy/PycharmProjects/medium-ds-articles/data/raw/medium_titles_2012.csv', 'USER_AGENT': 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1)'}
+INFO: Telnet Password: ee378c87e93e8c92
+INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.feedexport.FeedExporter',
+ 'scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.throttle.AutoThrottle']
+INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO: Enabled item pipelines:
+[]
+INFO: Spider opened
+INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+INFO: Telnet console listening on 127.0.0.1:6025
