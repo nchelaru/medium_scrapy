@@ -3,3 +3,5 @@
 .RData
 .Ruserdata
 notebooks/
+test_workflow.nb.html
+test_workflow.Rmd
