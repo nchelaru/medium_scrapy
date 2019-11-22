@@ -5,8 +5,8 @@ account: nancy-chelaru-centea
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 1510037
-bundleId: 2608460
+bundleId: 2608516
 url: https://nancy-chelaru-centea.shinyapps.io/ds_trends_medium/
-when: 1574385195.71956
+when: 1574387103.40462
 asMultiple: FALSE
 asStatic: FALSE

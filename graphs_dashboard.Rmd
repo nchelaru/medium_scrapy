@@ -82,9 +82,9 @@ Please see [here](http://rpubs.com/nchelaru/medium_ds_nlp) for a detailed run-do
 Column {data-width=450}
 -----------------------------------------------------------------------
  
-### Introduction  {data-height=350}
+### Introduction  {data-height=420}
 
-<div style='margin:15px; font-size:19px;'>
+<div style='margin:15px; font-size:18px;'>
 Judging by the number of articles tagged with "data science" published on Medium.com since 2009, it is not an over-statement to say that the data science community there has exploded since. This makes it an interesting resource for investigating how the interests and characteristics of data scientists may have evolved with time.
 
 One quick, but simplistic, approach to this is to measure which word pairs (bigrams) appear most frequently in the titles of articles published in each year, the result of which can be explored here. Please use the slider and knob in the side bar to select the year and number of top results that you are interested in, which then can be viewed as a network graph or data table under the different tabs. 
