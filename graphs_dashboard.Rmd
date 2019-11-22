@@ -12,15 +12,18 @@ runtime: shiny
 ## Import libraries
 library(flexdashboard)
 library(shinyWidgets)
+library(plyr)
+library(dplyr)
 library(igraph)
 library(ggraph)
 
 ## Set seed for ggraph package
-set.seed(2016)
+set.seed(1)
 ```
 
 
- 
+
+  
 
 Explore top article title keywords
 =========================================
@@ -29,24 +32,29 @@ Explore top article title keywords
 Column {.sidebar}
 -----------------------------------------------------------------------
 
- 
+<hr>
+
+Use the controls below to explore how popular topics in data science have changed over the years:
+
+<br> 
+
 ```{r}
 sliderInput("year", HTML("<b>Select the year of publication:</b>"), 
-            min = 2013, max = 2019, value = 2013,
+            min = 2012, max = 2019, value = 2019,
             sep="", animate=animationOptions(interval = 4000, loop = FALSE, playButton = NULL,
   pauseButton = NULL))
 ```
 
-<br><hr><br>
+<br>
 
-
+<center>
 ```{r}
 knobInput(
   "knob",
-  HTML("<b>Select the top X most frequently appearing bigrams:</b>"),
-  40,
-  min = 30, max = 70,
-  step = 5, angleOffset = 0, angleArc = 360,
+  HTML("<b>Select the number of bigrams to visualize:</b>"),
+  35,
+  min = 10, max = 60,
+  step = 5, angleOffset = 30, angleArc = 300,
   cursor = TRUE,
   thickness = NULL,
   lineCap = "round",
@@ -63,30 +71,144 @@ knobInput(
   immediate = FALSE
 )
 ```
+</center>
 
-Column {data-width=350 .tabset .tabset-fade}
------------------------------------------------------------------------
-
-### Introduction
-
-In this dashboard, you can explore the most frequently appearing bigrams in the titles of Medium.com articles tagged with "Data science" published between 2013 and late November of 2019.
+<br><hr><br>
 
 Please see [here](http://rpubs.com/nchelaru/medium_ds_nlp) for a detailed run-down of the workflow for web scraping and data preparation.
 
 
+
+Column {data-width=450}
+-----------------------------------------------------------------------
+ 
+### Introduction  {data-height=350}
+
+<div style='margin:15px; font-size:19px;'>
+Judging by the number of articles tagged with "data science" published on Medium.com since 2009, it is not an over-statement to say that the data science community there has exploded since. This makes it an interesting resource for investigating how the interests and characteristics of data scientists may have evolved with time.
+
+One quick, but simplistic, approach to this is to measure which word pairs (bigrams) appear most frequently in the titles of articles published in each year, the result of which can be explored here. Please use the slider and knob in the side bar to select the year and number of top results that you are interested in, which then can be viewed as a network graph or data table under the different tabs. 
+
+In the network graph, each word appears as a node and the directionality of the arrow connecting them to each other indicates the order in which they appears in a bigram. Finally, the darkness of the arrow connecting each pair of words is proportional to the frequency of appearance for that bigram. For example, we see much darker arrows connecting ‘data’, ‘science’ or ‘machine’, ‘learning’.
+
+</div>
+
+### Number of articles tagged "data science" published between 2009 and 2019 (as of November 21st)
+ 
+```{r, fig.align='center'}
+year_list <- c('2009-2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019')
+
+freq_list <- list()
+
+i <- 1
+
+for (year in year_list) {
+  df <- read.csv(sprintf('https://github.com/nchelaru/medium_scrapy/raw/master/processed/y%s_clean_titles.csv', year))
+  freq_list[[year]]<- dim(df)[1]
+}
+
+df <- do.call(rbind, Map(data.frame, Year=year_list, num_articles=freq_list))
+
+rownames(df) <- c()
+
+ggplot(df, aes(x=Year, y=num_articles, fill=num_articles, label=num_articles)) + 
+  geom_bar(stat = "identity") +
+  geom_text(size = 4, position = position_stack(vjust = 1.1)) +
+  scale_fill_gradient2(low='red', high='green') +
+  labs(y = "Number of articles published", size=5) +
+  theme_classic() +
+  theme(legend.position="none") 
+```
+ 
+
+
+
+
+
+
+
+
+
+Column {data-width=550 .tabset .tabset-fade}
+-----------------------------------------------------------------------
+
+### Visualize network of top occurring bigrams 
+ 
+```{r}
+renderPlot({
+  link <- sprintf("https://github.com/nchelaru/medium_scrapy/raw/master/processed/y%s_bigram_count_Nov21.csv", input$year)
+
+  ## Import data
+  bigram_counts <- read.csv(link) %>% select(-X) %>% arrange(desc(n))  
+  
+  ## Create graph
+  bigram_graph <- head(bigram_counts, input$knob) %>%
+    graph_from_data_frame()
+  
+  a <- grid::arrow(length = unit(0.15, "inches"), type = "closed")
+          
+  ggraph(bigram_graph, layout = "fr") +
+    geom_edge_link(aes(edge_alpha = n), show.legend = FALSE,
+                   arrow = a, end_cap = circle(.05, 'inches')) +
+    geom_node_point(color = "lightblue", size = 5) +
+    geom_node_text(aes(label = name), vjust = 1, hjust = 1, repel = TRUE, size=8) +
+    theme_void() 
+})
+
+```
+
+### Bigram frequency
+
+```{r}
+renderTable({
+  link <- sprintf("https://github.com/nchelaru/medium_scrapy/raw/master/processed/y%s_bigram_count_Nov21.csv", input$year)
+
+  bigram_counts <- read.csv(link) %>% select(-X) %>% arrange(desc(n))
+  
+  colnames(bigram_counts) <- c('Word 1', 'Word 2', 'Frequency')
+
+  head(bigram_counts, input$knob)
+  })
+```
+
+
 ### General workflow
 
-Here, I used the [workflow](https://www.tidytextmining.com/ngrams.html#counting-and-correlating-pairs-of-words-with-the-widyr-package) presented in the excellent reference *[Text Mining with R](https://www.tidytextmining.com/)* for visualizing bigram relationships for a body of text.
+First, frequency of adjacent word pairs (bigrams) in article titles are counted for each year:
 
-```r
-## Import libraries
+```Python
+import collections
+import nltk
+import inflection as inf
+import spacy
+from spacy_langdetect import LanguageDetector
+
+nlp = spacy.load('en_core_web_sm')
+
+nlp.add_pipe(LanguageDetector(), 
+             name="language_detector", 
+             last=True)
+
+counts = collections.Counter()
+
+for sent in final_df["names"]:
+  if type(sent) == str:
+    doc = nlp(sent)
+    
+    word_list = []
+    
+    for token in doc:
+      word_list.append(token.text.lower())
+      
+    counts.update(nltk.bigrams(word_list))
+```
+
+Then, the [workflow](https://www.tidytextmining.com/ngrams.html#counting-and-correlating-pairs-of-words-with-the-widyr-package) presented in the excellent reference *[Text Mining with R](https://www.tidytextmining.com/)* is used to visualize the most common bigrams and their relationships: 
+
+```R
 library(igraph)
 library(ggraph)
 
-## Set seed for ggraph package
-set.seed(2016)
-
-## Create graph
 bigram_graph <- bigram_counts %>% 
                     graph_from_data_frame()
 
@@ -101,35 +223,7 @@ ggraph(bigram_graph, layout = "fr") +
     theme_void()
 ```
 
-Column {data-width=650}
------------------------------------------------------------------------
 
-### Visualize network of top occurring bigrams
- 
-```{r}
-renderPlot({
-  link <- sprintf("https://github.com/nchelaru/scrapy/raw/master/data/processed/%s_title_bigram_counts.csv", input$year)
-
-  ## Import data
-  bigram_counts <- read.csv(link)
-  
-  bigram_counts <- head(bigram_counts[order(-bigram_counts$n),], input$knob)
-  
-  ## Create graph
-  bigram_graph <- bigram_counts %>%
-    graph_from_data_frame()
-  
-  a <- grid::arrow(type = "closed")
-          
-  ggraph(bigram_graph, layout = "fr") +
-    geom_edge_link(aes(edge_alpha = n), show.legend = FALSE,
-                   arrow = a, end_cap = circle(.05, 'inches')) +
-    geom_node_point(color = "lightblue", size = 5) +
-    geom_node_text(aes(label = name), vjust = 1, hjust = 1, repel = TRUE, size=8) +
-    theme_void() 
-})
-
-```
 
 
 Session info

@@ -49,9 +49,9 @@ In the web scraping portion of the project, I collected, among other things, the
 
 Since I was completely new to web scraping before this, I looked around for existing and fairly recent scripts scraping Medium articles. I had found two that use Selenium ([here](https://github.com/NISH1001/medium-crawler) and [here](https://github.com/Sangarshanan/webscraping-and-analysis-of-medium-articles)), but because of the large size of data to be scraped, I wanted to use Scrapy over Selenium ([see a comparison of the two here](https://www.accordbox.com/blog/web-scraping-framework-review-scrapy-vs-selenium/)). Plus, Scrapy has a built-in selector system that means I don't have to use BeautifulSoup to parse the HTML. I ended up using the Scrapy workflow by [May Yeung](https://code.likeagirl.io/heres-how-i-applied-coding-to-my-job-d8e13674c7e2) (posted on Medium, of course) as a starting point and made the script below, after much trial and error. 
 
-Looking at the [archive](https://medium.com/tag/data-science/archive) of all articles tagged with "Data Science", I see that I can iterate over each year (2013-2019 May), each month (01-12) and each day (01-31) to see the story cards of all articles tagged with "Data Science". Even though each story card contains the title, author name, publication date, number of comments and claps, I needed to get to the actual article page to get the tags. So, the script below follows the article URL on each story card to access the article page and scrape all the desired elements. This was the major departure from May Yeung's workflow, which scraped only the story cards. 
+Looking at the [archive](https://medium.com/tag/data-science/archive) of all articles tagged with "Data Science", I see that I can iterate over each year (2009-2019 November), each month (01-12) and each day (01-31) to see the story cards of all articles tagged with "Data Science". Even though each story card contains the title, author name, publication date, number of comments and claps, I needed to get to the actual article page to get the tags. So, the script below follows the article URL on each story card to access the article page and scrape all the desired elements. This was the major departure from May Yeung's workflow, which scraped only the story cards. 
 
-As there are almost 20,000 articles/year published in more recent years, I decided to divide up the scraping by year. As an example, here is the script used to get all the articles tagged with "Data Science" published in 2018:
+As there are often ~20,000 articles/year published in more recent years, I decided to divide up the scraping by year. As an example, here is the script used to get all the articles tagged with "Data Science" published in 2018:
 
 ```python
 ## Import libraries
@@ -245,8 +245,8 @@ library(kableExtra)
 import pandas as pd
 
 ## Import data sets
-full = pd.read_csv("https://github.com/nchelaru/scrapy/raw/master/data/raw/medium_full_2018.csv")
-titles = pd.read_csv("https://github.com/nchelaru/scrapy/raw/master/data/raw/medium_titles_2018.csv")
+full = pd.read_csv("https://github.com/nchelaru/medium_scrapy/raw/master/raw/medium_full_2018.csv")
+titles = pd.read_csv("https://github.com/nchelaru/medium_scrapy/raw/master/raw/medium_titles_2018.csv")
 ```
 
 
@@ -315,109 +315,58 @@ titles['articleLink'].dropna(inplace=True)
 titles.shape
 ```
 
-Now the number of articles/links in the two datasets are much closer.
+Now the number of articles/links in the two datasets are much closer. Again, as this is a quick proof-of-concept and hobbey project, I'm not as concerned with getting all the data that I can possibly can.  So, I will combine these two datasets to get all the unique article titles and metadata that I can, to get the final datasets that I will use for analysis. This is done in the same manner for articles tagged with "Data science" published in all years between 2009 and November 2019.
 
-At this point, I want to get data on articles whose links are present in the "title-only" dataset, just to see what information I am missing. To get links present in the titles but not in the full dataframe, I will use set operations:
-
-```{python}
-## Get difference between the two sets
-diff = set(titles['articleLink']) - set(full['articleLink'])
-
-## Check shape
-print(len(diff))
-```
-
-A cursory look through these 33 links show that some lead to 404 errors, and for others the Scrapy log shows redirects that may have interferred with the scraping process.
-
-```{python, eval=T, echo=F}
-diff = pd.DataFrame(diff)
-```
-
-```{r, eval=T, echo=F}
-diff <- py$diff
-
-kable(diff, col.names=NULL) %>%
-  kable_styling(bootstrap_options = c("striped", "hover")) %>%
-  scroll_box(width = "100%")
-```
-
-<br>
-
-Again, as this is a quick proof-of-concept and hobbey project, I'm not as concerned with getting all the data that I can possibly can. Though I will try my hardest. :)
-
-So, I fed the links into the crawler shown in Part 1 and seemed to be successful in getting article data for 18 articles:
-
-```{python}
-additional = pd.read_csv('https://github.com/nchelaru/scrapy/raw/master/data/raw/medium_missing_2018.csv')
-
-print(additional.shape)
-```
-
-
-```{r eval=T, echo=F}
-additional <- py$additional
-
-kable(additional) %>%
-  kable_styling(bootstrap_options = c("striped", "hover")) %>%
-  scroll_box(width = "100%")
-```
-
-<br>
-
-Finally, I want to process the links in this dataset the same way as above and merge it into the full dataframe:
-
-```{python}
-## Clean up the dataframe
-additional['articleLink'] = additional['articleURL'].str.split('?').str[0]
-
-additional.drop('articleURL', axis=1, inplace=True)
-
-additional.drop('article', axis=1, inplace=True)
-
-## Merge the two dataframes
-final_df = pd.concat([full, additional], sort=True)
-```
-
-Good to check that there are no duplicate entries in the dataframe:
-
-```{python}
-## Check for duplicate entries
-final_df[final_df.duplicated()].shape
-```
-
-As a final check:
-
-```{python}
-## Check the dataframe size
-final_df.shape
-```
-
-Let's export the data to a CSV so we can pick up where we leave off next time.
-
-```{python}
-final_df.to_csv('./2018_final_data.csv', index=False)
-```
-
-
-Truthfully, scraping the story cards the second time didn't add much data to the final set. However, it was a good exercise in data manipulation and cleaning. This is done in the same manner for articles tagged with "Data science" published in all years between 2013 and 2019 May.
+Just out of interest, let's see how many data science articles are published each year since 2009:
 
  
+```{r, fig.align='center'}
+year_list <- c('2009-2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019')
 
+freq_list <- list()
 
+i <- 1
+
+for (year in year_list) {
+  df <- read.csv(sprintf('https://github.com/nchelaru/medium_scrapy/raw/master/processed/y%s_clean_titles.csv', year))
+  
+  freq_list[[year]]<- dim(df)[1]
+}
+
+df <- do.call(rbind, Map(data.frame, Year=year_list, num_articles=freq_list))
+
+rownames(df) <- c()
+
+ggplot(df, aes(x=Year, y=num_articles, fill=num_articles, label=num_articles)) + 
+  geom_bar(stat = "identity") +
+  geom_text(size = 4, position = position_stack(vjust = 1.1)) +
+  scale_fill_gradient2(low='red', high='green') +
+  labs(y = "Number of articles published", size=5) +
+  theme_classic() +
+  theme(legend.position="none") 
+```
+ 
+Wow!
 
 <br>
 
-# Data cleaning
+# Data cleaning 
 
 ```{python, eval=T, echo=F}
 import pandas as pd
 
-final_df = pd.read_csv('https://github.com/nchelaru/scrapy/raw/master/data/processed/2018_final_data.csv')
+final_df = pd.read_csv('./2018_final_data.csv')
+```
+
+```{python, eval=T, echo=F}
+import pandas as pd
+
+final_df = pd.read_csv('./2018_final_data.csv')
 
 df1 = final_df[final_df['article'].str.split().str.len() < 3].head(5)
 ```
 
-Looking at the data, I quickly see that there are issues with the scraped article titles. With `Scrapy`, I could use either CSS or XPath selectors to grab the desired elements form the HTML, which require that the formating of each story card and article page to be quite consistent. Surprisingly, for a blogging platform, the formatting of the elements was quite diverse, particularly of the article title. This led me to list all possible CSS selectors (XPath selectors didn't do much better, so I omit those here) in an attempt to grab everything, but still I was getting some partial and blank titles.
+Looking at the merged dataset for each year, I quickly see that there are issues with the scraped article titles. With `Scrapy`, I could use either CSS or XPath selectors to grab the desired elements form the HTML, which require that the formating of each story card and article page to be quite consistent. Surprisingly, for a blogging platform, the formatting of the elements was quite diverse, particularly of the article title. This led me to list all possible CSS selectors (XPath selectors didn't do much better, so I omit those here) in an attempt to grab everything, but still I was getting some partial and blank titles.
 
 As an example, you can see that I was getting only the first part ("Alastair Majury") of several articles written by an author of the same name, even though there are more to the titles when I look at the article page directly.
 
@@ -492,11 +441,14 @@ kable(df2, row.names=FALSE) %>%
 It's not perfect, but let's give this a try for now.
 
 
-# Identify common bigrams in article titles
-As my first analysis, I really want to see if there are some patterns/trends in the article titles. Particularly, if popular topics have evolved over the year and just how clickbait-y the article titles have become. Here, I will use the [workflow](https://www.tidytextmining.com/ngrams.html#counting-and-correlating-pairs-of-words-with-the-widyr-package) presented in the excellent reference "Text Mining with R" for extracting word pairs (bigrams) from a corpus and examining their relationships.
 
 <br>
 
+
+# Identify common bigrams in article titles
+As my first analysis, I really want to see if there are some patterns/trends in the article titles. Particularly, if popular topics have evolved over the year and just how clickbait-y the article titles have become. Here, I will use the [workflow](https://www.tidytextmining.com/ngrams.html#counting-and-correlating-pairs-of-words-with-the-widyr-package) presented in the excellent reference "Text Mining with R" for extracting word pairs (bigrams) from a corpus and examining their relationships.
+
+ 
 ## Get title bigram counts
 First, I will use the Python natural language processing packages `NLTK` and `spaCy` to tokenize each (parsed) article title, filter out non-English words, singularize nouns, generate bigrams and finally create a tally of the frequency of each bigram. Unlike many other examples I have seen, I opted to not remove stop words, as otherwise I would lose bigrams like 'how', 'to' and 'need', 'to' that are so prevalent in Medium articles and hallmarks for clickbait.
 
@@ -540,13 +492,15 @@ bigram_counts.columns = ['word1', 'word2', 'n']
 ```
 
 ```{r, eval=T, echo=F}
-df <- read.csv('https://github.com/nchelaru/scrapy/raw/master/data/processed/2018_title_bigram_counts.csv') %>% arrange(desc(n))
+df <- read.csv('https://github.com/nchelaru/medium_scrapy/raw/master/processed/y2018_bigram_count_Nov21.csv') %>% arrange(desc(n)) %>% select(-X)
 
 kable(head(df, 10), row.names=FALSE) %>%
   kable_styling(full_width=T, bootstrap_options = c("striped", "hover")) %>%
   column_spec(2, width='10em') %>%
     scroll_box(width='100%')
 ```
+
+<br>
 
 Unsurprisingly, "data science", "machine learning" and "how to" are the most frequently appearing bigrams in article titles. Looks like we are on the right track. 
 
@@ -561,7 +515,7 @@ Each word appears as a node and the directionality of the arrow connecting them 
 
 ```{r, eval=T, echo=F}
 ## Import data
-bigram_counts <- read.csv("https://github.com/nchelaru/scrapy/raw/master/data/processed/2018_title_bigram_counts.csv")
+bigram_counts <- read.csv("https://github.com/nchelaru/medium_scrapy/raw/master/processed/y2018_bigram_count_Nov21.csv")
 ```
 
 ```{r fig.align='center', message=FALSE, warning=FALSE, fig.out = '100%', fig.height=8}
@@ -573,10 +527,10 @@ library(ggraph)
 set.seed(2016)
 
 ## Get top 60 most frequent bigrams
-bigram_counts <- head(bigram_counts[order(-bigram_counts$n),], 60)
+bigram_counts <- head(bigram_counts[order(-bigram_counts$n),], 60) %>% select(-X)
 
 ## Create graph
-bigram_graph <- bigram_counts %>%
+bigram_graph <- bigram_counts %>%  
   graph_from_data_frame()
 
 a <- grid::arrow(type = "closed")
@@ -591,7 +545,7 @@ ggraph(bigram_graph, layout = "fr") +
 
 Yep, we are seeing the "need to", "how to", "the best" that just sends a stab of FOMO through your heart. 
 
-Anyways! Please head over to this nifty Shiny dashboard to explore the most frequently appearing bigrams in the titles of Medium data science articles published between 2013 and 2019 May.
+Anyways! Please head over to [this nifty Shiny dashboard](https://nancy-chelaru-centea.shinyapps.io/ds_trends_medium) to explore the most frequently appearing bigrams in the titles of Medium data science articles published between 2009 and 2019 (as of November 21st).
 
 <br>
 
