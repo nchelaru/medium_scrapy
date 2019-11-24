@@ -121,14 +121,7 @@ ggplot(df, aes(x=Year, y=num_articles, fill=num_articles, label=num_articles)) +
 ```
  
 
-
-
-
-
-
-
-
-
+  
 Column {data-width=550 .tabset .tabset-fade}
 -----------------------------------------------------------------------
 
@@ -223,6 +216,203 @@ ggraph(bigram_graph, layout = "fr") +
     theme_void()
 ```
 
+Topic trends over the years {.storyboard}
+=========================================
+
+Column {.sidebar}
+-----------------------------------------------------------------------
+<div style='margin:10px 5px 5px 5px;'>
+Here, I manually selected a list of word pairs of interest and tracked the percentage of article titles (as indicated by both the size and colour of each circle) that contain them across the years. For ease of browsing, they are loosely grouped into six categories.
+
+I intentionally left variations of the same word pair distinct, such as "data scientist" and "data scientist", in order to leave the data as close to its original form as possible.
+
+This is by no means a rigorous study, only for personal interest. <i class="far fa-smile-wink"></i>
+</div>
+
+
+### General topics  
+
+```{r, fig.width=9}
+library(tidyr)
+library(ggplot2)
+library(ggpubr)
+library(plotly)
+
+df <- read.csv("./processed/top_bigrams_clean_Nov21.csv")
+
+df <- unite(df, bigram, c(word1, word2), sep=" ", remove=FALSE)
+
+df <- df[df$Category == 'General', ] %>% arrange(bigram)
+
+x <- within(df, rm(word1, word2, Category))
+
+rownames(x) <- x$bigram
+
+x$bigram <- NULL
+
+colnames(x) <- year_list
+
+ggballoonplot(x, fill = 'value', size='value') +
+  labs(x = "Year") +
+  theme(axis.text.x = element_text(angle = 0, vjust=1, hjust=0.5),
+        axis.title.x = element_text(size=12)) + 
+   labs(fill="% of all word pairs", size="% of all word pairs")
+
+```
+ 
+
+### Tools and methods 
+
+```{r, fig.width=9}
+library(tidyr)
+library(ggplot2)
+library(ggpubr)
+library(plotly)
+
+df <- read.csv("./processed/top_bigrams_clean_Nov21.csv")
+
+df <- unite(df, bigram, c(word1, word2), sep=" ", remove=FALSE)
+
+df <- df[df$Category == 'Technology', ] %>% arrange(bigram)
+
+x <- within(df, rm(word1, word2, Category))
+
+rownames(x) <- x$bigram
+
+x$bigram <- NULL
+
+colnames(x) <- year_list
+
+ggballoonplot(x, fill = 'value', size='value') +
+  labs(x = "Year") +
+  theme(axis.text.x = element_text(angle = 0, vjust=1, hjust=0.5),
+        axis.title.x = element_text(size=12)) + 
+   labs(fill="% of all word pairs", size="% of all word pairs")
+
+```
+
+
+
+### Programming languages  {data-commentary-width=400}
+
+```{r, fig.width=9}
+library(tidyr)
+library(ggplot2)
+library(ggpubr)
+library(plotly)
+
+df <- read.csv("./processed/top_bigrams_clean_Nov21.csv")
+
+df <- unite(df, bigram, c(word1, word2), sep=" ", remove=FALSE)
+
+df <- df[df$Category == 'Language', ] %>% arrange(bigram)
+ 
+x <- within(df, rm(word1, word2, Category))
+
+rownames(x) <- x$bigram
+
+x$bigram <- NULL
+
+colnames(x) <- year_list
+
+ggballoonplot(x, fill = 'value', size='value') +
+  labs(x = "Year") +
+  theme(axis.text.x = element_text(angle = 0, vjust=1, hjust=0.5),
+        axis.title.x = element_text(size=12)) + 
+   labs(fill="% of all word pairs", size="% of all word pairs")
+```
+
+
+### Applications of data science {data-commentary-width=400}
+
+
+```{r, fig.width=9}
+library(tidyr)
+library(ggplot2)
+library(ggpubr)
+library(plotly)
+
+df <- read.csv("./processed/top_bigrams_clean_Nov21.csv")
+
+df <- unite(df, bigram, c(word1, word2), sep=" ", remove=FALSE)
+
+df <- df[df$Category == 'Application', ] %>% arrange(bigram)
+
+x <- within(df, rm(word1, word2, Category))
+
+rownames(x) <- x$bigram
+
+x$bigram <- NULL
+
+colnames(x) <- year_list
+
+ggballoonplot(x, fill = 'value', size='value') +
+  labs(x = "Year") +
+  theme(axis.text.x = element_text(angle = 0, vjust=1, hjust=0.5),
+        axis.title.x = element_text(size=12)) + 
+   labs(fill="% of all word pairs", size="% of all word pairs")
+```
+
+
+### Learning data science {data-commentary-width=400}
+
+```{r, fig.width=9}
+library(tidyr)
+library(ggplot2)
+library(ggpubr)
+library(plotly)
+
+df <- read.csv("./processed/top_bigrams_clean_Nov21.csv")
+
+df <- unite(df, bigram, c(word1, word2), sep=" ", remove=FALSE)
+
+df <- df[df$Category == 'Learning', ] %>% arrange(bigram)
+
+x <- within(df, rm(word1, word2, Category))
+
+rownames(x) <- x$bigram
+
+x$bigram <- NULL
+
+colnames(x) <- year_list
+
+ggballoonplot(x, fill = 'value', size='value') +
+  labs(x = "Year") +
+  theme(axis.text.x = element_text(angle = 0, vjust=1, hjust=0.5),
+        axis.title.x = element_text(size=12)) + 
+   labs(fill="% of all word pairs", size="% of all word pairs")
+```
+
+
+
+### Others {data-commentary-width=400}
+
+```{r, fig.width=9}
+library(tidyr)
+library(ggplot2)
+library(ggpubr)
+library(plotly)
+
+df <- read.csv("./processed/top_bigrams_clean_Nov21.csv")
+
+df <- unite(df, bigram, c(word1, word2), sep=" ", remove=FALSE)
+
+df <- df[df$Category == 'Others', ] %>% arrange(bigram)
+
+x <- within(df, rm(word1, word2, Category))
+
+rownames(x) <- x$bigram
+
+x$bigram <- NULL
+
+colnames(x) <- year_list
+
+ggballoonplot(x, fill = 'value', size='value') +
+  labs(x = "Year") +
+  theme(axis.text.x = element_text(angle = 0, vjust=1, hjust=0.5),
+        axis.title.x = element_text(size=12)) + 
+   labs(fill="% of all word pairs", size="% of all word pairs")
+```
 
 
 

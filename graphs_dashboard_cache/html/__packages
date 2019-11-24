@@ -1,0 +1,13 @@
+base
+shiny
+flexdashboard
+shinyWidgets
+plyr
+dplyr
+igraph
+ggplot2
+ggraph
+tidyr
+magrittr
+ggpubr
+plotly
