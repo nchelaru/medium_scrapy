@@ -4,7 +4,7 @@ username:
 account: rpubs
 server: rpubs.com
 hostUrl: rpubs.com
-appId: https://api.rpubs.com/api/v1/document/552140/72a0eb46350f4f64b64ae643590b9440
-bundleId: https://api.rpubs.com/api/v1/document/552140/72a0eb46350f4f64b64ae643590b9440
-url: http://rpubs.com/nchelaru/552140
-when: 1574385035.68184
+appId: https://api.rpubs.com/api/v1/document/554591/45dcbd31d69f40a99e95066ed99afa14
+bundleId: https://api.rpubs.com/api/v1/document/554591/45dcbd31d69f40a99e95066ed99afa14
+url: http://rpubs.com/publish/claim/554591/43c226cf068b4bcf863c9040d7a1e946
+when: 1574977996.43687

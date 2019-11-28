@@ -1,0 +1,11 @@
+base
+knitr
+rmdformats
+reticulate
+kableExtra
+plyr
+dplyr
+magrittr
+ggplot2
+igraph
+ggraph
