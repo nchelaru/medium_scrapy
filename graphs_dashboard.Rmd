@@ -60,7 +60,7 @@ knobInput(
   lineCap = "round",
   displayInput = TRUE,
   displayPrevious = FALSE,
-  rotation = "clockwise",
+  rotation = "anticlockwise",
   fgColor = NULL,
   inputColor = NULL,
   bgColor = NULL,
@@ -75,21 +75,21 @@ knobInput(
 
 <br><hr><br>
 
-Please see [here](http://rpubs.com/nchelaru/medium_ds_nlp) for a detailed run-down of the workflow for web scraping and data preparation.
+Please see [here](http://rpubs.com/nchelaru/medium_ds_nlp) for a detailed run-down of the workflow for web scraping and data preparation, and the [Github repo](https://github.com/nchelaru/medium_scrapy) for raw and processed data used in this analysis.
 
 
 
 Column {data-width=450}
 -----------------------------------------------------------------------
  
-### Introduction  {data-height=420}
+### Introduction  {data-height=500}
 
-<div style='margin:15px; font-size:18px;'>
+<div style='margin:15px; font-size:17px;'>
 Judging by the number of articles tagged with "data science" published on Medium.com since 2009, it is not an over-statement to say that the data science community there has exploded since. This makes it an interesting resource for investigating how the interests and characteristics of data scientists may have evolved with time.
 
 One quick, but simplistic, approach to this is to measure which word pairs (bigrams) appear most frequently in the titles of articles published in each year, the result of which can be explored here. Please use the slider and knob in the side bar to select the year and number of top results that you are interested in, which then can be viewed as a network graph or data table under the different tabs. 
 
-In the network graph, each word appears as a node and the directionality of the arrow connecting them to each other indicates the order in which they appears in a bigram. Finally, the darkness of the arrow connecting each pair of words is proportional to the frequency of appearance for that bigram. For example, we see much darker arrows connecting ‘data’, ‘science’ or ‘machine’, ‘learning’.
+In the network graph, each word appears as a node and the directionality of the arrow connecting them to each other indicates the order in which they appears in a bigram. Finally, the darkness of the arrow connecting each pair of words is proportional to the frequency of appearance for that bigram. For example, we see much darker arrows connecting "data", "science" or "machine", "learning".
 
 </div>
 
@@ -256,7 +256,7 @@ ggballoonplot(x, fill = 'value', size='value') +
   labs(x = "Year") +
   theme(axis.text.x = element_text(angle = 0, vjust=1, hjust=0.5),
         axis.title.x = element_text(size=12)) + 
-   labs(fill="% of all word pairs", size="% of all word pairs")
+   labs(fill="% of all word pairs in titles", size="% of all word pairs in titles")
 
 ```
  
@@ -287,7 +287,7 @@ ggballoonplot(x, fill = 'value', size='value') +
   labs(x = "Year") +
   theme(axis.text.x = element_text(angle = 0, vjust=1, hjust=0.5),
         axis.title.x = element_text(size=12)) + 
-   labs(fill="% of all word pairs", size="% of all word pairs")
+   labs(fill="% of all word pairs in titles", size="% of all word pairs in titles")
 
 ```
 
@@ -319,7 +319,7 @@ ggballoonplot(x, fill = 'value', size='value') +
   labs(x = "Year") +
   theme(axis.text.x = element_text(angle = 0, vjust=1, hjust=0.5),
         axis.title.x = element_text(size=12)) + 
-   labs(fill="% of all word pairs", size="% of all word pairs")
+   labs(fill="% of all word pairs in titles", size="% of all word pairs in titles")
 ```
 
 
@@ -350,7 +350,7 @@ ggballoonplot(x, fill = 'value', size='value') +
   labs(x = "Year") +
   theme(axis.text.x = element_text(angle = 0, vjust=1, hjust=0.5),
         axis.title.x = element_text(size=12)) + 
-   labs(fill="% of all word pairs", size="% of all word pairs")
+   labs(fill="% of all word pairs in titles", size="% of all word pairs in titles")
 ```
 
 
@@ -380,7 +380,7 @@ ggballoonplot(x, fill = 'value', size='value') +
   labs(x = "Year") +
   theme(axis.text.x = element_text(angle = 0, vjust=1, hjust=0.5),
         axis.title.x = element_text(size=12)) + 
-   labs(fill="% of all word pairs", size="% of all word pairs")
+   labs(fill="% of all word pairs in titles", size="% of all word pairs in titles")
 ```
 
 
@@ -411,7 +411,7 @@ ggballoonplot(x, fill = 'value', size='value') +
   labs(x = "Year") +
   theme(axis.text.x = element_text(angle = 0, vjust=1, hjust=0.5),
         axis.title.x = element_text(size=12)) + 
-   labs(fill="% of all word pairs", size="% of all word pairs")
+   labs(fill="% of all word pairs in titles", size="% of all word pairs in titles")
 ```
 
 
